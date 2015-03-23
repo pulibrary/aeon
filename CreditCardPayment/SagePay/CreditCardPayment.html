@@ -1,0 +1,190 @@
+<html lang="en-US">
+<head>
+    <title>Aeon - Approve Billing</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+    <!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
+<![endif]-->
+    <script type="text/javascript" src="utility.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+</head>
+<body id="type-b">
+    <div id="wrap">
+        <#INCLUDE filename="include_header.html">
+        <div id="content-wrap">
+            <#INCLUDE filename="include_menu.html">
+            <script language="javascript">
+                $(document).ready(function () {
+                    $("#pay").click(function () {
+
+                        $("#sagepayform").submit();
+                    });
+
+                    $("#cancel").click(function () {
+                        window.location.replace("<#DLL queryFields=false>?action=10&form=10");
+                    });
+
+                    setStateVisibility();
+                });
+
+                function setStateVisibility() {
+                    if ($('#BillingCountry').val() == 'US') {
+                        $('#BillingStateLabel').show();
+                    }
+                    else {
+                        $('#BillingStateLabel').hide();
+                    }
+                }
+
+                function populateAddressFields() {
+                    var addressNumber = $('#AddressSelection').val()
+
+                    if (addressNumber == 1) {
+                        $('#BillingFirstnames').val('<#USER field="FirstName">');
+                        $('#BillingSurname').val('<#USER field="LastName">');
+                        $('#BillingAddress1').val('<#USER field="Address">');
+                        $('#BillingAddress2').val('<#USER field="Address2">');
+                        $('#BillingCity').val('<#USER field="City">');
+                        $('#BillingState').val('<#USER field="State">');
+                        $('#BillingCountry').val('<#USER field="Country">');
+                        $('#BillingPostCode').val('<#USER field="Zip">');
+                        $('#BillingPhone').val('<#USER field="Phone">');
+                        $('#BillingEmail').val('<#USER field="EMailAddress">');
+                    }
+                    else if (addressNumber == 2) {
+                        $('#BillingFirstnames').val('<#USER field="FirstName">');
+                        $('#BillingSurname').val('<#USER field="LastName">');
+                        $('#BillingAddress1').val('<#USER field="SAddress">');
+                        $('#BillingAddress2').val('<#USER field="SAddress2">');
+                        $('#BillingCity').val('<#USER field="SCity">');
+                        $('#BillingState').val('<#USER field="SState">');
+                        $('#BillingCountry').val('<#USER field="SCountry">');
+                        $('#BillingPostCode').val('<#USER field="SZip">');
+                        $('#BillingPhone').val('<#USER field="Phone">');
+                        $('#BillingEmail').val('<#USER field="EMailAddress">');
+                    }
+
+                    setStateVisibility();
+                }
+
+            </script>
+
+            <div id="content">
+                <div class="default-table">
+                    <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow"
+                    noDataMessage="No Requests" column="TransactionNumber:TN" column="DocumentType:Type"
+                    column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service
+                    Level" column="ShippingOption:Shipping" column="Subtotal" orderby="TransactionNumber
+                    DESC">
+                </div>
+
+                <form id="sagepayform" action="aeon.dll?Action=11&Type=107" method="post" class="f-wrap-request"> 
+                <!--Edit the following values -->
+                
+                <input type="hidden" name="VPSProtocol" value="2.23" />
+                <input type="hidden" name="Currency" value="GBP">
+                <input type="hidden" name="Description" value="<#CUSTOMIZATION name=CreditCardTransactionsDescription />">
+                <input type="hidden" name="TransactionNumbers" value="<#PARAM name="TransactionNumbers">">                   
+                <!--System defined values -->
+                <input type="hidden" name="NotificationURL" value="<#CUSTOMIZATION name=WebURL />/aeon.dll?action=11&type=108" />
+
+                <div class="req"><span class="bold">*</span> Indicates required field</div>
+                <fieldset>
+                    <legend>Billing Address Details</legend>
+                    <label for="AddressSelection">
+                        <span class="field">
+                            <span class="bold">Use address details from your Aeon account</span>
+                        </span>
+                        <select id="AddressSelection" name="AddressSelection" size="1" class="f-name" tabindex="0" title="Selecting an address will automatically populate the billing address details." onchange="populateAddressFields()";>
+                            <option value="0">Select an address</option>
+                            <option value="1">Primary Address - <#USER field="Address"></option>
+                            <option value="2">Secondary Address - <#USER field="SAddress"></option>
+                        </select><br />
+                    </label>
+                    <label for="BillingFirstnames">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">First Name</span>
+                        </span>
+                        <input id="BillingFirstnames" name="BillingFirstnames" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingFirstnames'>" /><br />						
+                    </label>
+
+                    <label for="BillingSurname">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">Last Name</span>
+                        </span>
+                        <input id="BillingSurname" name="BillingSurname" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingSurname'>" /><br />						
+                    </label>
+                    <label for="BillingAddress1">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">Address Line 1</span>
+                        </span>
+                        <input id="BillingAddress1" name="BillingAddress1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress1'>" /><br />						
+                    </label>
+                    <label for="BillingAddress2">
+                        <span class="field">                            
+                            <span class="bold">Address Line 2</span>
+                        </span>
+                        <input id="BillingAddress2" name="BillingAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress2'>" /><br />						
+                    </label>
+                    <label for="BillingCity">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">City</span>
+                        </span>
+                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingCity'>" /><br />						
+                    </label>
+                    <label id="BillingStateLabel" style="display: none;" for="BillingState">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">State</span>
+                        </span>
+                        <select id="BillingState" name="BillingState" size="1" class="f-name" tabindex="0">                            
+                            <#OPTION name="States" selectedValue="<#PARAM name='BillingState'>" defaultValue="Select your state"/>
+                        </select><br />
+                    </label>
+                    <label for="BillingCountry">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">Country</span>
+                        </span>
+                        
+                        <select id="BillingCountry" name="BillingCountry" size="1" class="f-name" tabindex="0" title="Selecting a country will dynamically show or hide the state address field." onchange="setStateVisibility();">
+							    <#OPTION name="Countries" selectedValue="<#PARAM name=BillingCountry>" defaultValue="Select your country" />
+						</select><br />
+                    </label>                    
+                    <label for="BillingPostCode">
+                        <span class="field">
+                            <span class="req">*</span>
+                            <span class="bold">Postal Code</span>
+                        </span>
+                        <input id="BillingPostCode" name="BillingPostCode" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPostCode'>" /><br />						
+                    </label>
+                    <label for="BillingPhone">
+                        <span class="field">
+                            <span class="bold">Phone Number</span>
+                        </span>
+                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPhone'>" /><br />						
+                    </label>
+                    <label for="BillingEmail">
+                        <span class="field">
+                            <span class="bold">E-mail Address</span>
+                        </span>
+                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingEmail'>" /><br />						
+                    </label>
+
+                    <div class="f-submit-wrap" align="right">
+                        <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0" />
+                        <input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
+                    </div>
+                </fieldset>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
