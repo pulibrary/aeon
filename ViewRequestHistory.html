@@ -1,0 +1,23 @@
+<html lang="en-US">
+<head>
+<title>Aeon - Request History</title>
+<#INCLUDE filename="include_head.html">
+<#INCLUDE filename="include_sortableTables.html">
+
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_menu.html">
+			<div id="content" role="heading" aria-label="Content">
+				<div class="default-table">			
+					<#TABLE name="ViewRequestHistory" headerText="Request History" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" 
+					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber DESC">
+				</div>
+				<#INCLUDE filename="include_footer.html">
+			</div>    
+		</div>
+	</div>
+</body>
+</html>

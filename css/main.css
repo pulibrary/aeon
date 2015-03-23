@@ -1,0 +1,468 @@
+/*
+LEGAL
+=====
+Copyright 2011 Atlas Systems, Inc. http://www.atlas-sys.com
+*/
+
+* {margin:0;padding:0}
+body {padding: 0 0 20px;color:#333;font:83%/1.5 arial,tahoma,verdana,sans-serif}
+
+a.offsite:link, .offsite {padding-right: 12px;background: transparent url("images/aoutside.gif") no-repeat 100%;white-space: nowrap;}
+
+.iconlist{list-style: none;margin: 0px;padding: 0px;}
+
+/* LINKS */
+a,a:link,a:link,a:link,a:hover {background:transparent;text-decoration:none;color:#666666;cursor:pointer} 
+a:link, a:visited {color:#666666} 
+/* FORMS */
+form {margin: 0 0 1.5em}
+input {font-family: arial,tahoma,verdana,sans-serif;margin: 2px 0}
+a:hover,a:active {color:#069} 
+
+textarea {font-family: arial,tahoma,verdana,sans-serif;font-size:10pt;margin: 2px 0}
+fieldset {border: none}
+label {display:block;padding: 5px 0}
+label br {clear:left}
+.bold {font-weight: bold;}
+
+/* FORMS - general classes */
+input.f-submit {padding: 1px 3px;background:#666;color:#fff;font-weight:bold;font-size:96%}
+    
+/* FORMS - f-wrap-1 - simple form, headings on left, form elements on right */
+form.f-wrap-1 {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
+form.f-wrap-1 fieldset {width:auto;margin: 0 1em}
+form.f-wrap-1 h3 {margin:0 0 .6em;font: bold 155% arial;color:#960}
+form.f-wrap-1 label {clear:left;float:left;width:100%;border-top: 1px solid #fff}
+
+/* hide from IE mac \*/
+form.f-wrap-1 label {float:none}
+/* end hiding from IE5 mac */
+
+form.f-wrap-1 label input, form.f-wrap-1 label textarea, form.f-wrap-1 label select {width:15em;float:left;margin-left:10px}
+
+form.f-wrap-1 label .field {float:left;width:8em;line-height: 1.7;display:block;position:relative}
+form.f-wrap-1 label .field .note {color:#333333;font-size:80%;font-weight:normal}
+form.f-wrap-1 label .field .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}		
+
+form.f-wrap-1 div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
+form.f-wrap-1 div.req b {color:#c00;font-size:140%}
+form.f-wrap-1 .req .bold {color: #c00; font-size: 140%;}
+form.f-wrap-1 label select {width: 24em}
+form.f-wrap-1 label textarea.f-comments {width: 20em}
+form.f-wrap-1 div.f-submit-wrap {padding: 5px 0 5px 8em}
+form.f-wrap-1 input.f-submit {margin: 0 0 0 10px}
+
+form.f-wrap-1 fieldset.f-checkbox-wrap, form.f-wrap-1 fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
+form.f-wrap-1 fieldset.f-checkbox-wrap b, form.f-wrap-1 fieldset.f-radio-wrap b {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
+form.f-wrap-1 fieldset.f-checkbox-wrap fieldset, form.f-wrap-1 fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
+form.f-wrap-1 fieldset.f-checkbox-wrap label, form.f-wrap-1 fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
+form.f-wrap-1 fieldset legend { color: #960; font: bold 155% arial; margin: 0 0 0.6em; }
+form.f-wrap-1 label input.f-checkbox, form.f-wrap-1 label input.f-radio {width:auto;float:none;margin:0;padding:0}
+
+form.f-wrap-1 label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
+form.f-wrap-1 label span.errormsg b {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
+
+/* FORMS - f-wrap-2 - simple form, headings on top, form elements on bottom */
+form.f-wrap-2 {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
+form.f-wrap-2 fieldset {width:auto;margin: 0 1em}
+form.f-wrap-2 h3 {margin:0 0 .6em;font: bold 155% arial;color:#c00}
+form.f-wrap-2 label {clear:left;float:left;width:100%;border-top: 1px solid #fff}
+
+/* hide from IE mac \*/
+form.f-wrap-2 label {float:none}
+/* end hiding from IE5 mac */
+
+form.f-wrap-2 label input, form.f-wrap-2 label textarea, form.f-wrap-2 label select {float:left;margin-left:10px}
+
+form.f-wrap-2 label b {float:left;line-height: 1.7;display:block;position:relative}
+form.f-wrap-2 label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1;left:-.4em;width:.3em;height:.3em}
+form.f-wrap-2 div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
+form.f-wrap-2 div.req b {color:#c00;font-size:140%}
+form.f-wrap-2 label select {width: 24em}
+form.f-wrap-2 label textarea.f-comments {width: 20em}
+form.f-wrap-2 div.f-submit-wrap {padding: 5px 0 5px 8em}
+form.f-wrap-2 input.f-submit {margin: 0 0 0 10px}
+
+form.f-wrap-2 fieldset.f-checkbox-wrap, form.f-wrap-2 fieldset.f-radio-wrap {clear:left;float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
+form.f-wrap-2 fieldset.f-checkbox-wrap b, form.f-wrap-2 fieldset.f-radio-wrap b {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
+form.f-wrap-2 fieldset.f-checkbox-wrap fieldset, form.f-wrap-2 fieldset.f-radio-wrap fieldset {float:left;margin: 3px 0 0 10px}
+form.f-wrap-2 fieldset.f-checkbox-wrap label, form.f-wrap-2 fieldset.f-radio-wrap label {float:left;border:none;margin:0;padding:2px 0;margin-right:-3px}
+form.f-wrap-2 label input.f-checkbox, form.f-wrap-2 label input.f-radio {width:auto;float:none;margin:0;padding:0}
+
+form.f-wrap-2 label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
+form.f-wrap-2 label span.errormsg b {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}	
+
+/* FORMS - f-wrap-request - simple form, headings on left, form elements on right */
+form.f-wrap-request {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
+form.f-wrap-request fieldset {width:auto;margin: 0 1em}
+form.f-wrap-request h3 {margin:0 0 .6em;font: bold 155% arial;color:#960}
+form.f-wrap-request h2 {margin:.6em 0 .6em;font: bold 155% arial;color:#000066}
+form.f-wrap-request label {clear:left;float:left;width:100%;border-bottom: 1px solid #fff}
+
+/* hide from IE mac \*/
+form.f-wrap-request label {float:none}
+/* end hiding from IE5 mac */
+
+form.f-wrap-request label input, form.f-wrap-request label textarea, form.f-wrap-request label select {width:35%;float:left;margin-left:10px;}
+form.f-wrap-request label input#ScheduledDate  {width: 32%}
+form.f-wrap-request label b {float:left;width:60%;line-height: 1.7;display:block;position:relative;
+    top: 0px;
+    left: 0px;
+}
+form.f-wrap-request label b .note {color:#333333;font-size:80%;font-weight:normal}
+form.f-wrap-request label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
+
+form.f-wrap-request label .field {float:left;width:60%;line-height: 1.7;display:block;position:relative}
+form.f-wrap-request label .field .note {color:#333333;font-size:80%;font-weight:normal}
+form.f-wrap-request label .field .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
+form.f-wrap-request label .field .note.validationError {color:#CC0000;} 
+
+form.f-wrap-request div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
+form.f-wrap-request div.req b {color:#c00;font-size:140%}
+form.f-wrap-request .req .bold {color: #c00; font-size: 140%;}
+form.f-wrap-request label select {width: 24em}
+form.f-wrap-request label textarea.f-comments {width: 20em}
+form.f-wrap-request div.f-submit-wrap {padding: 5px 0 5px 8em}
+form.f-wrap-request input.f-submit {margin: 0 0 0 10px}
+
+form.f-wrap-request fieldset.f-checkbox-wrap, form.f-wrap-request fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
+form.f-wrap-request fieldset.f-checkbox-wrap b, form.f-wrap-request fieldset.f-radio-wrap b {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
+form.f-wrap-request fieldset.f-checkbox-wrap fieldset, form.f-wrap-request fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
+form.f-wrap-request fieldset.f-checkbox-wrap label, form.f-wrap-request fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
+form.f-wrap-request fieldset legend { color: #960; font: bold 155% arial; margin: 0 0 0.6em; }
+form.f-wrap-request label input.f-checkbox {width:auto;float:left;margin-left:10px}
+form.f-wrap-request label input.f-radio {width:auto;float:none;margin-left:10px}
+
+form.f-wrap-request label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
+form.f-wrap-request label span.errormsg b {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
+
+form.f-wrap-request fieldset span.RequestForEnabled {display:block}
+form.f-wrap-request fieldset span.RequestForDisabled {display:none}
+form.f-wrap-request fieldset span.BillingAccountsEnabled {display:block}
+form.f-wrap-request fieldset span.BillingAccountsDisabled {display:none}
+
+/* FORMS - f-wrap-zresults - simple form, headings on left, form elements on right */
+form.f-wrap-zresults {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
+form.f-wrap-zresults fieldset {width:auto;margin: 0 1em}
+form.f-wrap-zresults h3 {margin:0 0 .6em;font: bold 155% arial;color:#960}
+form.f-wrap-zresults h2 {margin:.6em 0 .6em;font: bold 155% arial;color:#000066}
+form.f-wrap-zresults label {clear:left;float:left;width:100%;border-bottom: 1px solid #fff}
+
+/* hide from IE mac \*/
+form.f-wrap-zresults label {float:none}
+/* end hiding from IE5 mac */
+
+form.f-wrap-zresults label input, form.f-wrap-zresults label textarea, form.f-wrap-zresults label select {width:100%;float:left}
+
+form.f-wrap-zresults label b {float:left;width:60%;line-height: 1.7;display:block;position:relative}
+form.f-wrap-zresults label b .note {color:#333333;font-size:80%;font-weight:normal}
+form.f-wrap-zresults label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
+
+form.f-wrap-zresults label .field {float:left;width:60%;line-height: 1.7;display:block;position:relative}
+form.f-wrap-zresults label .field .note {color:#333333;font-size:80%;font-weight:normal}
+form.f-wrap-zresults label .field .req {color:#c00;font-size:150%;font-weight:bold;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
+
+form.f-wrap-zresults div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
+form.f-wrap-zresults div.req b {color:#c00;font-size:140%}
+form.f-wrap-zresults label select {width: 24em}
+form.f-wrap-zresults label textarea.f-comments {width: 20em}
+form.f-wrap-zresults div.f-submit-wrap {padding: 5px 0 5px 8em}
+form.f-wrap-zresults input.f-submit {margin: 0 0 0 10px}
+
+form.f-wrap-zresults fieldset.f-checkbox-wrap, form.f-wrap-zresults fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
+form.f-wrap-zresults fieldset.f-checkbox-wrap b, form.f-wrap-zresults fieldset.f-radio-wrap b {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
+form.f-wrap-zresults fieldset.f-checkbox-wrap fieldset, form.f-wrap-zresults fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
+form.f-wrap-zresults fieldset.f-checkbox-wrap label, form.f-wrap-zresults fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
+form.f-wrap-zresults label input.f-checkbox, form.f-wrap-zresults label input.f-radio {width:auto;float:none;margin:0;padding:0}
+
+form.f-wrap-zresults label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
+form.f-wrap-zresults label span.errormsg b {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
+        
+/* FORMS - f-wrap-detail - simple form, headings on left, form elements on right */
+form.f-wrap-detail {width:100%;padding: .5em 0;background: #f6f6f6;border-top: 1px solid #d7d7d7;position:relative}
+form.f-wrap-detail fieldset {width:auto;margin: 0 1em}
+form.f-wrap-detail h3 {margin:0 0 .6em;font: bold 155% arial;color:#960}
+form.f-wrap-detail h2 {margin:.6em 0 .6em;font: bold 155% arial;color:#000066}
+form.f-wrap-detail label {clear:left;float:left;width:100%;border-bottom: 1px solid #fff}
+
+/* hide from IE mac \*/
+form.f-wrap-detail label {float:none}
+/* end hiding from IE5 mac */
+
+form.f-wrap-detail label input, form.f-wrap-detail label textarea, form.f-wrap-detail label select {width:35%;float:left;margin-left:10px}
+
+form.f-wrap-detail label b {float:left;width:60%;line-height: 1.7;display:block;position:relative}
+form.f-wrap-detail label b .note {color:#333333;font-size:80%;font-weight:normal}
+form.f-wrap-detail label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
+form.f-wrap-detail div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
+form.f-wrap-detail div.req b {color:#c00;font-size:140%}
+form.f-wrap-detail label select {width: 24em}
+form.f-wrap-detail label textarea.f-comments {width: 20em}
+form.f-wrap-detail div.f-submit-wrap {padding: 5px 0 5px 8em}
+form.f-wrap-detail input.f-submit {margin: 0 0 0 10px}
+
+form.f-wrap-detail fieldset.f-checkbox-wrap, form.f-wrap-detail fieldset.f-radio-wrap {float:left;width:32em;border:none;margin:0;padding-bottom:.7em}
+form.f-wrap-detail fieldset.f-checkbox-wrap b, form.f-wrap-detail fieldset.f-radio-wrap b {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
+form.f-wrap-detail fieldset.f-checkbox-wrap fieldset, form.f-wrap-detail fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
+form.f-wrap-detail fieldset.f-checkbox-wrap label, form.f-wrap-detail fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
+form.f-wrap-detail label input.f-checkbox, form.f-wrap-detail label input.f-radio {width:auto;float:none;margin:0;padding:0}
+
+form.f-wrap-detail label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
+form.f-wrap-detail label span.errormsg b {padding: 10px 0;margin: 0 10px 0 30px;color:#B30800;font-weight:bold;display:block;width:auto;float:none;line-height:1.3}
+
+
+/* TYPOGRAPHY */
+p, ul, ol {margin: 0 0 1.5em}
+h1, h2, h3, h4, h5, h6 {letter-spacing: -1px;font-family: arial,verdana,sans-serif;margin: 1.2em 0 .3em;color:#000;border-bottom: 1px solid #eee;padding-bottom: .1em}
+h1 {font-size: 196%;margin-top:.6em}
+h2 {font-size: 136%}
+h3 {font-size: 126%}
+h4 {font-size: 116%}
+h5 {font-size: 106%}
+h6 {font-size: 96%}
+.highlight {color:#E17000}
+.subdued {color:#999}
+.error {color:#c00;font-weight:bold}
+.success {color:#390;font-weight:bold}
+.caption {color:#999;font-size:11px}
+.date {font: bold 82% arial;color:#bbb;display:block;letter-spacing: 1px}
+small {font-size:11px}
+
+/* LISTS */
+ul {margin: .3em 0 1.5em 0;list-style-type:none}
+ul.related {margin-top: -1em}
+ol {margin: .5em .5em 1.5em}
+ol li {margin-left: 1.4em;padding-left: 0;background: none; list-style-type: decimal}
+li {line-height: 1.4em;padding-left: 15px;background-image: url(images/bullet.gif);background-repeat: no-repeat;} 
+li.doc {background-position: 3px -500px}
+ul.nomarker li {background:none;padding-left:0}
+
+dl {margin: 0 0 1em 0}
+dt {font-weight:bold;margin-top: 1.3em}
+dl dl {margin: 0 0 1.5em 30px}
+
+/* GENERAL */
+img {border:none} 
+hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:both}
+.clear {clear:both;position:relative;font-size:0px;height:0px;line-height:0px} 
+
+/* LAYOUT - HEADER */
+#header {background-color: #f6f6f6; border-left: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC; border-top: 5px solid #000066;border-bottom: 5px solid #000066;margin: 0 0 25px;padding: 6px 0 0 2px}
+#header #site-name {font: 265% arial;letter-spacing: -.05em;margin:0px 0 0 40px;padding:3px;color:#000066;border:none}
+#header #title-name {font: 265% arial;letter-spacing: -.05em;margin:0px 0 0 40px;padding:3px;color:#000066;border:none}
+#header #user-name {font: 100% ariel;margin:0px 0 0 0;padding:3px;color:#333333;border:none}
+    
+/* SEARCH */
+#search {color:#000066;font-weight:bold;position:absolute;top:17px;right:10px}
+#search form {margin:0 0 5px 0}
+#search input.f-criteria {width:8em;margin: 0 0 -1px;height:1.6em}	
+#search label {padding:5px 0 0;display:inline}
+#search input.f-submit {width:auto;font-size:81%;margin:0 0 -.15em;height:1.95em}
+#search #searchType input {margin: 0 0 -0.4em;height:1.2em}
+#search #searchType label {font-weight:normal;font-size:0.8em;padding:0px 0 0 5}
+    
+/* POWERED BY */
+#poweredby {width:96px;height:63px;position:absolute;top:-102px;right:0}
+
+/* LAYOUT - main body of page */
+#wrap {min-width:770px;max-width:1200px;margin: 0 auto;position:relative}
+#content-wrap {position:relative;width:100%}
+#utility {position:absolute;top:0;left:25px;width:165px;border-top: 0px solid #999;padding-bottom: 40px}
+#sidebar {position:absolute;top:0;right:25px;width:20%;border-top: 5px solid #999;padding-top: 1px;padding-bottom: 40px}
+
+#content {margin: 0 50px}
+#content #breadcrumb {margin-top:-5px;font-size:93%;font-weight:bold}
+#content #breadcrumb a:link, #content #breadcrumb a:visited {text-decoration:none}
+#content #breadcrumb a:hover, #content #breadcrumb a:active {text-decoration:underline}
+    
+.featurebox {color:#333;padding: 15px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6 url("images/featurebox_bg.gif") no-repeat 100% 100%}
+.featurebox p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+.featurebox p {border:none;margin: 0 0 0.5em;color:#444}
+.featurebox a {font-weight:bold}
+
+/* ALERTS */
+    
+.alertNone {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
+.alertNone p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+.alertNone p {border:none;margin: 0 0 0.5em;color:#444}
+.alertNone a {font-weight:bold}
+
+.alertSystem {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
+.alertSystem p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+.alertSystem p {border:none;margin: 0 0 0.5em;color:#444}
+.alertSystem a {font-weight:bold}
+
+.alertUser {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
+.alertUser p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+.alertUser p {border:none;margin: 0 0 0.5em;color:#444}
+.alertUser a {font-weight:bold}
+
+.alertStatus {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
+.alertStatus p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+.alertStatus p {border:none;margin: 0 0 0.5em;color:#444}
+.alertStatus a {font-weight:bold}
+
+.alertDeliveryLocation {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;margin: 0 0 1.5em;background: #f6f6f6}
+.alertDeliveryLocation p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+.alertDeliveryLocation p {border:none;margin: 0 0 0.5em;color:#444}
+.alertDeliveryLocation a {font-weight:bold}
+
+/* TRANSACTION MENU */
+    
+#transactionMenu {border-top: 5px solid #999;border-bottom: 1px solid #ccc;margin-bottom:.5em;width:100%}
+#transactionMenu a:link, #transactionMenu a:visited {color:#c00;font-weight:bold;line-height:2em;padding:.3em}
+#transactionMenu a:hover, #transactionMenu a:active {background-color: #efefef}
+#transactionMenu .separator {color:ccc;margin-left:5px;margin-right:5px}
+#transactionMenu .noActionMessage {color:#999;font-weight:normal;line-height:2em;padding:.3em}
+    
+/* LAYOUT TYPE B */
+#type-b #content-wrap {background: transparent url("images/content_wrap_bg.gif") repeat-y 30px 0}
+#type-b #content {margin: 0 23px 0 235px}
+
+/* LAYOUT TYPE C */
+#type-c #content-wrap {background: transparent url("images/content_wrap_bg.gif") repeat-y 30px 0}
+#type-c #content {margin: 0 24% 0 235px}
+
+/* LAYOUT TYPE D */
+#type-d #content {margin: 0 25% 0 50px}
+
+/* LAYOUT TYPE E */
+#type-e #content-wrap {background: transparent url("images/content_wrap_e_bg.gif") repeat-y 100% 0}
+#type-e #utility {position:absolute;top:0;left:auto;right:25px;width:165px;border-top: 5px solid #999}
+#type-e #content {margin: 0 243px 0 50px}
+
+/* NAVIGATION */
+#nav, #nav ul {position:static}
+#nav, #nav li {list-style: none;margin:0;padding:0;background:#fff}
+#nav {padding-top:0;border-top: 5px solid #999;margin-top: 1px}
+#nav a {line-height:1.8;padding: 5px 0 5px 23px;background: #fff url("images/sprites.gif") no-repeat 10px -695px;font: bold 96% arial;display:block}
+#nav a, #nav a:link, #nav a:visited, #nav a:hover, #nav a:active {text-decoration:none;cursor:pointer} 
+#nav a:link {color:#000} 
+#nav a:visited {color:#000} 
+#nav a:hover {color:#c00;background: #fee url("images/sprites.gif") no-repeat 10px -695px} 
+#nav li.active a:link, #nav li.active a:visited, #nav li.active a:hover, #nav li.active a:active {color:#960} 
+#nav li {border-top: 1px solid #fff;border-bottom: 1px solid #ccc}
+#nav .default {color:#960} 
+
+/* NAVIGATION - 2nd TIER */
+#nav ul {margin: 0 0 1em 23px;padding:0}
+#nav li.active li a, #nav li.active li a:link, #nav li.active li a:visited {line-height:1.3;background: #fff url("images/sprites.gif") no-repeat 0 -798px;padding:0 0 0 12px;font-weight:normal;width:auto;color:#000;width:130px;display:block}
+#nav li.active li a:hover, #nav li.active li a:active {color: #960}
+#nav li.active li {border: none;margin:0}
+
+#nav li.active li.active a:link, 
+#nav li.active li.active a:visited, 
+#nav li.active li.active a:hover, 
+#nav li.active li.active a:active {font-weight:bold}
+
+/* NAVIGATION - 3rd TIER */
+#nav ul ul {margin: 0 0 1em 13px;padding:0}
+#nav li.active li.active li a, #nav li.active li.active li a:link, #nav li.active li.active li a:visited {width:117px}
+#nav li.active li.active li a:link, 
+#nav li.active li.active li a:visited, 
+#nav li.active li.active li a:hover, 
+#nav li.active li.active li a:active {font-weight:normal}
+#nav li.active li.active li.active a:link, 
+#nav li.active li.active li.active a:visited, 
+#nav li.active li.active li.active a:hover, 
+#nav li.active li.active li.active a:active {font-weight:bold}
+
+/* NAVIGATION - 4th TIER */
+#nav ul ul ul {margin: 0 0 1em 13px;padding:0}
+#nav li.active li.active li.active li a, #nav li.active li.active li.active li a:link, #nav li.active li.active li.active li a:visited {width:104px}
+#nav li.active li.active li.active li a:link, 
+#nav li.active li.active li.active li a:visited, 
+#nav li.active li.active li.active li a:hover, 
+#nav li.active li.active li.active li a:active {font-weight:normal}
+#nav li.active li.active li.active li.active a:link, 
+#nav li.active li.active li.active li.active a:visited, 
+#nav li.active li.active li.active li.active a:hover, 
+#nav li.active li.active li.active li.active a:active {font-weight:bold}
+
+/* LAYOUT - FOOTER */
+#footer {clear:both;border-top: 1px solid #E3E8EE;padding: 10px 0 30px;font-size:86%;color:#666; text-align: left}
+#footer p {margin:0}
+#footer a:link {color:#666}
+
+
+/* LAYOUT - FOOTER */
+#footer_request {clear:both;border-top: 1px solid #E3E8EE;padding: 10px 30px 30px;font-size:86%;color:#999; text-align: left}
+#footer_request p {margin:0}
+#footer_request a:link {color:#666}
+
+/* DEFAULT TABLE */
+
+.default-table {width:100%}
+.default-table table {border: 1px solid #000066;font: 75%/1.5em arial, geneva, sans-serif;border-collapse:collapse;}
+.default-table tbody td {font-size: 100%;letter-spacing: 0.05em;}
+.default-table tbody td, th {border-left: 1px solid #000066;vertical-align: middle;padding: 5px;}
+.default-table thead tr, .default-table tfoot tr {background: #efefef;color:#000;}
+.default-table thead tr.row-header {background: #000066;color: #fff;}
+.default-table caption {background: #000066;color: #fff; font: 110% arial, geneva, sans-serif; font-weight: bold; text-align: left; letter-spacing: 0.2em; padding: 5px; }
+.default-table thead tr.row-headings th{border-bottom: 1px solid #000066;}
+.default-table thead th, .default-table tfoot  tr {padding: 5px 5px;text-align: left;letter-spacing: 0.2em;font-weight: bold;font-size: 110%}
+.default-table tbody th {padding: 5px 5px 5px 5px;text-align: left;font-size: 110%;color: #fff;letter-spacing: 0.1em;line-height: 1.5em;text-transform: uppercase;}	
+.default-table tbody th[scope="row"] { color: #333; font-size: 100%; text-transform: none; letter-spacing: 0.05em; font-weight: normal;}
+.default-table tbody tr.row-odd th {background: #efefef;}
+.default-table tbody tr.row-odd {background: #efefef;}
+.default-table tbody tr th {background: #ffffff;}
+.default-table tbody tr {background: #ffffff;}
+.default-table tfoot td {border-top: 1px solid #000066; padding: 5px;}
+.default-table tfoot tr td {padding: 5px;}
+.default-table tfoot tr.row-footer {background: #ffffff; color:#000000}
+.default-table a {text-decoration:none;}
+
+/* FAQ */
+
+#faq-toc li {font-weight:bold;line-height: 1.4em;padding-left: 0px;} 
+
+#faq-contents {line-height:normal}
+#faq-contents .faq-item {width:100%;border-top: 5px solid #999;padding-top: 1px;padding-bottom: 10px}
+#faq-contents .faq-item-box {color:#333;padding: 0px 20px 20px;border-top: 1px solid #d7d7d7;background: #f6f6f6}
+#faq-contents .faq-item-box p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
+#faq-contents .faq-item-box p {border:none;margin: 0 0 1em;color:#444}
+#faq-contents .faq-item-box a {font-weight:bold}
+#faq-contents li {font-weight:normal;line-height: 1.4em;padding-left: 0px;background-image: url(images/bullet.gif);background-repeat: no-repeat;} 
+
+#status {font: Arial, Helvetica, sans-serif; margin:0px 0 0 40px;padding:3px;color:#333333;border:none}
+.statusNormal {color:#333333}
+.statusInformation {color:#0000FF}
+.statusError {color:#CC0000;}
+
+.NLMDDSRequest {margin-bottom:20px}
+
+.validationError {font-weight:bold; color:#CC0000}
+
+.EADCommon {margin-bottom:20px}
+.EADSection {margin-top:5px; margin-bottom:5px; padding:5px; border-style:solid; border-width:1px; border-color:#666666}
+.EADGroup {margin:5px; padding:5px;}
+.EADContainer {margin-left:20px; padding:0px;}
+.EADRequest {display:block}
+.c01 {padding-left:5px; font-weight:bold}
+.c02 {padding-left:15px}
+.c03 {padding-left:30px}
+.c04 {padding-left:45px}
+.c05 {padding-left:60px}
+.c06 {padding-left:75px}
+.c07 {padding-left:90px}
+.c08 {padding-left:105px}
+.c09 {padding-left:120px}
+.c10 {padding-left:135px}
+.c11 {padding-left:150px}
+.c12 {padding-left:165px}
+
+/*a.toplink {position:absolute; top:5px; right:15px; float:right; padding-left:15px; padding-right:15px; background: transparent url("images/up.gif") no-repeat 100%;white-space: nowrap;}*/
+a.toplink {padding-left:10px; font-size:x-small}
+
+
+.Z3950Result {margin-top:5px; margin-bottom:5px; padding:5px; border-style:solid; border-width:1px; border-color:#666666}
+
+#table-main-outstanding-requests {overflow: auto;}
+
+/*
+LEGAL
+=====
+Copyright: Daemon Pty Limited 1995-2006, http://www.daemon.com.au & http://www.mollio.org/
+License: Released Under the "Common Public License 1.0", http://www.opensource.org/licenses/cpl.php
+Version: 010306
+*/

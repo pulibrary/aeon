@@ -1,0 +1,307 @@
+@media only screen and (max-width: 480px)
+{
+    *
+    {
+        box-sizing: border-box;
+    }
+    body
+    {
+        font: 80%/1.5 arial,tahoma,verdana,sans-serif;
+    }
+    
+    /* FORMS */
+    input.f-submit
+    {
+        font-size:96%
+    }
+
+    /* FORMS - general classes */
+    form.f-wrap-1 fieldset
+    {
+        margin: 0 0.5em;
+    }
+    
+    form.f-wrap-1 label input, form.f-wrap-1 label textarea, form.f-wrap-1 label select
+    {
+        width: 182px;
+    }
+    
+    form.f-wrap-1 label .field
+    {
+        /* TODO: The line height declaration was excluded; everything else was the same */
+    }
+    
+    /* FORMS - f-wrap-request */
+    form.f-wrap-request fieldset
+    {
+        margin: 0 0.5em;
+    }
+
+    form.f-wrap-request h3
+    {
+        color: #960;
+    }
+
+    form.f-wrap-request label input, form.f-wrap-request label textarea, form.f-wrap-request label select
+    {
+        clear: left;
+        float: left;
+        width: 100%;
+        line-height: 1.7em;
+        margin-left: 0px;
+    }
+    
+    form.f-wrap-request label b
+    {
+        width: 100%;
+        top: 0px;
+        left: 0px;
+    }
+    
+    form.f-wrap-request label .field
+    {
+        width: 100%;
+    }
+
+    form.f-wrap-request div.req
+    {
+        display: none;
+    }
+    
+    /*form.f-wrap-request label select {width: 15.5em}*/
+    /*form.f-wrap-request label textarea.f-comments {width: 20em}*/
+    
+    form.f-wrap-request div.f-submit-wrap 
+    {
+        padding: 0px
+    }
+    
+    form.f-wrap-request input.f-submit
+    {
+        clear: left;
+        float: left;
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* LAYOUT - HEADER */
+    #header
+    {
+        margin: 0 0 10px;
+    }
+    #header #site-name
+    {
+        margin: 0px 0 0 5px;
+    }
+    #header #title-name
+    {
+        margin: 0px 0 0 5px;
+    }
+    #header #title-name a
+    {
+        color: #000066;
+    }
+
+    /* SEARCH */
+    #search
+    {
+        display: none;
+    }
+
+    /* LAYOUT - main body of page */
+
+    #wrap 
+    {
+        min-width: inherit;
+        max-width: inherit;
+    }
+    
+    #utility
+    {
+        position:static;
+        top:0px;
+        left:0px;
+        width:100%;
+        border-top: 0px;
+        padding-bottom: 40px
+    }
+    
+    #sidebar
+    {
+        display: none;
+    }
+
+    #content
+    {
+        margin: 0 5px;
+        border-left: 0px;
+    }
+    
+    /* LAYOUT TYPE B */
+    #type-b #content-wrap {background: none}
+    #type-b #content {margin: 0px}
+    #type-b #utility
+    {
+        display:none;
+    }
+    
+    /* LAYOUT TYPE C */
+    #type-c #content-wrap {background: none}
+    #type-c #content {margin: 0px}
+
+    /* NAVIGATION */
+    
+    #nav, #nav ul {position:inherit} /* TODO: Was not originally included in this version*/
+    #nav
+    {
+        border: 0px;
+        padding-top: 0;
+        margin-top: 1px;
+    }
+    
+    #nav a
+    {
+        line-height: 1.5;
+        padding: 5px 0 5px 10px;
+        background: #fff;
+        font: bold 96% arial;
+        display: block;
+    }
+    
+    #nav a, #nav a:link, #nav a:visited, #nav a:hover, #nav a:active
+    {
+        border-top: 1px solid #999;
+        font-size: 1.2em;
+    }
+    
+    #nav a:hover
+    {
+        color: #c00;
+        background: #fee;
+    }
+    
+    #nav li.active a:link, #nav li.active a:visited, #nav li.active a:hover, #nav li.active a:active
+    {
+        color: #960;
+    }
+    #nav li
+    {
+        border-top: 1px solid #fff;
+        border-bottom: 0px;
+    }
+    
+    #nav .default
+    {
+        color: #960;
+    }
+
+    /* NAVIGATION - 2nd TIER */
+    #nav li.active li a, #nav li.active li a:link, #nav li.active li a:visited
+    {
+        line-height: 1.4;
+        padding-left: 0px;
+        background: #fff;
+        font-weight: normal;
+        width: auto;
+        color: #000;
+        display: block;
+    }
+    #nav li.active li a:hover, #nav li.active li a:active
+    {
+        color: #960;
+    }
+
+    #nav li.active li.active a:link, #nav li.active li.active a:visited, #nav li.active li.active a:hover, #nav li.active li.active a:active
+    {
+        font-weight: bold;
+    }
+
+    .default-table
+    {
+        width: 100%;
+    }
+
+    /* DEFAULT TABLE */
+    .default-table table
+    {
+        display: none;
+    }
+
+    /* FAQ */
+
+    #faq-toc li
+    {
+        font-weight: bold;
+        line-height: 1.4em;
+        padding-left: 0px;
+        background-image: none;
+    }
+
+    /* Status */
+    #status
+    {
+        margin: 0px 0 0 5px;
+    }
+
+    #table-main-outstanding-requests
+    {
+        display: none;
+    }
+
+    .itable
+    {
+        border: 1px solid #000066;
+        font: 80%/1.5em arial, geneva, sans-serif;
+        width: 100%;
+    }
+    .iheader
+    {
+        background: #000066;
+        color: #fff;
+        padding: 2px;
+        text-align: left;
+        letter-spacing: 0.2em;
+        font-weight: bold;
+        font-size: 110%;
+        width: 100%;
+    }
+    .irow
+    {
+        background: #ffffff;
+        border-bottom: 1px solid #000066;
+        font-size: 100%;
+        letter-spacing: 0.05em;
+        width: 100%;
+    }
+    .irow-pair
+    {
+        border-bottom: 1px dotted #D3D3D3;
+        display: inline-block;
+        width: 100%;
+        padding: 2px;
+    }
+    
+    .irow-pair:last-child
+    {
+        border-bottom: 0px;
+    }
+
+    .irow-name
+    {
+        font-weight: bold;
+        display: inline-block;
+        float: left;
+        width: 25%;
+    }
+    .irow-value
+    {
+        display: inline-block;
+        float: right;
+        width: 75%;
+    }
+    .irow-footer
+    {
+        padding: 2px;
+        width: 100%;
+    }
+}

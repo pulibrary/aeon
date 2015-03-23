@@ -1,0 +1,15 @@
+<link id="" media="print, projection, screen" type="text/css" href="css/tablesorter.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function () {
+        if ($(window).width() > 480) {
+            $('table.tablesorter').tablesorter({
+                /* dateFormat: "uk", //Uncomment to support DD/MM/YYYY formats */
+                widgets: ['zebra'],
+                widgetZebra: {
+                    css: ["row-even", "row-odd"]
+                }
+            })
+        }
+    });
+</script>

@@ -1,0 +1,20 @@
+<html lang="en-US">
+<head>
+<title>Aeon - Activities</title>
+<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_menu.html">
+			<div id="content" role="heading" aria-label="Content">
+				<div class="default-table">			
+					<#TABLE name="ViewActivities" headerText="Activities" noDataAction="ShowMessageRow" noDataMessage="No Activities" column="DownloadDetails:Download" column="ID" column="Name" column="Description" column="ActivityStatus:Status" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
+				</div>
+				<#INCLUDE filename="include_footer.html">
+			</div>    
+		</div>
+	</div>
+</body>
+</html>

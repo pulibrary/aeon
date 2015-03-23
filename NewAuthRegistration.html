@@ -1,0 +1,218 @@
+<html lang="en-US">
+<head>
+<title>Aeon - New User Registration</title>
+<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+	<div id="wrap">
+  		<#INCLUDE filename="include_header.html">
+  		<div id="content-wrap">
+  			<#INCLUDE filename="include_menu.html">
+    		<div id="content" role="heading" aria-label="Content">
+				<form action="aeon.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
+					<input type="hidden" name="AeonForm" value="NewAuthRegistration">
+					<input type="hidden" name="NotificationMethod" value="E-mail">
+                    <#FORMSTATE>
+
+					<div class="req"><span class="bold">*</span> Indicates required field</div>
+					<fieldset>			
+						<legend>New User Registration</legend>
+						<label for="FirstName">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
+							</span>
+							<input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">"><br />	
+						</label>		
+							
+						<label for="LastName">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
+							</span>
+							<input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">"><br />						
+						</label>
+
+						<label for="DateOfBirth">
+							<span class="field">
+								<span class="<#ERROR name="ERRORDateOfBirth">"><span class="bold">Date of Birth</span></span>
+							</span>
+							<input id="DateOfBirth" name="DateOfBirth" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="DateOfBirth">"><br />						
+						</label>
+				
+						<label for="IDType">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORIDType">"><span class="bold">ID Type</span></span>
+							</span>
+							<select id="IDTypeOption" name="IDType" size="1" class="f-name" tabindex="0">
+								<option>Choose an ID Type</option>
+								<#OPTION name="IDTypes">
+							</select><br />
+						</label>
+						
+                        <label for="ID">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORID">"><span class="bold">ID Number</span></span>
+							</span>
+							<input id="ID" name="ID" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ID">"><br />						
+						</label>
+
+						<label for="EMailAddress">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERROREMailAddress">"><span class="bold">E-mail Address</span></span>
+							</span>
+							<input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">"><br />						
+						</label>
+				
+						<label for="Phone">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORPhone">"><span class="bold">Daytime Phone</span></span>
+							</span>
+							<input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">"><br />						
+						</label>
+						
+						<label for="Address">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORAddress">"><span class="bold">Primary Address Line 1</span></span>
+							</span>
+							<input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">"><br />						
+						</label>
+				
+						<label for="Address2">
+							<span class="field">
+								<span class="<#ERROR name="ERRORAddress2">"><span class="bold">Primary Address Line 2</span></span>
+							</span>
+							<input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">"><br />
+						</label>
+						
+						<label for="City">
+							<span class="field">
+								<span class="req">*</span>							
+								<span class="<#ERROR name="ERRORCity">"><span class="bold">Primary Address City</span></span>
+							</span>
+							<input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">"><br />
+						</label>
+						
+						<label for="State">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORState">"><span class="bold">Primary Address State</span></span>
+							</span>
+							<input id="State" name="State" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="State">"><br />
+						</label>
+						
+						<label for="Zip">
+							<span class="field">
+								<span class="req">*</span>						
+								<span class="<#ERROR name="ERRORZip">"><span class="bold">Primary Address Zip</span></span>
+							</span>
+							<input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">"><br />
+						</label>
+
+                        <label for="Country">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORCountry">"><span class="bold">Primary Address Country</span></span>
+							</span>							
+                            <select id="Country" name="Country" size="1" class="f-name" tabindex="0">
+							    <#OPTION name="Countries" selectedValue="<#PARAM name=Country>" defaultValue="Choose a country" />
+						    </select><br />
+						</label>
+
+						<label for="SAddress">
+							<span class="field">
+								<span class="<#ERROR name="ERRORSAddress">"><span class="bold">Alternate Address Line 1</span></span>
+							</span>
+							<input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">"><br />						
+						</label>
+						
+						<label for="SAddress2">
+							<span class="field">
+								<span class="<#ERROR name="ERRORSAddress2">"><span class="bold">Alternate Address Line 2</span></span>
+							</span>
+							<input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">"><br />
+						</label>
+						
+						<label for="SCity">
+							<span class="field">
+								<span class="<#ERROR name="ERRORSCity">"><span class="bold">Alternate Address City</span></span>
+							</span>
+							<input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">"><br />
+						</label>
+						
+						<label for="SState">
+							<span class="field">
+								<span class="<#ERROR name="ERRORSState">"><span class="bold">Alternate Address State</span></span>
+							</span>
+							<input id="SState" name="SState" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SState">"><br />
+						</label>
+
+						<label for="SZip">
+							<span class="field">
+								<span class="<#ERROR name="ERRORSZip">"><span class="bold">Alternate Address Zip</span></span>
+							</span>
+							<input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">"><br />
+						</label>
+															
+                        <label for="SCountry">
+							<span class="field">
+								<span class="<#ERROR name="ERRORSCountry">"><span class="bold">Alternate Address Country</span></span>
+							</span>							
+                            <select id="SCountry" name="SCountry" size="1" class="f-name" tabindex="0">
+							    <#OPTION name="Countries" selectedValue="<#PARAM name=SCountry>" defaultValue="Choose a country" />
+						    </select><br />
+						</label>
+						
+						<label for="Status">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORStatus">"><span class="bold">Status</span></span>
+							</span>
+							<select id="StatusOption" name="Status" size="1" class="f-name" tabindex="0">
+								<option>Choose a Status</option>
+								<#OPTION name="Statuses">
+							</select><br />
+						</label>
+				
+						<label for="Department">
+							<span class="field">
+								<span class="req">*</span>
+								<span class="<#ERROR name="ERRORDepartment">"><span class="bold">Department</span></span>
+							</span>
+							<select id="Department" name="Department" size="1" class="f-name" tabindex="0">
+								<option>Choose a Department</option>
+								<#OPTION name="Departments">
+							</select><br />
+						</label>
+						
+						<label for="ResearchTopics">
+							<span class="field">
+								<span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
+							</span>
+							<textarea id="ResearchTopics" name="ResearchTopics" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ResearchTopics"></textarea><br />
+						</label>
+						
+						<label for="ResearchTopicsSharing">
+							<span class="field">
+								<span class="<#ERROR name="ERRORResearchTopicsSharing">"><span class="bold">Share Research Topics?</span></span>				
+							</span>
+							<input id="ResearchTopicsSharing" name="ResearchTopicsSharing" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="ResearchTopicsSharing" default="true">><br />							
+						</label>
+								   
+						<div class="f-submit-wrap" align="right">
+							<input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
+							<input type="submit" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
+						</div>
+					</fieldset>
+				</form>		
+				<#INCLUDE filename="include_footer.html">
+			</div>    
+		</div>
+	</div>
+</body>
+</html>
