@@ -1,0 +1,123 @@
+<div class="default-table simple-table">
+    <!-- <#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true"><br />					 -->
+    <table class="default-table">
+        <thead>
+            <caption>Monograph Information</caption>
+        </thead>
+        <tbody>
+            <tr class="row-even">
+                <th scope="row">
+                    Title
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemTitle">
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">
+                    Author
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemAuthor">
+                </td>
+            </tr>
+            <tr class="row-even">
+                <th scope="row">
+                    Place of Publication
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemPlace">
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">
+                    Publisher
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemPublisher">
+                </td>
+            </tr>
+            <tr class="row-even">
+                <th scope="row">
+                    Date
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemDate">
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">
+                    Edition
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemEdition">
+                </td>
+            </tr>
+            <tr class="row-even">
+                <th scope="row">
+                    Volume
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemVolume">
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">
+                    Issue/Copy
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemIssue">
+                </td>
+            </tr>
+            <!--<tr class="row-odd">
+                <th scope="row">
+                    Size/Physical Description
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemCitation">
+                </td>
+            </tr>-->
+            <!--<tr class="row-even">
+                <th scope="row">
+                    ISxN
+                </th>
+                <td>
+                    <#TRANSACTION field="ItemISxN">
+                </td>
+            </tr>-->
+            <tr class="row-even">
+                <th scope="row">
+                    Call Number
+                </th>
+                <td>
+                    <#TRANSACTION field="CallNumber">
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">
+                    Collection Name/Location
+                </th>
+                <td>
+                    <#TRANSACTION field="Location">
+                </td>
+            </tr>
+            <tr class="row-even">
+                <th scope="row">Requested For (if applicable)</th>
+                <td><#TRANSACTION field="ResearcherUsername"></td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">Activity Number (if applicable)</th>
+                <td><#TRANSACTION field="ActivityID"></td>
+            </tr>
+            <tr class="row-even">
+                <th scope="row">Scheduled Date (if applicable)</th>
+                <td><#TRANSACTION field="ScheduledDate"></td>
+            </tr>
+            <tr class="row-odd">
+                <th scope="row">Special Request (if applicable)</th>
+                <td><#TRANSACTION field="SpecialRequest"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+</div>

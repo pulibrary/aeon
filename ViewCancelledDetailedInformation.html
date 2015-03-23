@@ -1,0 +1,50 @@
+<html lang="en-US">
+<head>
+<title>Aeon - Transaction <#PARAM name="TransactionNumber"></title>
+<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+	<div id="wrap">
+  		<#INCLUDE filename="include_header.html">
+  		<div id="content-wrap">
+  			<#INCLUDE filename="include_menu.html">
+    		<div id="content" role="heading" aria-label="Content">
+				<#MENU name="transaction" separator="|" item="Edit:Edit Request" item="Cancel:Cancel Request"  item="RemoveHold:Remove from Hold" item="Resubmit:Resubmit Request" item="Clone:Clone Request" item="CloneToCopy:Clone to Copy" item="ViewFile:View Item" item="DeleteFile:Delete Item" item="Submit:Submit Request" item="ApproveOrderEstimate:Approve Estimate" item="ApproveOrderBilling:Approve Billing" item="ExportRIS:Export Citation">
+		
+				<#INCLUDE type="DetailedDocTypeInformation">
+
+				<div class="default-table">
+				<table class="default-table">
+				<thead>
+					<caption>Cancellation Information</caption>
+				</thead>
+				<tbody>
+				<tr class="row-even">
+				<td>Reason for Cancellation</td>
+				<td><#TRANSACTION field="ReasonforCancellation"></td>
+				</tr>
+				</tbody>
+				</table>
+				<br/>
+				</div>
+				
+<!--				<div class="default-table">
+					<#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true"><br />					
+				</div>
+-->
+		
+				<div class="default-table">
+					<#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes" column="NoteDate:Date/Time" column="AddedBy:Added By" column="Note"><br />
+				</div>
+		
+				<div class="default-table">
+					<#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking" 
+			 		column="DateTime:Date/Time" column="ChangedTo:Status" column="ChangedBy:Changed By"><br />
+				</div>
+		
+				<#INCLUDE filename="include_footer.html">
+    		</div>    
+  		</div>
+	</div>
+</body>
+</html>

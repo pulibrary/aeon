@@ -1,0 +1,35 @@
+<html lang="en-US">
+<head>
+<title>Aeon - Approve Billing</title>
+<#INCLUDE filename="include_head.html">
+<#INCLUDE filename="include_sortableTables.html">
+
+<script type="text/javascript" src="utility.js"></script>
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_menu.html">
+			<div id="content" role="heading" aria-label="Content">
+				<form action="aeon.dll" method="post" name="ViewOrderApprovals" class="f-wrap-request">
+					<input type="hidden" name="AeonForm" value="ViewOrderApprovals">
+					
+					Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', false);">None</a>
+					
+					<div class="default-table">			
+						<#TABLE name="ViewOrderBilling" headerText="Orders to Approve/Pay" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" 
+						 column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" column="Subtotal" orderby="t.TransactionNumber DESC">
+					</div>
+					
+					<div class="f-submit-wrap" align="right">
+						<input type="submit" name="SubmitButton" value="Approve Orders" class="f-submit" tabindex="0" />                        
+						<input type="submit" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
+					</div>
+				</form>
+				<#INCLUDE filename="include_footer.html">
+			</div>    
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+Dear <#USER field='FirstName'> <#USER field='LastName'>,
+
+Thank you for registering to use the <#LOCALINFO field='LibraryName'>.
+
+Upon your first visit, please be prepared to present government-issued identification to verify the credentials you submitted as part of the online registration process.
+
+In the meantime, you may proceed to place advance requests to view materials in our reading room through our online catalog and finding aids. You may also place requests for photoduplication orders through your research account if you know already what materials you would like to have reproduced.
+
+To access your research account at <#LOCALINFO field='SystemName'>, you may login with the username (<#USER field='Username'>) and password you created during the registration process by visiting: <#LOCALINFO field='SystemURL'>.
+
+A summary of the information you provided during the registration process is included at the end of this message for your convenient reference. You may also refer to update these and other details from the Change User Information menu option in your research account.
+
+Should you have any questions or comments about this service, please feel free to contact us at:
+
+  <#LOCALINFO field='GeneralEMailAddress'>
+
+   or
+
+   <#LOCALINFO field='GeneralPhone'>
+
+We look forward to serving you. 
+
+Yours sincerely,
+
+<#LOCALINFO field='LibraryName'>
+<#LOCALINFO field='InstitutionName'>
+
+Research Account Summary:
+Username: <#USER field='Username'>
+<#USER field='IDType'>: <#USER field='ID'>
+Status: <#USER field='Status'>
+Department: <#USER field='Department'>
+Organization: <#USER field='Organization'>
+Phone: <#USER field='Phone'>
+E-mail Address: <#USER field='EmailAddress'>
+Address:
+<#USER field='Address'>
+<#USER field='Address2'>
+<#USER field='City'> <#USER field='State'> <#USER field='Zip'>
+Research Topics:
+<#USER field='ResearchTopics'>
+

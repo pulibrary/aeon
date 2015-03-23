@@ -1,0 +1,31 @@
+<html lang="en-US">
+<head>
+<title>Aeon Main Menu</title>
+<#INCLUDE filename="include_head.html">
+<#INCLUDE filename="include_sortableTables.html">
+
+<link href="<#ACTION action="2" type="40" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">" rel="alternate" type="application/rss+xml" title="Aeon Alerts" />
+</head>
+<body id="type-c">
+    <div id="wrap">
+        <#INCLUDE filename="include_header.html">
+        <div id="content-wrap">
+            <#INCLUDE filename="include_menu.html">
+            <div id="content" role="heading" aria-label="Content">
+                <div class="default-table" id="table-main-outstanding-requests">
+                    <#TABLE name="ViewOutstandingRequests" headerText="Outstanding Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" 
+                    column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" orderby="TransactionNumber DESC">
+                </div>
+                <#INCLUDE filename="include_footer.html">
+            </div>
+            <div id="sidebar" role="heading" aria-label="Alerts">
+                <a href="<#ACTION action="2" type="40" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">">Subscribe to Alerts Feed</a><br />
+                <#ALERTS>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

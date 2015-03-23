@@ -1,0 +1,16 @@
+<div id="header" role="heading" aria-label="Search">
+	<div id="title-name"><a href="<#ACTION action="10" form="10">">Aeon</a></div>	
+	<div id="status"></div>
+	<div id="search">
+		<form action="aeon.dll" name="Search" method="post">
+			<input type="hidden" name="AeonForm" value="Search" />
+			<input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">" />
+			<input id="SearchCriteria" name="SearchCriteria" type="text" title="Search criteria" class="f-criteria" />				
+			<input type="submit" name="SubmitButton" value="Search" title="Search" class="f-submit" />
+			<div id="searchType">
+				<input name="SearchType" type="radio" id="SearchTypeActive" value="Active" checked class="f-searchType" /><label for="SearchTypeActive">Active</label>
+				<input name="SearchType" type="radio" id="SearchTypeAll" value="All" class="f-searchType" /><label for="SearchTypeAll">All</label>
+			</div>
+		</form>
+	</div>
+</div>
