@@ -1,0 +1,102 @@
+<html lang="en-US">
+<head>
+<title>Aeon - Approve Billing</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
+<![endif]-->
+<script type="text/javascript" src="utility.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+</head>
+<body id="type-b">
+    <div id="wrap">
+        <#INCLUDE filename="include_header.html">
+        <div id="content-wrap">
+            <#INCLUDE filename="include_menu.html">
+            
+            <script language="javascript">
+                transactionNumbers = "<#PARAM name='TransactionNumbers'>";
+
+                $(document).ready(function(){
+                    $("#pay").click(function() {
+                        $.ajax({
+                            type: "GET",
+                            url:"aeon.dll/ajax?query=GenerateAuthorizeNetFingerprint",
+                            data: {
+                                login: $('[name=x_login]').val(),
+                                amount: $('[name=x_amount]').val(),
+                                transactionNumbers: $('[name=transactionNumbers]').val()    
+                                },
+                            success: function(data, textStatus, jqXHR) {
+                                    ProcessFingerPrintResponse(data)
+                                },
+                            error: function(jqXHR,textStatus,errorThrown) {
+                                throw errorThrown;
+                            }
+                        });
+                    });
+
+                    $("#cancel").click(function() {
+                      window.location.replace("<#DLL queryFields=false>?action=10&form=10");
+                    });
+                });
+
+                function ProcessFingerPrintResponse(responseData)
+                {
+                    $('[name=x_fp_hash]').val(responseData.Hash);
+                    $('[name=x_fp_sequence]').val(responseData.Sequence);
+                    $('[name=x_fp_timestamp]').val(responseData.TimeStamp);
+                    $('[name=x_invoice_num]').val(responseData.Sequence);
+                    $('[name=x_amount]').val(responseData.Amount);
+                    
+                    $("#paymentform").submit();
+                }
+            </script>
+            
+            <div id="content">
+                <div class="default-table">			
+                    <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests" 
+                     column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal" orderby="TransactionNumber DESC">
+                </div>                
+                <form id="paymentform" action="<#CUSTOMIZATION name=PaymentProviderURL />" method="post">
+                    <!-- Enter your Authorize.Net provided login -->
+                    <input type="hidden" name="x_login" value="<#CUSTOMIZATION name="PaymentProviderMerchantId">">
+
+                    <!--The relay URL should point to your nonshib folder if using remote auth e.g. http://aeon.institution.edu/aeon/nonshib/aeon.dll?action=11&type=106 -->
+                    <input type="hidden" name="x_relay_url" value="<#CUSTOMIZATION name="WebURL">/aeon.dll?action=11&type=109">
+
+                    <!-- Set this value to TRUE in order to test your Login ID and Transaction Key against the live environment.  No transactions sent with this value set to true will be processed.  
+                    Alternatively, your merchant account also has a test mode option, which can be enabled via the Authorize.Net Merchant Interface. 
+                    When testing is finished, this value can be set to FALSE or removed entirely. -->
+                    <input type="hidden" name="x_test_request" value="TRUE">
+                    
+                    <!-- The values below are all system determined values and typically should not be modified. -->
+                    <input type="hidden" name="x_type" value="AUTH_CAPTURE">
+                    <input type="hidden" name="x_show_form" value="PAYMENT_FORM">
+                    <input type="hidden" name="x_description" value="<#CUSTOMIZATION name="CreditCardTransactionsDescription">">
+                    <input type="hidden" name="x_relay_response" value="TRUE">
+                    
+                    <input type="hidden" name="x_version" value="3.1">
+                    <input type="hidden" name="transactionNumbers" value="<#PARAM name="TransactionNumbers">" />
+                    <input type="hidden" name="returnUrlBase" value="<#DLL absoluteUrl="true" queryFields="false">" />
+
+                    <!-- These fields are left blank intentionally to be populated by pre-submission AJAX calls. Any values set here will be overwritten upon form submission. -->
+                    <input type="hidden" name="x_fp_hash" value="">
+                    <input type="hidden" name="x_fp_sequence" value="">
+                    <input type="hidden" name="x_fp_timestamp" value="">
+                    <input type="hidden" name="x_invoice_num" value="">     
+                    <input type="hidden" name="x_amount" value="">     
+                                        
+                    <div class="f-submit-wrap" align="right">                
+                        <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0"/>
+                        <input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
+                    </div>
+                </form>
+
+                <#INCLUDE filename="include_footer.html">
+            </div>    
+        </div>
+    </div>
+</body>
+</html>
