@@ -1,22 +1,26 @@
-<html lang="en-US">
-<head>
-<title>Aeon - Checked Out Items</title>
-<#INCLUDE filename="include_head.html">
-<#INCLUDE filename="include_sortableTables.html">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Aeon - Checked Out Items</title>
+    <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_sortableTables.html">
 </head>
+
 <body id="type-b">
-	<div id="wrap">
-		<#INCLUDE filename="include_header.html">
-		<div id="content-wrap">
-			<#INCLUDE filename="include_menu.html">
-			<div id="content" role="heading" aria-label="Content">
-				<div class="default-table">			
-					<#TABLE name="ViewCheckedOutItems" headerText="Checked Out Items" noDataAction="ShowMessageRow" noDataMessage="No Items" sortable="true">
-				</div>
-				<#INCLUDE filename="include_footer.html">
-			</div>    
-		</div>
-	</div>
+    <div id="wrap">
+        <#INCLUDE filename="include_header.html">
+            <div id="content-wrap">
+                <#INCLUDE filename="include_menu.html">
+                    <div id="content" role="heading" aria-label="Content">
+                        <div class="default-table">
+                            <#TABLE name="ViewCheckedOutItems" headerText="Checked Out Items" noDataAction="ShowMessageRow" noDataMessage="No Items" sortable="true">
+                        </div>
+                        <#INCLUDE filename="include_footer.html">
+                    </div>
+            </div>
+    </div>
 </body>
+
 </html>
