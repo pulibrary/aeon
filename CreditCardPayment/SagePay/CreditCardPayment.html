@@ -96,7 +96,7 @@
                         <span class="field">
                             <span class="bold">Use address details from your Aeon account</span>
                         </span>
-                        <select id="AddressSelection" name="AddressSelection" size="1" class="f-name" tabindex="0" title="Selecting an address will automatically populate the billing address details." onchange="populateAddressFields()";>
+                        <select id="AddressSelection" name="AddressSelection" size="1" class="f-name"  title="Selecting an address will automatically populate the billing address details." onchange="populateAddressFields()";>
                             <option value="0">Select an address</option>
                             <option value="1">Primary Address - <#USER field="Address"></option>
                             <option value="2">Secondary Address - <#USER field="SAddress"></option>
@@ -107,7 +107,7 @@
                             <span class="req">*</span>
                             <span class="bold">First Name</span>
                         </span>
-                        <input id="BillingFirstnames" name="BillingFirstnames" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingFirstnames'>" /><br />						
+                        <input id="BillingFirstnames" name="BillingFirstnames" type="text" size="40" class="f-name"  value="<#PARAM name='BillingFirstnames'>" /><br />						
                     </label>
 
                     <label for="BillingSurname">
@@ -115,34 +115,34 @@
                             <span class="req">*</span>
                             <span class="bold">Last Name</span>
                         </span>
-                        <input id="BillingSurname" name="BillingSurname" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingSurname'>" /><br />						
+                        <input id="BillingSurname" name="BillingSurname" type="text" size="40" class="f-name"  value="<#PARAM name='BillingSurname'>" /><br />						
                     </label>
                     <label for="BillingAddress1">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">Address Line 1</span>
                         </span>
-                        <input id="BillingAddress1" name="BillingAddress1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress1'>" /><br />						
+                        <input id="BillingAddress1" name="BillingAddress1" type="text" size="40" class="f-name"  value="<#PARAM name='BillingAddress1'>" /><br />						
                     </label>
                     <label for="BillingAddress2">
                         <span class="field">                            
                             <span class="bold">Address Line 2</span>
                         </span>
-                        <input id="BillingAddress2" name="BillingAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress2'>" /><br />						
+                        <input id="BillingAddress2" name="BillingAddress2" type="text" size="40" class="f-name"  value="<#PARAM name='BillingAddress2'>" /><br />						
                     </label>
                     <label for="BillingCity">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">City</span>
                         </span>
-                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingCity'>" /><br />						
+                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name"  value="<#PARAM name='BillingCity'>" /><br />						
                     </label>
                     <label id="BillingStateLabel" style="display: none;" for="BillingState">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">State</span>
                         </span>
-                        <select id="BillingState" name="BillingState" size="1" class="f-name" tabindex="0">                            
+                        <select id="BillingState" name="BillingState" size="1" class="f-name" >                            
                             <#OPTION name="States" selectedValue="<#PARAM name='BillingState'>" defaultValue="Select your state"/>
                         </select><br />
                     </label>
@@ -152,7 +152,7 @@
                             <span class="bold">Country</span>
                         </span>
                         
-                        <select id="BillingCountry" name="BillingCountry" size="1" class="f-name" tabindex="0" title="Selecting a country will dynamically show or hide the state address field." onchange="setStateVisibility();">
+                        <select id="BillingCountry" name="BillingCountry" size="1" class="f-name"  title="Selecting a country will dynamically show or hide the state address field." onchange="setStateVisibility();">
 							    <#OPTION name="Countries" selectedValue="<#PARAM name=BillingCountry>" defaultValue="Select your country" />
 						</select><br />
                     </label>                    
@@ -161,24 +161,24 @@
                             <span class="req">*</span>
                             <span class="bold">Postal Code</span>
                         </span>
-                        <input id="BillingPostCode" name="BillingPostCode" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPostCode'>" /><br />						
+                        <input id="BillingPostCode" name="BillingPostCode" type="text" size="40" class="f-name"  value="<#PARAM name='BillingPostCode'>" /><br />						
                     </label>
                     <label for="BillingPhone">
                         <span class="field">
                             <span class="bold">Phone Number</span>
                         </span>
-                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPhone'>" /><br />						
+                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name"  value="<#PARAM name='BillingPhone'>" /><br />						
                     </label>
                     <label for="BillingEmail">
                         <span class="field">
                             <span class="bold">E-mail Address</span>
                         </span>
-                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingEmail'>" /><br />						
+                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name"  value="<#PARAM name='BillingEmail'>" /><br />						
                     </label>
 
                     <div class="f-submit-wrap" align="right">
-                        <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0" />
-                        <input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
+                        <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit"  />
+                        <input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit"  />
                     </div>
                 </fieldset>
                 </form>

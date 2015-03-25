@@ -1,25 +1,31 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Aeon Logout</title>
-<#INCLUDE filename="include_head.html">
+    <meta charset="UTF-8">
+    <title>Aeon - Logout</title>
+    <#INCLUDE filename="include_head.html">
 </head>
+
 <body id="type-a">
-	<script language="javascript" type="text/javascript">
-		//This command will wait 5 seconds (5000 milliseconds) and then load the page defined in the WebLogoutURL or RemoteAuthWebLogoutURL customization key, as appropriate.
-		window.setTimeout('window.location.replace("<#PARAM name='LogoutUrl'>");', 5000); 
-	</script>
-
-	<div id="wrap">
-  		<div id="header" role="heading" aria-label="Header">
-			<span id="site-name">Aeon</span>
-    		<div id="status"><#STATUS></div>
-  		</div>
-  		<div id="content-wrap">
-			<div id="content" role="heading" aria-label="Content">
-
-			<p>If you are not redirected within five seconds, <a href="<#PARAM name='LogoutUrl'>">click here.</a></p>
-			<#INCLUDE filename="include_footer.html">
-		</div>
-	</div>
+    <script language="javascript" type="text/javascript">
+    //This command will wait 5 seconds (5000 milliseconds) and then load the page defined in the WebLogoutURL or RemoteAuthWebLogoutURL customization key, as appropriate.
+    window.setTimeout('window.location.replace("<#PARAM name='
+        LogoutUrl '>");', 5000);
+    </script>
+    <div id="wrap">
+        <div id="header" role="heading" aria-label="Header">
+            <span id="site-name">Aeon</span>
+            <div id="status">
+                <#STATUS>
+            </div>
+        </div>
+        <div id="content-wrap">
+            <div id="content" role="heading" aria-label="Content">
+                <p>If you are not redirected within five seconds, <a href="<#PARAM name='LogoutUrl'>">click here.</a></p>
+                <#INCLUDE filename="include_footer.html">
+            </div>
+        </div>
 </body>
+
 </html>

@@ -2,21 +2,21 @@
 	<span class="field">
 		<span class="<#ERROR name="ERRORItemPages">"><span class="bold">Inclusive Pages</span></span>
 	</span>
-	<input id="ItemPages" name="ItemPages" type="text" size="90" class="f-name" tabindex="0" value="<#PARAM name="ItemPages">"><br />
+	<input id="ItemPages" name="ItemPages" type="text" size="90" class="f-name"  value="<#PARAM name="ItemPages">"><br />
 </label>
 
 <label for="PageCount">
 	<span class="field">
 		<span class="<#ERROR name="ERRORPageCount">"><span class="bold">Page Count</span></span>
 	</span>
-	<input id="PageCount" name="PageCount" type="text" size="95" class="f-name" tabindex="0" value="<#PARAM name="PageCount">"><br />
+	<input id="PageCount" name="PageCount" type="text" size="95" class="f-name"  value="<#PARAM name="PageCount">"><br />
 </label>
 
 <label for="Format">
 	<span class="field">        
 		<span class="<#ERROR name="ERRORFormat">"><span class="bold">Format</span></span>
 	</span>
-	<select id="Format" name="Format" size="1" class="f-name" tabindex="0">
+	<select id="Format" name="Format" size="1" class="f-name" >
 		<#OPTION name="Formats">
 	</select><br />
 </label>
@@ -25,7 +25,7 @@
 	<span class="field">        
 		<span class="<#ERROR name="ERRORShippingOption">"><span class="bold">Shipping</span></span>
 	</span>
-	<select id="ShippingOption" name="ShippingOption" size="1" class="f-name" tabindex="0">
+	<select id="ShippingOption" name="ShippingOption" size="1" class="f-name" >
 		<#OPTION name="ShippingOptions">
 	</select><br />
 </label>
@@ -34,7 +34,7 @@
 	<span class="field">        
 		<span class="<#ERROR name="ERRORServiceLevel">"><span class="bold">Service Level</span></span>
 	</span>
-	<select id="ServiceLevel" name="ServiceLevel" size="1" class="f-name" tabindex="0">
+	<select id="ServiceLevel" name="ServiceLevel" size="1" class="f-name" >
 		<#OPTION name="ServiceLevels">
 	</select><br />
 </label>      
@@ -43,5 +43,5 @@
 	<span class="field">        
 		<span class="<#ERROR name="ERRORForPublication">"><span class="bold">For Publication?</span></span>
 	</span>
-	<input id="ForPublication" name="ForPublication" type="checkbox" class="f-checkbox" tabindex="0" value="Yes" <#CHECKED name="ForPublication"> default="false" /><br />
+	<input id="ForPublication" name="ForPublication" type="checkbox" class="f-checkbox"  value="Yes" <#CHECKED name="ForPublication"> default="false" /><br />
 </label>      

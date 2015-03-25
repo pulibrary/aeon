@@ -1,27 +1,30 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Aeon - Activity Requests</title>
-<#INCLUDE filename="include_head.html">
-<#INCLUDE filename="include_sortableTables.html">
-
+    <meta charset="UTF-8">
+    <title>Aeon - Activity Requests</title>
+    <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_sortableTables.html">
 </head>
-<body id="type-b">
-	<div id="wrap">
-		<#INCLUDE filename="include_header.html">
-		<div id="content-wrap">
-			<#INCLUDE filename="include_menu.html">
-			<div id="content" role="heading" aria-label="Content">				
-                <a href="<#ACTION action="10" form="92">&Value=<#PARAM name="Value">">Download Excel workbook with all Activity details</a><br />
-                <a href="<#ACTION action="10" form="93">&Value=<#PARAM name="Value">">Download iCalendar file</a>	
-                <#INCLUDE filename="ActivityInformation.html">
 
-				<div class="default-table">
-					<#TABLE name="ViewActivityRequests" headerText="Activity Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" 
-					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber">
-				</div>
-				<#INCLUDE filename="include_footer.html">
-			</div>    
-		</div>
-	</div>
+<body id="type-b">
+    <div id="wrap">
+        <#INCLUDE filename="include_header.html">
+            <div id="content-wrap">
+                <#INCLUDE filename="include_menu.html">
+                    <div id="content" role="heading" aria-label="Content">
+                        <a href="<#ACTION action=" 10 " form="92 ">&Value=<#PARAM name="Value ">">Download Excel workbook with all Activity details</a>
+                        <br />
+                        <a href="<#ACTION action=" 10 " form="93 ">&Value=<#PARAM name="Value ">">Download iCalendar file</a>
+                        <#INCLUDE filename="ActivityInformation.html">
+                            <div class="default-table">
+                                <#TABLE name="ViewActivityRequests" headerText="Activity Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber">
+                            </div>
+                            <#INCLUDE filename="include_footer.html">
+                    </div>
+            </div>
+    </div>
 </body>
+
 </html>
