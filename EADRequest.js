@@ -63,6 +63,9 @@ function SubmitEADForm(sender, e) {
                         labelElement = $('#' + error);
                         labelElement.removeClass('valid');
                         labelElement.addClass('validationError');
+
+                        //Scroll to the top of the page to show error messages
+                        window.scrollTo(0, 0);
                     });
                 } else {
                     submitButton.click();

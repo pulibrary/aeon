@@ -1,7 +1,7 @@
 /*
 LEGAL
 =====
-Copyright 2011 Atlas Systems, Inc. http://www.atlas-sys.com
+Copyright 2015 Atlas Systems, Inc. http://www.atlas-sys.com
 */
 
 * {margin:0;padding:0}
@@ -47,7 +47,6 @@ form.f-wrap-1 label .field .req {color:#c00;font-size:150%;font-weight:normal;po
 form.f-wrap-1 div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
 form.f-wrap-1 div.req b {color:#c00;font-size:140%}
 form.f-wrap-1 .req .bold {color: #c00; font-size: 140%;}
-form.f-wrap-1 label select {width: 24em}
 form.f-wrap-1 label textarea.f-comments {width: 20em}
 form.f-wrap-1 div.f-submit-wrap {padding: 5px 0 5px 8em}
 form.f-wrap-1 input.f-submit {margin: 0 0 0 10px}
@@ -56,7 +55,7 @@ form.f-wrap-1 fieldset.f-checkbox-wrap, form.f-wrap-1 fieldset.f-radio-wrap {flo
 form.f-wrap-1 fieldset.f-checkbox-wrap b, form.f-wrap-1 fieldset.f-radio-wrap b {float:left;width:8em;line-height: 1.7;display:block;position:relative;padding-top:.3em}
 form.f-wrap-1 fieldset.f-checkbox-wrap fieldset, form.f-wrap-1 fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
 form.f-wrap-1 fieldset.f-checkbox-wrap label, form.f-wrap-1 fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
-form.f-wrap-1 fieldset legend { color: #960; font: bold 155% arial; margin: 0 0 0.6em; }
+form.f-wrap-1 fieldset legend { color: #960; font: bold 155% arial; margin: 0 0 0.6em;}
 form.f-wrap-1 label input.f-checkbox, form.f-wrap-1 label input.f-radio {width:auto;float:none;margin:0;padding:0}
 
 form.f-wrap-1 label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
@@ -78,7 +77,6 @@ form.f-wrap-2 label b {float:left;line-height: 1.7;display:block;position:relati
 form.f-wrap-2 label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1;left:-.4em;width:.3em;height:.3em}
 form.f-wrap-2 div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
 form.f-wrap-2 div.req b {color:#c00;font-size:140%}
-form.f-wrap-2 label select {width: 24em}
 form.f-wrap-2 label textarea.f-comments {width: 20em}
 form.f-wrap-2 div.f-submit-wrap {padding: 5px 0 5px 8em}
 form.f-wrap-2 input.f-submit {margin: 0 0 0 10px}
@@ -103,24 +101,22 @@ form.f-wrap-request label {clear:left;float:left;width:100%;border-bottom: 1px s
 form.f-wrap-request label {float:none}
 /* end hiding from IE5 mac */
 
-form.f-wrap-request label input, form.f-wrap-request label textarea, form.f-wrap-request label select {width:35%;float:left;margin-left:10px;}
-form.f-wrap-request label input#ScheduledDate  {width: 32%}
-form.f-wrap-request label b {float:left;width:60%;line-height: 1.7;display:block;position:relative;
-    top: 0px;
-    left: 0px;
-}
+form.f-wrap-request label input, form.f-wrap-request label textarea, form.f-wrap-request label select {width:40%;float:left;}
+form.f-wrap-request label input:disabled, form.f-wrap-request label textarea:disabled, form.f-wrap-request label select:disabled  {background-color: #E9E9E9;}
+form.f-wrap-request label input#ScheduledDate  {width: 35.5%}
+
+form.f-wrap-request label b {float:left;width:60%;line-height: 1.7;display:block;position:relative;top: 0px;left: 0px;}
 form.f-wrap-request label b .note {color:#333333;font-size:80%;font-weight:normal}
 form.f-wrap-request label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
 
-form.f-wrap-request label .field {float:left;width:60%;line-height: 1.7;display:block;position:relative}
+form.f-wrap-request label .field {float:left;width:58%;margin-right:2%;line-height: 1.7;display:block;position:relative}
 form.f-wrap-request label .field .note {color:#333333;font-size:80%;font-weight:normal}
 form.f-wrap-request label .field .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
 form.f-wrap-request label .field .note.validationError {color:#CC0000;} 
 
-form.f-wrap-request div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
+form.f-wrap-request div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:0px;right:1em;}
 form.f-wrap-request div.req b {color:#c00;font-size:140%}
 form.f-wrap-request .req .bold {color: #c00; font-size: 140%;}
-form.f-wrap-request label select {width: 24em}
 form.f-wrap-request label textarea.f-comments {width: 20em}
 form.f-wrap-request div.f-submit-wrap {padding: 5px 0 5px 8em}
 form.f-wrap-request input.f-submit {margin: 0 0 0 10px}
@@ -130,7 +126,7 @@ form.f-wrap-request fieldset.f-checkbox-wrap b, form.f-wrap-request fieldset.f-r
 form.f-wrap-request fieldset.f-checkbox-wrap fieldset, form.f-wrap-request fieldset.f-radio-wrap fieldset {float:left;width:13em;margin: 3px 0 0 10px}
 form.f-wrap-request fieldset.f-checkbox-wrap label, form.f-wrap-request fieldset.f-radio-wrap label {float:left;width:13em;border:none;margin:0;padding:2px 0;margin-right:-3px}
 form.f-wrap-request fieldset legend { color: #960; font: bold 155% arial; margin: 0 0 0.6em; }
-form.f-wrap-request label input.f-checkbox {width:auto;float:left;margin-left:10px}
+form.f-wrap-request label input.f-checkbox {width:auto;float:left;}
 form.f-wrap-request label input.f-radio {width:auto;float:none;margin-left:10px}
 
 form.f-wrap-request label span.errormsg {position:absolute;top:0;right:-10em;left:auto;display:block;width:16em;background: transparent url(images/errormsg_bg.gif) no-repeat 0 0}
@@ -164,7 +160,6 @@ form.f-wrap-zresults label .field .req {color:#c00;font-size:150%;font-weight:bo
 
 form.f-wrap-zresults div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
 form.f-wrap-zresults div.req b {color:#c00;font-size:140%}
-form.f-wrap-zresults label select {width: 24em}
 form.f-wrap-zresults label textarea.f-comments {width: 20em}
 form.f-wrap-zresults div.f-submit-wrap {padding: 5px 0 5px 8em}
 form.f-wrap-zresults input.f-submit {margin: 0 0 0 10px}
@@ -196,7 +191,6 @@ form.f-wrap-detail label b .note {color:#333333;font-size:80%;font-weight:normal
 form.f-wrap-detail label b .req {color:#c00;font-size:150%;font-weight:normal;position:absolute;top:-.1em;line-height:1em;left:-.4em;width:.3em;height:.3em}
 form.f-wrap-detail div.req {color:#666;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:.4em;left:auto;width:13em;text-align:right}
 form.f-wrap-detail div.req b {color:#c00;font-size:140%}
-form.f-wrap-detail label select {width: 24em}
 form.f-wrap-detail label textarea.f-comments {width: 20em}
 form.f-wrap-detail div.f-submit-wrap {padding: 5px 0 5px 8em}
 form.f-wrap-detail input.f-submit {margin: 0 0 0 10px}
@@ -411,10 +405,12 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 .default-table tfoot tr td {padding: 5px;}
 .default-table tfoot tr.row-footer {background: #ffffff; color:#000000}
 .default-table a {text-decoration:none;}
+.table-export-link {display: inline-block; float: right;}
+.table-export-link a {color: #bbb;}
 
 /* FAQ */
 
-#faq-toc li {font-weight:bold;line-height: 1.4em;padding-left: 0px;} 
+#faq-toc li {background-image: none; list-style-type: disc; padding-left: 0; margin-left: 18px;}
 
 #faq-contents {line-height:normal}
 #faq-contents .faq-item {width:100%;border-top: 5px solid #999;padding-top: 1px;padding-bottom: 10px}
@@ -422,7 +418,7 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 #faq-contents .faq-item-box p, .featurebox h1, .featurebox h2, .featurebox h3, .featurebox h4, .featurebox h5, .featurebox h6 {margin: 0 0 .3em;border-bottom: 1px solid #333399;color:#333399}
 #faq-contents .faq-item-box p {border:none;margin: 0 0 1em;color:#444}
 #faq-contents .faq-item-box a {font-weight:bold}
-#faq-contents li {font-weight:normal;line-height: 1.4em;padding-left: 0px;background-image: url(images/bullet.gif);background-repeat: no-repeat;} 
+#faq-contents li {background-image: none; list-style-type: disc; padding-left: 0; margin-left: 18px;}
 
 #status {font: Arial, Helvetica, sans-serif; margin:0px 0 0 40px;padding:3px;color:#333333;border:none}
 .statusNormal {color:#333333}
@@ -458,6 +454,28 @@ a.toplink {padding-left:10px; font-size:x-small}
 .Z3950Result {margin-top:5px; margin-bottom:5px; padding:5px; border-style:solid; border-width:1px; border-color:#666666}
 
 #table-main-outstanding-requests {overflow: auto;}
+
+
+/* Researcher Tags */
+.researcher-tag-cloud {overflow: auto; width: 100%; margin: .2em 0 .2em 0; background-color: #f6f6f6;}
+.researcher-tag-cloud .researcher-tag  {margin: .1em; padding: .1em; display: inline-block;}
+.researcher-tag-cloud .researcher-tag .researcher-tag-name {margin: 0 .05em 0 .05em;}
+.researcher-tag-cloud .researcher-tag .researcher-tag-count {margin: 0 .05em 0 .05em;}
+.researcher-tag-cloud .researcher-tag-weight-1 {font-size: 10pt;}
+.researcher-tag-cloud .researcher-tag-weight-2 {font-size: 11pt;}
+.researcher-tag-cloud .researcher-tag-weight-3 {font-size: 12pt;}
+.researcher-tag-cloud .researcher-tag-weight-4 {font-size: 13pt;}
+
+#researcher-tags-update {width: 100%; display: inline-block; margin: 0 0 1em 0;}
+#researcher-tags-update .field {float:left;width:8em;line-height: 1.7;display:block;position:relative;width:45%;}
+#researcher-tags-update .note {color:#333333;font-size:80%;font-weight:normal;}
+#researcher-tags-update .value {float:right;width:55%;}
+#researcher-tags-update label input {margin:3px; width: 79%;}
+#researcher-tags-update label  button {float:right; width: 19%;height:24px;}
+
+.collapse-control-expand:before {content:url(images/expand.png); margin-right: 5px;}
+.collapse-control-collapse:before {content:url(images/collapse.png); margin-right: 5px;}
+.collapse {display:none}
 
 /*
 LEGAL

@@ -74,7 +74,7 @@
                     Your payment is being submitted.  To prevent errors in the payment process, please do not hit your browser's back or refresh buttons.
                 </div>
                                                
-                <form id="paypalform" action="<#CUSTOMIZATION name=PaymentProviderURL />" method="post">
+                <form id="paypalform" action="<#PAYMENTPROVIDERURL>" method="post">
                     <!--Enter your currency code based on PayPal accepted codes. https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_currency_codes -->                    
                     <input type="hidden" name="currency_code" value="USD">
                                       
@@ -95,8 +95,8 @@
                     <input type="hidden" name="rm" value="2">                   
                                         
                     <div class="f-submit-wrap" align="right">                
-                        <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" />
-						<input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit"  />
+                        <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0"/>
+						<input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
 					</div>
                 </form>
 
