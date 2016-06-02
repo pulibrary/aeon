@@ -1,6 +1,12 @@
 $(document).ready(function () {
-    //Add the onclick handler to the submit request button    
-    $(':submit').click(function (event) { return SubmitKeepInReviewForm(this, event); });
+    var submitInformationInput = $('#submitInformation');
+
+    if (submitInformationInput.length == 0) {
+        alert("Error: The Submit Information button does not have an ID. The ViewUserReviewRequests.html file does not match this version of KeepInReview.js.");
+    } else {
+        //Add the onclick handler to the submit request button    
+        submitInformationInput.click(function (event) { return SubmitKeepInReviewForm(this, event); });
+    }
 });
 
 function SubmitKeepInReviewForm(sender, e) {
@@ -8,77 +14,66 @@ function SubmitKeepInReviewForm(sender, e) {
     var statusRoot;
     var validationSuccessful;
 
-    if (!sender.id) {
-        alert("Error: The submit buttons do not have IDs. The ViewUserReviewRequests.html file does not match this version of EADRequest.js.");
-        return false;
+    if (!e) {
+        var e = window.event;
     }
 
-    if (sender.id != 'submitInformation') {
-        //If the id is not submitInformation, allow the regular form click to continue
-        return true;
+    e.cancelBubble = true;
+
+    if (e.stopPropagation) {
+        e.stopPropagation();
     }
-    else {
-        if (!e) {
-            var e = window.event;
-        }
 
-        e.cancelBubble = true;
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
 
-        if (e.stopPropagation) {
-            e.stopPropagation();
-        }
+    statusRoot = $('#status');
 
-        if (e.preventDefault) {
-            e.preventDefault();
-        }
+    // Clear previous status additions
+    if (statusRoot) {
+        statusRoot.children('br,span[name="statusMessage"]').remove();
+    }
 
-        statusRoot = $('#status');
+    // Clear previous status error class changes
+    $('.validationError').addClass('valid');
+    $('.validationError').removeClass('validationError');
 
-        // Clear previous status additions
-        if (statusRoot) {
-            statusRoot.children('br,span[name="statusMessage"]').remove();
-        }
+    $.post('aeon.dll/ajax?query=ValidateForm', $('#ViewUserReviewRequests').serialize(), function (data) {
+        if (data instanceof Object && data.messages && data.errors) {
+            if (data.messages.length > 0 || data.errors.length > 0) {
+                // Process messages
+                $.each(data.messages, function (index, message) {
+                    if (statusRoot) {
+                        // Create new status span to display
+                        breakElement = $('<br>');
+                        statusElement = $('<span></span>').attr('name', 'statusMessage').addClass('statusError').text(message);
 
-        // Clear previous status error class changes
-        $('.validationError').addClass('valid');
-        $('.validationError').removeClass('validationError');
+                        statusRoot.append(breakElement);
+                        statusRoot.append(statusElement);
+                    }
+                });
 
-        $.post('aeon.dll/ajax?query=ValidateForm', $('#ViewUserReviewRequests').serialize(), function (data) {
-            if (data instanceof Object && data.messages && data.errors) {
-                if (data.messages.length > 0 || data.errors.length > 0) {
-                    // Process messages
-                    $.each(data.messages, function (index, message) {
-                        if (statusRoot) {
-                            // Create new status span to display
-                            breakElement = $('<br>');
-                            statusElement = $('<span></span>').attr('name', 'statusMessage').addClass('statusError').text(message);
+                // Process errors
+                $.each(data.errors, function (index, error) {
+                    // Change class of label
+                    labelElement = $('#' + error);
+                    labelElement.removeClass('valid');
+                    labelElement.addClass('validationError');
+                });
+                return false;
+            } else {
+                var submitButton = document.createElement("input");
+                submitButton.type = "hidden";
+                submitButton.name = "SubmitButton";
+                submitButton.id = "SubmitButton";
+                submitButton.value = "Submit Information";
 
-                            statusRoot.append(breakElement);
-                            statusRoot.append(statusElement);
-                        }
-                    });
+                $('#ViewUserReviewRequests').append(submitButton);
 
-                    // Process errors
-                    $.each(data.errors, function (index, error) {
-                        // Change class of label
-                        labelElement = $('#' + error);
-                        labelElement.removeClass('valid');
-                        labelElement.addClass('validationError');
-                    });
-                    return false;
-                } else {
-                    var submitButton = document.createElement("input");
-                    submitButton.type = "hidden";
-                    submitButton.name = "SubmitButton";
-                    submitButton.id = "SubmitButton";
-                    submitButton.value = "Submit Information";
-
-                    $('#ViewUserReviewRequests').append(submitButton);
-
-                    $('#ViewUserReviewRequests').submit();
-                    return true;
-                }
+                $('#ViewUserReviewRequests').submit();
+                return true;
             }
-        });
-    }
+        }
+    });
 }

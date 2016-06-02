@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <title>Aeon - Notifications</title>
-    <#INCLUDE filename="include_head.html">
-    <link href="<#ACTION action=" 2 " type="41 " value="RSSID " valueType="lookup " absolutePath="true " includeSessionID="false ">" rel="alternate" type="application/rss+xml" title="Aeon Notifications" />
+<title>Aeon - Notifications</title>
+<#INCLUDE filename="include_head.html">
+<link href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">" rel="alternate" type="application/rss+xml" title="Aeon Notifications" />
 </head>
-
 <body id="type-b">
-    <div id="wrap">
-        <#INCLUDE filename="include_header.html">
-            <div id="content-wrap">
-                <#INCLUDE filename="include_menu.html">
-                    <div id="content" role="heading" aria-label="Content">
-                        <a href="<#ACTION action=" 2 " type="41 " value="RSSID " valueType="lookup " absolutePath="true " includeSessionID="false ">">Subscribe to Notifications Feed</a>
-                        <br />
-                        <div class="default-table">
-                            <#TABLE name="ViewNotifications" headerText="Notifications" noDataAction="ShowMessageRow" noDataMessage="No Notifications">
-                        </div>
-                        <#INCLUDE filename="include_footer.html">
-                    </div>
-            </div>
-    </div>
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_menu.html">
+			<div id="content" role="heading" aria-label="Content">
+				<a href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">">Subscribe to Notifications Feed</a><br />
+				<div class="default-table">			
+					<#TABLE name="ViewNotifications" headerText="Notifications" noDataAction="ShowMessageRow" noDataMessage="No Notifications">
+				</div>
+				<#INCLUDE filename="include_footer.html">
+			</div>    
+		</div>
+	</div>
 </body>
-
 </html>

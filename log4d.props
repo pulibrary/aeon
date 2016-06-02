@@ -9,7 +9,7 @@ log4d.rootCategory=INFO,ROOT
 # root appender
 log4d.appender.ROOT=TLogFileAppender
 log4d.appender.ROOT.append=TRUE
-log4d.appender.ROOT.fileName=c:\aeon\logs\AeonDLL.log
+log4d.appender.ROOT.fileName=[$INSTALLDIR]logs\AeonDLL.log
 log4d.appender.ROOT.errorHandler=TLogOnlyOnceErrorHandler
 log4d.appender.ROOT.layout=TLogPatternLayout
 log4d.appender.ROOT.layout.dateFormat=yyyy-mm-dd hh:MM:ss,zzz

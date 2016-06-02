@@ -30,24 +30,34 @@
     $(document).ready(function () {
         scheduledDateLabel = $('label[for="ScheduledDate"]');
         userReviewLabel = $('label[for="UserReview"]');
-
+		
         if ((scheduledDateLabel != null) && (userReviewLabel != null) && ($('#VisitScheduled') != null) && ($('#VisitReview') != null) && ($('#UserReview') != null)) {
 
-            $('#UserReview').hide();
+			if (scheduledDateLabel.children(":disabled").length + userReviewLabel.children(":disabled").length == 0) {
+				$('#UserReview').hide();
 
-            $('#VisitScheduled').click(function () {
-                showScheduled();
-            });
+				$('#VisitScheduled').click(function () {
+					showScheduled();
+				});
 
-            $('#VisitReview').click(function () {
-                showReview();
-            });
-
-            if ($('#UserReview').prop("checked")) {
-                showReview();
-            } else {
-                showScheduled();
-            }
+				$('#VisitReview').click(function () {
+					showReview();
+				});
+				
+				if ($('#UserReview').prop("checked")) {
+					showReview();
+				} else {
+					showScheduled();
+				}
+			}
+			else
+			{
+				if ($('#UserReview').prop("checked")) {
+					scheduledDateLabel.hide();
+				} else {
+					userReviewLabel.hide();
+				}
+			}
         }
     });
 

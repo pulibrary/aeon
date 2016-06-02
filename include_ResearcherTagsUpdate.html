@@ -1,0 +1,50 @@
+<input type="hidden" name="TransactionNumber" value="<#PARAM name="TransactionNumber">">
+<div id="researcher-tags-update">
+	<label for="ResearcherTags">
+		<span class="field">
+			<span class="bold">Researcher Tags</span><br/>
+			<span class="note">Enter a comma-separated list of the tags you want associated with this request.</span>
+		</span>
+		<div class="value">
+			<input id="researcher-tags-input" name="ResearcherTags" type="text" size="50" tabindex="0" value="<#PARAM name="ResearcherTags">">
+			<button id="update-researcher-tags-button">Update Tags</button>
+		</div>
+	</label>
+</div>
+<script language="javascript">
+	$(document).ready(function() {
+		var updateResearcherTagsButton = $("#update-researcher-tags-button");
+		var researcherTagsInput = $("#researcher-tags-input");
+		var transactionNumberInput = $("input[name=TransactionNumber]");
+		var sessionIdInput = $("input[name=SessionID]");
+		
+		if (updateResearcherTagsButton && researcherTagsInput && transactionNumberInput && sessionIdInput) {
+			updateResearcherTagsButton.click(function() {
+				updateResearcherTagsButton.attr("disabled", "disabled");
+				$.ajax({
+					type: "POST",
+					url: "aeon.dll/ajax?query=UpdateResearcherTags",
+					data: {
+						transactionNumber: transactionNumberInput.attr("value"),
+						sessionId: sessionIdInput.attr("value"),
+						tags: encodeURIComponent(researcherTagsInput.val())
+					},
+					success: function(data, textStatus, jqXHR) {
+						updateResearcherTagsButton.removeAttr("disabled");
+						
+						if (typeof data === "string" && data.indexOf("Error:") == 0) {
+							alert(data);
+						} else  { 
+							researcherTagsInput.val(data.tags);
+						}
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						updateResearcherTagsButton.removeAttr("disabled");
+						alert('Error updating researcher tags');
+						throw errorThrown;
+					}
+				});
+			});
+		}
+	});
+</script>
