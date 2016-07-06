@@ -1,4 +1,5 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon - New Request</title>
 <#INCLUDE filename="include_head.html">
@@ -8,7 +9,7 @@
     <div id="wrap">
         <#INCLUDE filename="include_header_request.html">
         <div id="content-wrap">
-            <#INCLUDE filename="include_menu.html"> 
+            <#INCLUDE filename="include_menu.html">
             <div id="content" role="heading" aria-label="Content">
                 <form action="aeon.dll" method="post" id="RequestForm" class="f-wrap-request">
                     <input type="hidden" name="AeonForm" value="GenericRequestManuscript">
@@ -21,12 +22,12 @@
                     <input type="hidden" name="DocumentType" value="Manuscript">
 					<input type="hidden" name="FormValidationOverride" value="AllRequests">
 
-                    <fieldset>			
+                    <fieldset>
                         <legend>New Manuscript/Archives Request</legend>
                         <#STATUS>
                         <h2>Describe the item you want</h2>
 						<div class="req"><span class="bold">*</span> Indicates required field</div>
-                    
+
 						<label for="Site">
 							<span class="field">
                                 <span class="req">*</span>
@@ -43,7 +44,7 @@
                                 <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span><br />
                             </span>
                             <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea><br />
-                        </label>		
+                        </label>
 
                         <!-- <label for="ItemSubTitle">
                             <span class="field">
@@ -51,42 +52,42 @@
                             </span>
                             <textarea id="ItemSubTitle" name="ItemSubTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemSubTitle"></textarea><br />
                         </label>  -->
-                        
+
                         <label for="ItemAuthor">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemAuthor">"><span class="bold">Author/Creator</span></span>
                             </span>
-                            <input id="ItemAuthor" name="ItemAuthor" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemAuthor">"><br />						
+                            <input id="ItemAuthor" name="ItemAuthor" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemAuthor">"><br />
                         </label>
-                                            
+
                         <label for="ItemDate">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemDate">"><span class="bold">Date(s)</span></span>
                             </span>
                             <input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">"><br />
                         </label>
-                                            
+
                         <label for="Location">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Location</span></span>
                             </span>
-                            <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />						
+                            <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />
                         </label>
 
                         <label for="CallNumber">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORCallNumber">"><span class="bold">Call Number</span></span>
                             </span>
-                            <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />						
+                            <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />
                         </label>
-                    
+
                         <label for="ItemVolume">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Box(es)/Folder(s)</span></span>
                             </span>
-                            <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />						
+                            <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />
                         </label>
-                        
+
                         <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
                              <label for="RequestLink">
                                 <span class="field">
@@ -97,7 +98,7 @@
                                 </select><br />
                             </label>
                         </span>
-                        
+
                         <label for="Notes">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORNotes">"><span class="bold">My Notes</span></span><br />
@@ -115,12 +116,12 @@
                         </label>
 
 						<#INCLUDE filename="include_ResearcherTags.html">
-						
+
                         <#INCLUDE filename="include_scheduleddate_review_toggle.html">
-                        
+
                         <#INCLUDE filename="include_request_buttons.html">
                     </fieldset>
-                </form>		
+                </form>
                 <#INCLUDE filename="include_footer.html">
             </div>
         </div>

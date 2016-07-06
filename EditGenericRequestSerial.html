@@ -1,4 +1,5 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon - Edit Request</title>
 <#INCLUDE filename="include_head.html">
@@ -20,13 +21,13 @@
                     <input type="hidden" name="RequestType" value="Loan">
                     <input type="hidden" name="DocumentType" value="Serial">
 					<input type="hidden" name="FormValidationOverride" value="AllRequests">
-                    
+
                     <fieldset>
                         <legend>Edit Serial Request</legend>
                         <#STATUS>
                         <h2>Describe the item you want</h2>
 						<div class="req"><span class="bold">*</span> Indicates required field</div>
-                    
+
 						<label for="Site">
 							<span class="field">
                                 <span class="req">*</span>
@@ -43,21 +44,21 @@
                                 <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span><br />
                             </span>
                             <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea><br />
-                        </label>		
+                        </label>
 
                         <label for="ItemPlace">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemPlace">"><span class="bold">Place of Publication</span></span>
                             </span>
-                            <input id="ItemPlace" name="ItemPlace" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPlace">"><br />						
+                            <input id="ItemPlace" name="ItemPlace" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPlace">"><br />
                         </label>
-                        
+
                         <!--
                         <label for="ItemPublisher">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemPublisher">"><span class="bold">Publisher</span></span>
                             </span>
-                            <input id="ItemPublisher" name="ItemPublisher" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPublisher">"><br />						
+                            <input id="ItemPublisher" name="ItemPublisher" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPublisher">"><br />
                         </label>
                         -->
 
@@ -67,21 +68,21 @@
                             </span>
                             <input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">"><br />
                         </label>
-                        
+
                         <label for="ItemVolume">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume/Copy</span></span>
                             </span>
-                            <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />						
+                            <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />
                         </label>
-    
+
                         <label for="ItemIssue">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemIssue">"><span class="bold">Issue/Number</span></span>
                             </span>
-                            <input id="ItemIssue" name="ItemIssue" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemIssue">"><br />						
+                            <input id="ItemIssue" name="ItemIssue" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemIssue">"><br />
                         </label>
-                        
+
                         <!--
                         <label for="ItemPages">
                             <span class="field">
@@ -98,7 +99,7 @@
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemISxN">"><span class="bold">ISxN</span></span>
                             </span>
-                            <input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">"><br />						
+                            <input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">"><br />
                         </label>
                         -->
 
@@ -106,14 +107,14 @@
                             <span class="field">
                                 <span class="<#ERROR name="ERRORCallNumber">"><span class="bold">Call Number</span></span>
                             </span>
-                            <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />						
+                            <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />
                         </label>
-                        
+
                         <label for="Location">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Location</span></span>
                             </span>
-                            <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />						
+                            <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />
                         </label>
 
                         <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
@@ -126,7 +127,7 @@
                                 </select><br />
                             </label>
                         </span>
-                        
+
                         <#INCLUDE type="photoduplication" filename="include_photoduplication.html">
 
                         <label for="Notes">
@@ -146,7 +147,7 @@
                         </label>
 
 						<#INCLUDE filename="include_ResearcherTags.html">
-						
+
                         <#INCLUDE filename="include_scheduleddate_review_toggle.html">
 
                         <#INCLUDE filename="include_request_buttons.html">

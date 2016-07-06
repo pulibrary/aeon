@@ -1,4 +1,5 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon - Approve Estimates</title>
 <#INCLUDE filename="include_head.html">
@@ -18,19 +19,19 @@
 					<p>You may also edit and change your order(s) option by clicking on the corresponding transaction number (TN).</p>
 
 					Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderEstimates', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderEstimates', false);">None</a>
-					
-					<div class="default-table">			
-						<#TABLE name="ViewOrderEstimates" headerText="Orders to Submit" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" 
+
+					<div class="default-table">
+						<#TABLE name="ViewOrderEstimates" headerText="Orders to Submit" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
 						 column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal:Estimated Charges" orderby="TransactionNumber DESC">
 					</div>
-					
+
 					<div class="f-submit-wrap" align="right">
 						<input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
 						<input type="submit" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
 					</div>
 				</form>
 				<#INCLUDE filename="include_footer.html">
-			</div>    
+			</div>
 		</div>
 	</div>
 </body>

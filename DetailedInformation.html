@@ -1,4 +1,5 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon - Transaction <#PARAM name="TransactionNumber"></title>
 <#INCLUDE filename="include_head.html">
@@ -17,19 +18,19 @@
 		<div class="default-table">
 			<#TABLE name="BillingDetails" headerText="Billing" noDataAction="ShowMessageRow" noDataMessage="No Billing"><br />
 		</div>
-		
+
 		<div class="default-table">
-			<#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes" 
+			<#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes"
 			 column="NoteDate:Note Date" column="Note" column="Username"><br />
 		</div>
-		
+
 		<div class="default-table">
-			<#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking" 
+			<#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking"
 			 column="ChangedDate:Changed Date" column="ChangedTo:Status" column="ChangedBy:Changed By"><br />
 		</div>
-				
+
 		<#INCLUDE filename="include_footer.html">
-    </div>    
+    </div>
   </div>
 </div>
 </body>
