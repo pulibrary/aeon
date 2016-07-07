@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon - Approve Billing</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
@@ -10,16 +11,17 @@
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 </head>
 <body id="type-b">
-	<div id="wrap">
-		<#INCLUDE filename="include_header.html">
-		<div id="content-wrap">
-			<#INCLUDE filename="include_menu.html">
-            <div id="content">
-                <span class="statusError">A payment gateway has not been configured.</span>
-
-				<#INCLUDE filename="include_footer.html">
-			</div>    
-		</div>
-	</div>
+	<#INCLUDE filename="include_header.html">
+	<div id="content-wrap" class="panel-display--three_nine l-page">
+	  <section class="l-main">
+	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+	        <#INCLUDE filename="include_menu.html">
+	    </nav>
+	    <main role="main" class="three_nine-region--second">
+        <span class="statusError">A payment gateway has not been configured.</span>
+      </main>
+    </section>
+  </div>
+	<#INCLUDE filename="include_footer.html">
 </body>
 </html>

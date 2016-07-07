@@ -1,20 +1,21 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon Logon</title>
 <#INCLUDE filename="include_head.html">
 </head>
 <body id="type-a">
-	<div id="wrap">
-  		<div id="header">
-			<span id="site-name">Aeon</span>
-    		<div id="status"><#STATUS></div>
-  		</div>
-  		<div id="content-wrap">
-    		<div id="content" role="heading" aria-label="Content">
+	<#INCLUDE filename="include_header.html">
+  <div id="content-wrap" class="panel-display--three_nine l-page">
+    <section class="l-main">
+      <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+      </nav>
+      <main role="main" class="three_nine-region--second">
 				Please contact the Special Collections office during normal business hours to reinstate your service.
-				<#INCLUDE filename="include_footer.html">
-    		</div>    
-  		</div>
-	</div>
+      </main>
+    </section>
+  </div>
+	<#INCLUDE filename="include_footer.html">
 </body>
 </html>

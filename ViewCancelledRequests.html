@@ -1,4 +1,5 @@
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Aeon - Cancelled Requests</title>
 <#INCLUDE filename="include_head.html">
@@ -6,18 +7,20 @@
 
 </head>
 <body id="type-b">
-	<div id="wrap">
-		<#INCLUDE filename="include_header.html">
-		<div id="content-wrap">
-			<#INCLUDE filename="include_menu.html">
-			<div id="content" role="heading" aria-label="Content">
-				<div class="default-table">			
-					<#TABLE name="ViewCancelledItems" headerText="Cancelled Requests" noDataAction="ShowMessageRow" noDataMessage="No Cancelled Requests" sortable="true" 
+	<#INCLUDE filename="include_header.html">
+	<div id="content-wrap" class="panel-display--three_nine l-page">
+	  <section class="l-main">
+	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+	        <#INCLUDE filename="include_menu.html">
+	    </nav>
+	    <main role="main" class="three_nine-region--second">
+				<div class="default-table">
+					<#TABLE name="ViewCancelledItems" headerText="Cancelled Requests" noDataAction="ShowMessageRow" noDataMessage="No Cancelled Requests" sortable="true"
 					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber DESC">
 				</div>
-				<#INCLUDE filename="include_footer.html">
-			</div>    
-		</div>
+			</main>
+		</section>
 	</div>
+	<#INCLUDE filename="include_footer.html">
 </body>
 </html>
