@@ -6,168 +6,170 @@
 <#INCLUDE filename="include_head_request.html">
 </head>
 <body id="type-b">
-    <div id="wrap">
-        <#INCLUDE filename="include_header_request.html">
-        <div id="content-wrap">
-            <#INCLUDE filename="include_menu.html">
-            <div id="content" role="heading" aria-label="Content">
-                <form action="aeon.dll" method="post" name="DefaultRequest" id="RequestForm" class="f-wrap-request">
-                    <input type="hidden" name="AeonForm" value="DefaultRequest">
-                    <input type="hidden" name="Username" value="<#PARAM name="Username">">
-                    <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
-                    <input type="hidden" name="TransactionLink" value="<#PARAM name="TransactionLink">">
-                    <input type="hidden" name="ReferenceNumber" value="<#PARAM name="ReferenceNumber">">
-                    <input type="hidden" name="ItemNumber" value="<#PARAM name="ItemNumber">">
-                    <input type="hidden" name="RequestType" value="Loan">
-					<input type="hidden" name="FormValidationOverride" value="AllRequests">
+  <#INCLUDE filename="include_header.html">
+  <div id="content-wrap" class="panel-display--three_nine l-page">
+    <section class="l-main">
+      <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+      </nav>
+      <main role="main" class="three_nine-region--second">
+        <form action="aeon.dll" method="post" name="DefaultRequest" id="RequestForm" class="f-wrap-request">
+            <input type="hidden" name="AeonForm" value="DefaultRequest">
+            <input type="hidden" name="Username" value="<#PARAM name="Username">">
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+            <input type="hidden" name="TransactionLink" value="<#PARAM name="TransactionLink">">
+            <input type="hidden" name="ReferenceNumber" value="<#PARAM name="ReferenceNumber">">
+            <input type="hidden" name="ItemNumber" value="<#PARAM name="ItemNumber">">
+            <input type="hidden" name="RequestType" value="Loan">
+	<input type="hidden" name="FormValidationOverride" value="AllRequests">
 
-                    <fieldset>
-                        <legend>New Request</legend>
-                        <#STATUS>
-                        <h2>Describe the item you want</h2>
-						<div class="req"><span class="bold">*</span> Indicates required field</div>
+            <fieldset>
+                <legend>New Request</legend>
+                <#STATUS>
+                <h2>Describe the item you want</h2>
+		<div class="req"><span class="bold">*</span> Indicates required field</div>
 
-						<label for="Site">
-							<span class="field">
-                                <span class="req">*</span>
-								<span class="<#ERROR name="ERRORSite">"><span class="bold">Site</span></span>
-							</span>
-							<select id="Site" name="Site" size="1" class="f-name" tabindex="0">
-								<#OPTION name="Sites" selectedValue="<#PARAM name=Site>" defaultName="Choose a Site" defaultValue="">
-							</select><br />
-						</label>
+		<label for="Site">
+			<span class="field">
+                        <span class="req">*</span>
+				<span class="<#ERROR name="ERRORSite">"><span class="bold">Site</span></span>
+			</span>
+			<select id="Site" name="Site" size="1" class="f-name" tabindex="0">
+				<#OPTION name="Sites" selectedValue="<#PARAM name=Site>" defaultName="Choose a Site" defaultValue="">
+			</select><br />
+		</label>
 
-                        <label for="ItemTitle">
-                            <span class="field">
-                                <span class="req">*</span>
-                                <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span><br />
-                            </span>
-                            <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea><br />
-                        </label>
+                <label for="ItemTitle">
+                    <span class="field">
+                        <span class="req">*</span>
+                        <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span><br />
+                    </span>
+                    <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea><br />
+                </label>
 
-                        <!--<label for="ItemSubTitle">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemSubTitle">"><span class="bold">Additional Title</span></span>
-                            </span>
-                            <textarea id="ItemSubTitle" name="ItemSubTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemSubTitle"></textarea><br />
-                        </label>  -->
+                <!--<label for="ItemSubTitle">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemSubTitle">"><span class="bold">Additional Title</span></span>
+                    </span>
+                    <textarea id="ItemSubTitle" name="ItemSubTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemSubTitle"></textarea><br />
+                </label>  -->
 
-                        <label for="ItemAuthor">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemAuthor">"><span class="bold">Author/Creator</span></span>
-                            </span>
-                            <input id="ItemAuthor" name="ItemAuthor" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemAuthor">"><br />
-                        </label>
+                <label for="ItemAuthor">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemAuthor">"><span class="bold">Author/Creator</span></span>
+                    </span>
+                    <input id="ItemAuthor" name="ItemAuthor" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemAuthor">"><br />
+                </label>
 
-                        <label for="ItemPlace">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemPlace">"><span class="bold">Place of Publication</span></span>
-                            </span>
-                            <input id="ItemPlace" name="ItemPlace" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPlace">"><br />
-                        </label>
+                <label for="ItemPlace">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemPlace">"><span class="bold">Place of Publication</span></span>
+                    </span>
+                    <input id="ItemPlace" name="ItemPlace" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPlace">"><br />
+                </label>
 
-                        <label for="ItemPublisher">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemPublisher">"><span class="bold">Publisher</span></span>
-                            </span>
-                            <input id="ItemPublisher" name="ItemPublisher" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPublisher">"><br />
-                        </label>
+                <label for="ItemPublisher">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemPublisher">"><span class="bold">Publisher</span></span>
+                    </span>
+                    <input id="ItemPublisher" name="ItemPublisher" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPublisher">"><br />
+                </label>
 
-                        <label for="ItemDate">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemDate">"><span class="bold">Date</span></span>
-                            </span>
-                            <input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">"><br />
-                        </label>
+                <label for="ItemDate">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemDate">"><span class="bold">Date</span></span>
+                    </span>
+                    <input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">"><br />
+                </label>
 
-                        <label for="ItemEdition">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemEdition">"><span class="bold">Edition</span></span>
-                            </span>
-                            <input id="ItemEdition" name="ItemEdition" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemEdition">"><br />
-                        </label>
+                <label for="ItemEdition">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemEdition">"><span class="bold">Edition</span></span>
+                    </span>
+                    <input id="ItemEdition" name="ItemEdition" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemEdition">"><br />
+                </label>
 
-                        <label for="ItemVolume">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume/Box</span></span>
-                            </span>
-                            <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />
-                        </label>
+                <label for="ItemVolume">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume/Box</span></span>
+                    </span>
+                    <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />
+                </label>
 
-                        <label for="ItemIssue">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemIssue">"><span class="bold">Issue/Copy</span></span>
-                            </span>
-                            <input id="ItemIssue" name="ItemIssue" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemIssue">"><br />
-                        </label>
+                <label for="ItemIssue">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemIssue">"><span class="bold">Issue/Copy</span></span>
+                    </span>
+                    <input id="ItemIssue" name="ItemIssue" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemIssue">"><br />
+                </label>
 
-                        <!--
-                        <label for="ItemCitation">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemCitation">"><span class="bold">Size/Physical Description</span></span>
-                            </span>
-                            <input id="ItemCitation" name="ItemCitation" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemCitation">"><br />
-                        </label>-->
+                <!--
+                <label for="ItemCitation">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemCitation">"><span class="bold">Size/Physical Description</span></span>
+                    </span>
+                    <input id="ItemCitation" name="ItemCitation" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemCitation">"><br />
+                </label>-->
 
-                        <!--
-                        <label for="ItemISxN">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORItemISxN">"><span class="bold">ISxN</span></span>
-                            </span>
-                            <input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">"><br />
-                        </label>-->
+                <!--
+                <label for="ItemISxN">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORItemISxN">"><span class="bold">ISxN</span></span>
+                    </span>
+                    <input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">"><br />
+                </label>-->
 
-                        <label for="CallNumber">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORCallNumber">"><span class="bold">Call Number</span></span>
-                            </span>
-                            <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />
-                        </label>
+                <label for="CallNumber">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORCallNumber">"><span class="bold">Call Number</span></span>
+                    </span>
+                    <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />
+                </label>
 
-                        <label for="Location">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Location</span></span>
-                            </span>
-                            <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />
-                        </label>
+                <label for="Location">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Location</span></span>
+                    </span>
+                    <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />
+                </label>
 
-                        <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
-                             <label for="RequestLink">
-                                <span class="field">
-                                    <span class="<#ERROR name="ERRORRequestLink">"><span class="bold">Request for</span></span>
-                                </span>
-                                <select id="RequestLink" name="RequestLink" size="1" class="f-name" tabindex="0">
-                                    <#OPTION name="RequestLinks" hideUsernames="true">
-                                </select><br />
-                            </label>
+                <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
+                     <label for="RequestLink">
+                        <span class="field">
+                            <span class="<#ERROR name="ERRORRequestLink">"><span class="bold">Request for</span></span>
                         </span>
+                        <select id="RequestLink" name="RequestLink" size="1" class="f-name" tabindex="0">
+                            <#OPTION name="RequestLinks" hideUsernames="true">
+                        </select><br />
+                    </label>
+                </span>
 
-                        <label for="Notes">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORNotes">"><span class="bold">My Notes</span></span><br />
-                                <span class="note">Enter any notes about this request for your personal reference.</span>
-                            </span>
-                            <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="Notes"></textarea><br />
-                        </label>
+                <label for="Notes">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORNotes">"><span class="bold">My Notes</span></span><br />
+                        <span class="note">Enter any notes about this request for your personal reference.</span>
+                    </span>
+                    <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="Notes"></textarea><br />
+                </label>
 
-                        <label for="SpecialRequest">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span><br />
-                                <span class="note">Please enter any special requests or questions for library staff.</span>
-                            </span>
-                            <textarea id="SpecialRequest" name="SpecialRequest" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="SpecialRequest"></textarea><br />
-                        </label>
+                <label for="SpecialRequest">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span><br />
+                        <span class="note">Please enter any special requests or questions for library staff.</span>
+                    </span>
+                    <textarea id="SpecialRequest" name="SpecialRequest" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="SpecialRequest"></textarea><br />
+                </label>
 
-						<#INCLUDE filename="include_ResearcherTags.html">
+		<#INCLUDE filename="include_ResearcherTags.html">
 
-                        <#INCLUDE filename="include_scheduleddate_review_toggle.html">
+                <#INCLUDE filename="include_scheduleddate_review_toggle.html">
 
-                        <#INCLUDE filename="include_request_buttons.html">
-                    </fieldset>
-                </form>
-                <#INCLUDE filename="include_footer.html">
-            </div>
-        </div>
-    </div>
+                <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+        </form>
+      </main>
+    </section>
+  </div>
+  <#INCLUDE filename="include_footer.html">
 </body>
 </html>

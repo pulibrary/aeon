@@ -6,11 +6,13 @@
 <#INCLUDE filename="include_head_request.html">
 </head>
 <body id="type-b">
-    <div id="wrap">
-        <#INCLUDE filename="include_header_request.html">
-        <div id="content-wrap">
-            <#INCLUDE filename="include_menu.html">
-            <div id="content" role="heading" aria-label="Content">
+  <#INCLUDE filename="include_header.html">
+  <div id="content-wrap" class="panel-display--three_nine l-page">
+    <section class="l-main">
+      <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+      </nav>
+      <main role="main" class="three_nine-region--second">
                 <form action="aeon.dll" method="post" name="EditEADRequest" class="f-wrap-request">
                     <input type="hidden" name="AeonForm" value="EditGenericRequestEAD">
                     <input type="hidden" name="Username" value="<#PARAM name="Username">">
@@ -130,9 +132,9 @@
                         <#INCLUDE filename="include_request_buttons.html">
                     </fieldset>
                 </form>
-                <#INCLUDE filename="include_footer.html">
-            </div>
-        </div>
-    </div>
+      </main>
+    </section>
+  </div>
+  <#INCLUDE filename="include_footer.html">
 </body>
 </html>

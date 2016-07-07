@@ -17,15 +17,13 @@
 <!-- Logon.html -->
 </head>
 <body id="type-a">
-	<div id="wrap">
-  		<div id="header" role="heading" aria-label="Header">
-  			<span id="site-name">Aeon</span>
-    		<div id="status">Enter your user information below.<br />
-      			Then press the Logon to Aeon button to continue.
-	 		</div>
-  		</div>
-  		<div id="content-wrap">
-			<div id="content">
+	<#INCLUDE filename="include_header.html">
+	<div id="content-wrap" class="panel-display--three_nine l-page">
+	  <section class="l-main">
+	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+	        <#INCLUDE filename="include_menu.html">
+	    </nav>
+	    <main role="main" class="three_nine-region--second">
 				<div role="heading" aria-label="Logon form">
 					<form action="aeon.dll" method="post" name="Logon" class="f-wrap-1">
 						<input type="hidden" name="AeonForm" value="Logon">
@@ -59,11 +57,9 @@
 					<a href="aeon.dll?Action=10&Form=84" tabindex="0">Forgot Password?</a><br />
 					<a href="aeon.dll?Action=10&Form=79" tabindex="0">First Time Users</a>
 				</div>
-				<div id="footer">
-					&copy; 2015 <a href="http://www.atlas-sys.com" tabindex="0">Atlas Systems, Inc.</a> All Rights Reserved.
-				</div>
-			</div>
-  		</div>
+	    </main>
+	  </section>
 	</div>
+	<#INCLUDE filename="include_footer.html">
 </body>
 </html>

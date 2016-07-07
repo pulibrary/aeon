@@ -6,13 +6,13 @@
 <#INCLUDE filename="include_head.html">
 </head>
 <body id="type-a">
-	<div id="wrap">
-  		<div id="header" role="heading" aria-label="Header">
-			<span id="site-name">Aeon</span>
-    		<div id="status"><#STATUS></div>
-  		</div>
-  		<div id="content-wrap">
-			<div id="content">
+	<#INCLUDE filename="include_header.html">
+	<div id="content-wrap" class="panel-display--three_nine l-page">
+	  <section class="l-main">
+	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+	        <#INCLUDE filename="include_menu.html">
+	    </nav>
+	    <main role="main" class="three_nine-region--second">
 				<div role="heading" aria-label="Logon form">
 					<form action="<#DLL>" method="post" name="Logon" class="f-wrap-1">
 						<input type="hidden" name="AeonForm" value="Logon">
@@ -50,10 +50,9 @@
 						<a href="#" onclick="RegisterForm.submit(); return false;" tabindex="0">First Time Users</a>
 					</form>
 				</div>
-
-				<#INCLUDE filename="include_footer.html">
-			</div>
-		</div>
+			</main>
+		</section>
 	</div>
+	<#INCLUDE filename="include_footer.html">
 </body>
 </html>

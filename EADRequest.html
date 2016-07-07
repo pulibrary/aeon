@@ -21,60 +21,62 @@
 </script>
 </head>
 <body id="type-b">
-    <div id="wrap">
-        <#INCLUDE filename="include_header_request.html">
-        <div id="content-wrap">
-            <#INCLUDE filename="include_menu.html">
-            <div id="content" role="heading" aria-label="Content">
-                <!--
-                Commented out original form declaration. New method requires javascript, but can handle large EADs
-                <form action="aeon.dll" method="post" name="EADRequest" class="f-wrap-request">
-                -->
-                <form action="" name="EADRequest_Original" class="f-wrap-request">
-                    <input type="hidden" ID="AeonForm" name="FormDataField" value="EADRequest">
-                    <input type="hidden" ID="Username" name="FormDataField" value="<#PARAM name="Username">">
-                    <input type="hidden" ID="SessionID" name="FormDataField" value="<#PARAM name="SessionID">">
-                    <input type="hidden" ID="DocumentType" name="FormDataField" value="Manuscript">
+  <#INCLUDE filename="include_header.html">
+  <div id="content-wrap" class="panel-display--three_nine l-page">
+   <section class="l-main">
+     <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+         <#INCLUDE filename="include_menu.html">
+     </nav>
+   <main role="main" class="three_nine-region--second">
+      <!--
+      Commented out original form declaration. New method requires javascript, but can handle large EADs
+      <form action="aeon.dll" method="post" name="EADRequest" class="f-wrap-request">
+      -->
+      <form action="" name="EADRequest_Original" class="f-wrap-request">
+        <input type="hidden" ID="AeonForm" name="FormDataField" value="EADRequest">
+        <input type="hidden" ID="Username" name="FormDataField" value="<#PARAM name="Username">">
+        <input type="hidden" ID="SessionID" name="FormDataField" value="<#PARAM name="SessionID">">
+        <input type="hidden" ID="DocumentType" name="FormDataField" value="Manuscript">
 
-                    <fieldset>
-                        <legend>Finding Aid Requests</legend>
-                        <div id="requestStatus"><#STATUS></div>
-						<div class="req"><span class="bold">*</span> Indicates required field</div>
+        <fieldset>
+            <legend>Finding Aid Requests</legend>
+            <div id="requestStatus"><#STATUS></div>
+        		<div class="req"><span class="bold">*</span> Indicates required field</div>
 
-                        <span class="field">
-                            <span class="note">Click on headings below to display/hide corresponding information.</span>
-                        </span>
+            <span class="field">
+                <span class="note">Click on headings below to display/hide corresponding information.</span>
+            </span>
 
-                        <#PARAM name="EADRequests">
+            <#PARAM name="EADRequests">
 
-                        <h2>Common Request Information</h2>
-                        Note: The notes will be used for all of the submitted requests.
+            <h2>Common Request Information</h2>
+            Note: The notes will be used for all of the submitted requests.
 
-						<label for="Site">
-							<span class="field">
+        		<label for="Site">
+        			<span class="field">
                                 <span class="req">*</span>
-								<span class="<#ERROR name="ERRORSite">"><span class="bold">Site</span></span>
-							</span>
-							<select id="Site" name="FormDataField" size="1" class="f-name" tabindex="0">
-								<#OPTION name="Sites" selectedValue="<#PARAM name=Site>" defaultName="Choose a Site" defaultValue="">
-							</select><br />
-						</label>
+        				<span class="<#ERROR name="ERRORSite">"><span class="bold">Site</span></span>
+        			</span>
+        			<select id="Site" name="FormDataField" size="1" class="f-name" tabindex="0">
+        				<#OPTION name="Sites" selectedValue="<#PARAM name=Site>" defaultName="Choose a Site" defaultValue="">
+        			</select><br />
+        		</label>
 
-                        <label for="Notes">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORNotes">"><span class="bold">Notes</span></span><br />
-                                <span class="note">Please include any additional information that might help us locate the specific items requested, as well as other pertinent information.</span>
-                            </span>
-                            <textarea id="Notes" name="FormDataField" rows="2" cols="40" class="f-name"><#PARAM name="Notes"></textarea><br />
-                        </label>
+            <label for="Notes">
+                <span class="field">
+                    <span class="<#ERROR name="ERRORNotes">"><span class="bold">Notes</span></span><br />
+                    <span class="note">Please include any additional information that might help us locate the specific items requested, as well as other pertinent information.</span>
+                </span>
+                <textarea id="Notes" name="FormDataField" rows="2" cols="40" class="f-name"><#PARAM name="Notes"></textarea><br />
+            </label>
 
-                        <label for="SpecialRequest">
-                            <span class="field">
-                                <span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span><br />
-                                <span class="note">Please enter any special requests or questions for library staff.</span>
-                            </span>
-                            <textarea id="SpecialRequest" class="f-name" cols="40" name="FormDataField" rows="2" tabindex="0"><#PARAM name="SpecialRequest"></textarea><br />
-                        </label>
+            <label for="SpecialRequest">
+                <span class="field">
+                    <span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span><br />
+                    <span class="note">Please enter any special requests or questions for library staff.</span>
+                </span>
+                <textarea id="SpecialRequest" class="f-name" cols="40" name="FormDataField" rows="2" tabindex="0"><#PARAM name="SpecialRequest"></textarea><br />
+            </label>
 
 						<label for="ResearcherTags">
 							<span class="field">
@@ -84,21 +86,21 @@
 							<input id="ResearcherTags" name="FormDataField" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ResearcherTags">"><br />
 						</label>
 
-                        <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
-                             <label for="RequestLink">
-                                <span class="field">
-                                    <span class="<#ERROR name="ERRORRequestLink">"><span class="bold">Request for</span></span>
-                                </span>
-                                <select id="RequestLink" name="FormDataField" size="1" class="f-name" tabindex="0">
-                                    <#OPTION name="RequestLinks">
-                                </select><br />
-                            </label>
-                        </span>
+            <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
+                 <label for="RequestLink">
+                    <span class="field">
+                        <span class="<#ERROR name="ERRORRequestLink">"><span class="bold">Request for</span></span>
+                    </span>
+                    <select id="RequestLink" name="FormDataField" size="1" class="f-name" tabindex="0">
+                        <#OPTION name="RequestLinks">
+                    </select><br />
+                </label>
+            </span>
 
-                        <input id="VisitScheduled" name="Visit" type="radio" title="Schedule retrieval" tabindex="0" CHECKED="CHECKED"> Schedule Retrieval<br />
+            <input id="VisitScheduled" name="Visit" type="radio" title="Schedule retrieval" tabindex="0" CHECKED="CHECKED"> Schedule Retrieval<br />
 						<input id="VisitReview" name="Visit" type="radio" title="Keep for my review" tabindex="0"> Keep for My Review<br />
 
-                        <label for="ScheduledDate">
+            <label for="ScheduledDate">
 							<span class="field">
 								<span class="note <#ERROR name="ERRORScheduledDate">"><strong>Click the calendar button on the right to bring up a calendar</strong> and use it to indicate the date you plan to visit. You may leave this field blank if you are not sure when you'll be coming or you would like the item retrieved as soon as possible.</span>
 							</span>
@@ -107,17 +109,17 @@
 
 						<label for="UserReview">
 							<span class="field">
-                                <span class="note <#ERROR name="ERRORUserReview">"><strong>This request will not be processed</strong> until you select and submit it from the "Review Requests" listing under the "Requests" menu in the left-hand navigational bar.</span>
+                <span class="note <#ERROR name="ERRORUserReview">"><strong>This request will not be processed</strong> until you select and submit it from the "Review Requests" listing under the "Requests" menu in the left-hand navigational bar.</span>
 							</span>
 							<input id="UserReview" name="FormDataField" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="UserReview" default="false">><br />
 						</label>
 
-                        <#INCLUDE filename="include_request_buttons.html">
-                    </fieldset>
-                </form>
-                <#INCLUDE filename="include_footer.html">
-            </div>
-        </div>
-    </div>
+            <#INCLUDE filename="include_request_buttons.html">
+          </fieldset>
+        </form>
+      </main>
+    </section>
+  </div>
+  <#INCLUDE filename="include_footer.html">
 </body>
 </html>

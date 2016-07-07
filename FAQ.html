@@ -15,12 +15,13 @@
 	<![endif]-->
 </head>
 <body id="type-a">
-<div id="wrap">
-  	<div id="header">
-  		<span id="site-name">Aeon</span>
-  	</div>
-  	<div id="content-wrap">
-    	<div id="content" class="faq">
+	<#INCLUDE filename="include_header.html">
+	<div id="content-wrap" class="panel-display--three_nine l-page">
+	  <section class="l-main">
+	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+	        <#INCLUDE filename="include_menu.html">
+	    </nav>
+	    <main role="main" class="three_nine-region--second">
 			<h2>Answers to Frequently Asked Questions about Aeon<a name="contents" /></h2>
 
 <div id="faq-toc">
@@ -127,11 +128,9 @@
 	</div>
 </div>
 
-<div id="footer">
-	&copy; 2015 <a href="http://www.atlas-sys.com">Atlas Systems, Inc.</a> All Rights Reserved.
-</div>
-</div>
-</div>
-</div>
+	    </main>
+	  </section>
+	</div>
+	<#INCLUDE filename="include_footer.html">
 </body>
 </html>
