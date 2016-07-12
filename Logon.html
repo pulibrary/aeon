@@ -3,60 +3,82 @@
 <head>
 <meta http-equiv="Pragma" content="no-cache">
 <title>Aeon Logon</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<link rel="apple-touch-icon" href="iphone-icon.png" />
-<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="css/mobile.css" media="only screen and (max-device-width: 480px)" />
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
-<![endif]-->
-
-<!-- Logon.html -->
+<#INCLUDE filename="include_head.html">
 </head>
 <body id="type-a">
 	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
+	<div id="content-wrap" class="panel-display--six_six l-page">
 	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-				<div role="heading" aria-label="Logon form">
-					<form action="aeon.dll" method="post" name="Logon" class="f-wrap-1">
+	    <main role="main">
+	    	<section class="six_six-region--first">
+					<form action="aeon.dll" method="post" name="LogonPU" class="f-wrap-1">
 						<input type="hidden" name="AeonForm" value="Logon">
 						<div id="logonform">
-							<fieldset>
-								<legend>Aeon Logon</legend>
-								<div class="req"><span class="bold">*</span> Indicates required field</div>
-								<label for="username">
-									<span class="field">
-										<span class="req">*</span>
-										<span class="bold">Username</span>
-									</span>
-									<input id="username" name="Username" type="text" class="f-name" tabindex="0" /><br />
-								</label>
-								<label for="password">
-									<span class="field">
-										<span class="req">*</span>
-										<span class="bold">Password</span>
-									</span>
-									<input id="password" name="Password" type="password" class="f-name" tabindex="0" /><br />
-								</label>
+							<h1>Princeton University Patrons Login</h1>
+							<p>All Princeton University faculty, students, and staff with an active Princeton University netID.</p>
+							<label for="username">
+								<span class="field">
+									<span class="req">*</span>
+									<span class="bold">Princeton NetID</span>
+								</span>
+								<input id="username" name="Username" type="text" class="f-name" tabindex="0" /><br />
+							</label>
+							<label for="password">
+								<span class="field">
+									<span class="req">*</span>
+									<span class="bold">Password</span>
+								</span>
+								<input id="password" name="Password" type="password" class="f-name" tabindex="0" /><br />
+							</label>
 
-								<div class="f-submit-wrap">
-									<input type="submit" name="SubmitButton" value="Logon to Aeon" class="f-submit" tabindex="0" /><br />
-								</div>
-							</fieldset>
+							<div class="f-submit-wrap">
+								<input type="submit" name="SubmitButton" value="Logon to Aeon" class="f-submit" tabindex="0" /><br />
+							</div>
+						</div>
+
+						<div class="formpadding">
+							<p>First-time users will be directed to a registration form to create a research account.</p>
+							<p>For instructions on registering and requesting to view material, click <a href='http://blogs.princeton.edu/research-account/'>Research Account</a>.</p>
+							<p>* Indicates required field</p>
 						</div>
 					</form>
-				</div>
-				<div role="heading" aria-label="Account creation and password reset">
-					<a href="aeon.dll?Action=10&Form=84" tabindex="0">Forgot Password?</a><br />
-					<a href="aeon.dll?Action=10&Form=79" tabindex="0">First Time Users</a>
-				</div>
+				</section>
+
+				<aside role="complementary" class="six_six-region--second">
+					<form action="aeon.dll" method="post" name="LogonNonPU" class="f-wrap-1">
+						<input type="hidden" name="AeonForm" value="Logon">
+						<div id="logonform2">
+							<h2>Non-Princeton University Patrons</h2>
+							<p>All patrons who do not hold an active Princeton University netID. Your username will be the email address that you registered with.</p>
+							<label for="username2">
+
+								<span class="field">
+									<span class="req">*</span>
+									<b>Username:</b>
+								</span>
+								<input id="username2" name="Username" type="text" class="f-name" tabindex="201" /><br />
+							</label>
+							<label for="password2">
+								<span class="field">
+
+									<span class="req">*</span>
+									<b>Password:</b>
+								</span>
+
+								<input id="password2" name="Password" type="password" class="f-name" tabindex="202" /><br />
+							</label>
+
+							<div class="f-submit-wrap">
+								<input type="submit" name="SubmitButton" value="Login" class="f-submit" tabindex="400" /><br /><br />
+
+							</div>
+						</div>
+						<div class="formpadding">
+							<p><a href="aeon.dll?Action=10&Form=84">Forgot Password?</a> | <a href="aeon.dll?Action=10&Form=79">First Time Users</a></p>
+							<p>For instructions on registering and requesting to view material, click <a href='http://blogs.princeton.edu/research-account/'>Research Account</a>.</p>
+						</div>
+					</form>
+				</aside>
 	    </main>
 	  </section>
 	</div>
