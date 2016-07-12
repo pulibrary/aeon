@@ -1,44 +1,59 @@
-<div id="utility" aria-label="Menu" role="heading">
-	<ul id="nav">
-		<li class="active"><a href="<#ACTION action="99">">Logoff <#PARAM name="Username"></a></li>
-		<li class="active"><a href="<#ACTION action="10" form="10">">Main Menu</a></li>
-		<li class="active"><a href="#">New Request</a>
-			<ul>
-				<li class="first"><a href="<#ACTION action="10" form="21">">Default</a></li>
-				<li><a href="<#ACTION action="10" form="20" value="GenericRequestMonograph">">Monograph</a></li>
-				<li><a href="<#ACTION action="10" form="20" value="GenericRequestSerial">">Serial</a></li>
-				<li><a href="<#ACTION action="10" form="20" value="GenericRequestManuscript">">Manuscript/Archives</a></li>
-				<li><a href="<#ACTION action="10" form="23">">Photoduplication</a></li>
-			</ul>
+<div class="active button--logoff">
+	<a href="<#ACTION action="99">" class="button button-flat-empty">Logoff</a>
+</div>
+
+<div id="utility">
+	<ul id="nav" class="nav ac-container">
+		<li class="active">
+			<input type="checkbox" id="ac-1" name="accordion-1" checked>
+			<label for="ac-1" class="label">Search Requests</label></li>
+			<form action="Aeon.dll" name="Search" method="post" class="menu--search-form">
+				<input type="hidden" name="AeonForm" value="Search" />
+				<input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">" />
+				<label for="SearchCriteria"><br />
+					<input id="SearchCriteria" name="SearchCriteria" type="text" class="f-criteria" />
+				</label>
+				<input type="submit" name="SubmitButton" value="Search" class="f-submit" />
+			</form>
 		</li>
-		<li class="active"><a href="#">Requests</a>
+		<li class="active"><a href="<#ACTION action="10" form="20" value="NewRequests">">Create a New Request</a></li>
+		<li class="active">
+			<input type="checkbox" id="ac-2" name="accordion-2" checked>
+			<label for="ac-2" class="label">Requests</label>
 			<ul>
-				<li class="first"><a href="<#ACTION action="10" form="76">">Review Requests</a></li>
+				<li class="first"><a href="<#ACTION action="10" form="76">">Review Requests to Submit</a></li>
 				<li><a href="<#ACTION action="10" form="62">">Outstanding Requests</a></li>
 				<li><a href="<#ACTION action="10" form="70">">Cancelled Requests</a></li>
-				<li><a href="<#ACTION action="10" form="68">">History Requests</a></li>
-				<li><a href="<#ACTION action="10" form="60">">All Requests</a></li>		
-				<li><a href="<#ACTION action="10" form="73">">View Notifications</a></li>				
+				<li><a href="<#ACTION action="10" form="68">">Completed Requests</a></li>
+				<li><a href="<#ACTION action="10" form="60">">All Requests</a></li>
 			</ul>
 		</li>
-		<li class="active"><a href="#">Orders</a>
-			<ul>
-				<li><a href="<#ACTION action="10" form="77">">Order Estimates</a></li>
-				<li><a href="<#ACTION action="10" form="78">">Order Billing</a></li>
-				<li><a href="<#ACTION action="10" form="64">">Delivered Items</a></li>				
+		<li class="active">
+			<input type="checkbox" id="ac-3" name="accordion-3">
+			<label for="ac-3" class="label">Events</label>
+			<ul class="ac-group li-2">
+				<li class="first"><a href="<#ACTION action="10" form="90">">Events</a></li>
 			</ul>
 		</li>
-		<li class="active"><a href="#">Activities</a>
-			<ul>
-				<li class="first"><a href="<#ACTION action="10" form="90">">Activities</a></li>
-			</ul>
-		</li>
-		<li class="active"><a href="#">Preferences</a>
-			<ul>
+		<li class="active">
+			<input type="checkbox" id="ac-4" name="accordion-4">
+			<label for="ac-4" class="label">Preferences</label>
+			<ul class="ac-group li-3">
 				<li class="first"><a href="<#ACTION action="10" form="81">">Change User Information</a></li>
-				<li class="last"><a href="<#ACTION action="10" form="83">">Change Password</a></li>
+				<!--li class="last"><a href="<#ACTION action="10" form="83">">Change Password</a></li-->
+				<!--PLEASE NOTE THE CONTACT US PAGE LINKS TO ABOUTAEON.HTML, SO ANY CHANGES ONE WOULD WANT TO MAKE ON THE CONTACTS WOULD NEED TO CHANGE ABOUTAEON-->
+				<li class="active"><a href="<#ACTION action="10" form="1">">Contact Us</a></li>
 			</ul>
 		</li>
-		<li class="active"><a href="<#ACTION action="10" form="1">">About Aeon</a></li>
+		<li class="active">
+			<input type="checkbox" id="ac-5" name="accordion-5">
+			<label for="ac-5" class="label">Hours</label>
+			<ul class="ac-group li-3">
+			<li class="active"><a href=http://library.princeton.edu/hours/rbsc target=blank><font color="000000">RBSC Firestone</a></font></li>
+					<li class="active"><a href=http://library.princeton.edu/hours/mudd target=blank><font color="000000">Mudd Library</a></font></li>
+					<li class="active"><a href=http://marquand.princeton.edu/hours-and-access/ target=blank><font color="000000">Marquand Library</a></font></li>
+			</ul>
+		</li>
+		<li class="active"><a href="<#ACTION action="10" form="10">" class="nav-group">Home</a></li>
 	</ul>
 </div>

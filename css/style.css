@@ -1,7 +1,7 @@
 .ac-container {
 	text-align: left;
 }
-.ac-container label{
+.ac-container .label{
 	/*font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;*/
 	padding: 15px;
 	margin-bottom: 2px;
@@ -28,7 +28,7 @@
 	box-shadow:
 		0px 0px 0px 1px rgba(155,155,155,0.3);
 }
-.ac-container label:hover{
+.ac-container .label:hover{
 	background: #fff;
 	color: #000;
 }
@@ -54,7 +54,7 @@
 .ac-container input:checked + label:hover:after{
 	background-image: url(../css/images/arrow_up.png);
 }
-.ac-container input{
+.ac-container input[type="checkbox"]{
 	display: none;
 }
 .ac-container .ac-group{
@@ -90,6 +90,9 @@
 	height: auto;
 }
 .ac-container input:checked ~ .ac-group.li-3{
+	height: auto;
+}
+.ac-container input:checked ~ .ac-group.li-4{
 	height: auto;
 }
 .ac-container input:checked ~ .ac-group.li-6{
@@ -128,6 +131,9 @@ a.nav-group:hover {
 }
 form {
 	position: relative;
+}
+.menu--search-form {
+	padding: 0 1em 1em;
 }
 .three_nine-region--second label {
 	margin: 1.5em 0;
@@ -355,9 +361,9 @@ table {
     height:1px;
     overflow:hidden;
 }
-.six_six-region--first form {
+/*.six_six-region--first form {
 	margin-top: 1.25em;
-}
+}*/
 h1 {
 	margin-bottom: 1.75rem;
 	font-size: 1.75em;
