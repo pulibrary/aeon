@@ -12,6 +12,7 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<div id="status"><#STATUS></div>
 	    	<h1>Events</h1>
 				<div class="default-table">
 					<#TABLE name="ViewActivities" headerText="Activities" noDataAction="ShowMessageRow" noDataMessage="No Activities" column="DownloadDetails:Download" column="ID" column="Name" column="Description" column="ActivityStatus:Status" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
