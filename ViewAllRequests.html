@@ -14,8 +14,9 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<h1>All Requests</h1>
 				<div class="default-table">
-					<#TABLE name="ViewAllRequests" headerText="All Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" exportable="true"
+					<#TABLE name="ViewAllRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" exportable="true"
 					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber DESC">
 				</div>
 			</main>

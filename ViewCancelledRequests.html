@@ -14,8 +14,9 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<h1>Cancelled Requests</h1>
 				<div class="default-table">
-					<#TABLE name="ViewCancelledItems" headerText="Cancelled Requests" noDataAction="ShowMessageRow" noDataMessage="No Cancelled Requests" sortable="true"
+					<#TABLE name="ViewCancelledItems" noDataAction="ShowMessageRow" noDataMessage="No Cancelled Requests" sortable="true"
 					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber DESC">
 				</div>
 			</main>

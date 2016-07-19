@@ -14,8 +14,9 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<h1>Outstanding Requests</h1>
 				<div class="default-table">
-					<#TABLE name="ViewOutstandingRequests" headerText="Outstanding Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
+					<#TABLE name="ViewOutstandingRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
 					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" orderby="TransactionNumber DESC">
 				</div>
 			</main>

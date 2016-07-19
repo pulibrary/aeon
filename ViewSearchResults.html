@@ -14,8 +14,9 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<h1>Search Results</h1>
 				<div class="default-table">
-					<#TABLE name="ViewSearchResults" headerText="Search Results" noDataAction="ShowMessageRow" noDataMessage="No Results" sortable="true"
+					<#TABLE name="ViewSearchResults" noDataAction="ShowMessageRow" noDataMessage="No Results" sortable="true"
 					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status">
 				</div>
 			</main>

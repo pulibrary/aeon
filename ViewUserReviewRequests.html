@@ -19,13 +19,14 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<h1>Requests in Review</h1>
 				<form action="aeon.dll" method="post" id="ViewUserReviewRequests" name="ViewUserReviewRequests" class="f-wrap-request">
 					<input type="hidden" name="AeonForm" value="ViewUserReviewRequests">
 
 					Select: <a href="#" onclick="ToggleCheckBoxes('ViewUserReviewRequests', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewUserReviewRequests', false);">None</a>
 
 					<div class="default-table">
-						<#TABLE name="ViewUserReviewRequests" headerText="Requests In Review" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
+						<#TABLE name="ViewUserReviewRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
 						 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber DESC">
 					</div>
 

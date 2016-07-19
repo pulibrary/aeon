@@ -14,9 +14,10 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
-                <a href="<#ACTION action="10" form="92">&Value=<#PARAM name="Value">">Download Excel workbook with all Activity details</a><br />
-                <a href="<#ACTION action="10" form="93">&Value=<#PARAM name="Value">">Download iCalendar file</a>
-                <#INCLUDE filename="ActivityInformation.html">
+	    	<h1>View Event Requests</h1>
+        <a href="<#ACTION action="10" form="92">&Value=<#PARAM name="Value">">Download Excel workbook with all Activity details</a><br />
+        <a href="<#ACTION action="10" form="93">&Value=<#PARAM name="Value">">Download iCalendar file</a>
+        <#INCLUDE filename="ActivityInformation.html">
 
 				<div class="default-table">
 					<#TABLE name="ViewActivityRequests" headerText="Activity Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
