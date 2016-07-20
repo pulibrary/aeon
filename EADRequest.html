@@ -28,6 +28,8 @@
          <#INCLUDE filename="include_menu.html">
      </nav>
    <main role="main" class="three_nine-region--second">
+    <div id="status"><#STATUS></div>
+    <h1>Finding Aid Requests</h1>
       <!--
       Commented out original form declaration. New method requires javascript, but can handle large EADs
       <form action="aeon.dll" method="post" name="EADRequest" class="f-wrap-request">
@@ -39,7 +41,6 @@
         <input type="hidden" ID="DocumentType" name="FormDataField" value="Manuscript">
 
         <fieldset>
-            <legend>Finding Aid Requests</legend>
             <div id="requestStatus"><#STATUS></div>
         		<div class="req"><span class="bold">*</span> Indicates required field</div>
 

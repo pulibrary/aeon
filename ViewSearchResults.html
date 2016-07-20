@@ -4,7 +4,6 @@
 <title>Aeon - Search Results</title>
 <#INCLUDE filename="include_head.html">
 <#INCLUDE filename="include_sortableTables.html">
-
 </head>
 <body id="type-b">
 	<#INCLUDE filename="include_header.html">
@@ -14,8 +13,10 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<div id="status"><#STATUS></div>
+	    	<h1>Search Results</h1>
 				<div class="default-table">
-					<#TABLE name="ViewSearchResults" headerText="Search Results" noDataAction="ShowMessageRow" noDataMessage="No Results" sortable="true"
+					<#TABLE name="ViewSearchResults" noDataAction="ShowMessageRow" noDataMessage="No Results" sortable="true"
 					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status">
 				</div>
 			</main>

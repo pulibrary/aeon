@@ -4,7 +4,6 @@
 <title>Aeon - Approve Estimates</title>
 <#INCLUDE filename="include_head.html">
 <#INCLUDE filename="include_sortableTables.html">
-
 <script type="text/javascript" src="utility.js"></script>
 </head>
 <body id="type-b">
@@ -15,6 +14,8 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+		    <div id="status"><#STATUS></div>
+	    	<h1>Orders to Submit</h1>
 				<form action="aeon.dll" method="post" name="ViewOrderEstimates" class="f-wrap-request">
 					<input type="hidden" name="AeonForm" value="ViewOrderEstimates">
 					<p>See the table below for an estimated cost for your order. If you would like to proceed with placing your order(s), check the corresponding checkbox(es) and click the submit button.</p>
@@ -23,7 +24,7 @@
 					Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderEstimates', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderEstimates', false);">None</a>
 
 					<div class="default-table">
-						<#TABLE name="ViewOrderEstimates" headerText="Orders to Submit" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
+						<#TABLE name="ViewOrderEstimates" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
 						 column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal:Estimated Charges" orderby="TransactionNumber DESC">
 					</div>
 

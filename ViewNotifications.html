@@ -13,9 +13,11 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<div id="status"><#STATUS></div>
+	    	<h1>Notifications</h1>
 				<a href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">">Subscribe to Notifications Feed</a><br />
 				<div class="default-table">
-					<#TABLE name="ViewNotifications" headerText="Notifications" noDataAction="ShowMessageRow" noDataMessage="No Notifications">
+					<#TABLE name="ViewNotifications" noDataAction="ShowMessageRow" noDataMessage="No Notifications">
 				</div>
 			</main>
 		</section>

@@ -12,13 +12,13 @@
 	        <#INCLUDE filename="include_menu.html">
 	    </nav>
 	    <main role="main" class="three_nine-region--second">
+	    	<div id="status"><#STATUS></div>
+	    	<h1>First Time User Registration for Aeon</h1>
 				<form action="aeon.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
 					<input type="hidden" name="AeonForm" value="NewAuthRegistration">
 					<input type="hidden" name="NotificationMethod" value="Email">
                     <#FORMSTATE>
 					<fieldset>
-						<legend>First Time User Registration for Aeon</legend>
-
 						<p>
 						To request an item, you must first identify yourself to the library's Aeon system. To do this you fill out a registration form using your Web browser.<br />
 						Registration has two purposes:

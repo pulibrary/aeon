@@ -13,19 +13,20 @@
           <#INCLUDE filename="include_menu.html">
       </nav>
       <main role="main" class="three_nine-region--second">
+        <div id="status"><#STATUS></div>
+        <h1>New Photoduplication Request</h1>
 				<form action="aeon.dll" method="post" id="RequestForm" class="f-wrap-request">
 					<input type="hidden" name="AeonForm" value="PhotoduplicationRequest">
 					<input type="hidden" name="Username" value="<#PARAM name="Username">">
 					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
-                    <input type="hidden" name="TransactionLink" value="<#PARAM name="TransactionLink">">
-                    <input type="hidden" name="ReferenceNumber" value="<#PARAM name="ReferenceNumber">">
-                    <input type="hidden" name="ItemNumber" value="<#PARAM name="ItemNumber">">
+          <input type="hidden" name="TransactionLink" value="<#PARAM name="TransactionLink">">
+          <input type="hidden" name="ReferenceNumber" value="<#PARAM name="ReferenceNumber">">
+          <input type="hidden" name="ItemNumber" value="<#PARAM name="ItemNumber">">
 					<input type="hidden" name="RequestType" value="Copy">
 					<input type="hidden" name="DocumentType" value="Photoduplication">
 					<input type="hidden" name="FormValidationOverride" value="AllRequests">
 
 					<fieldset>
-						<legend>New Photoduplication Request</legend>
 						<#STATUS>
 						<h2>Describe the item you want</h2>
 						<div class="req"><span class="bold">*</span> Indicates required field</div>
