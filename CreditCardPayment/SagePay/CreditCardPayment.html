@@ -79,13 +79,13 @@
                     DESC">
                 </div>
 
-                <form id="sagepayform" action="aeon.dll?Action=11&Type=107" method="post" class="f-wrap-request"> 
+                <form id="sagepayform" action="aeon.dll?Action=11&Type=107" method="post" class="f-wrap-request">
                 <!--Edit the following values -->
-                
+
                 <input type="hidden" name="VPSProtocol" value="2.23" />
                 <input type="hidden" name="Currency" value="GBP">
                 <input type="hidden" name="Description" value="<#CUSTOMIZATION name=CreditCardTransactionsDescription />">
-                <input type="hidden" name="TransactionNumbers" value="<#PARAM name="TransactionNumbers">">                   
+                <input type="hidden" name="TransactionNumbers" value="<#PARAM name="TransactionNumbers">">
                 <!--System defined values -->
                 <input type="hidden" name="NotificationURL" value="<#CUSTOMIZATION name=WebURL />/aeon.dll?action=11&type=108" />
 
@@ -100,14 +100,14 @@
                             <option value="0">Select an address</option>
                             <option value="1">Primary Address - <#USER field="Address"></option>
                             <option value="2">Secondary Address - <#USER field="SAddress"></option>
-                        </select><br />
+                        </select>
                     </label>
                     <label for="BillingFirstnames">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">First Name</span>
                         </span>
-                        <input id="BillingFirstnames" name="BillingFirstnames" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingFirstnames'>" /><br />						
+                        <input id="BillingFirstnames" name="BillingFirstnames" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingFirstnames'>" />
                     </label>
 
                     <label for="BillingSurname">
@@ -115,65 +115,65 @@
                             <span class="req">*</span>
                             <span class="bold">Last Name</span>
                         </span>
-                        <input id="BillingSurname" name="BillingSurname" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingSurname'>" /><br />						
+                        <input id="BillingSurname" name="BillingSurname" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingSurname'>" />
                     </label>
                     <label for="BillingAddress1">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">Address Line 1</span>
                         </span>
-                        <input id="BillingAddress1" name="BillingAddress1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress1'>" /><br />						
+                        <input id="BillingAddress1" name="BillingAddress1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress1'>" />
                     </label>
                     <label for="BillingAddress2">
-                        <span class="field">                            
+                        <span class="field">
                             <span class="bold">Address Line 2</span>
                         </span>
-                        <input id="BillingAddress2" name="BillingAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress2'>" /><br />						
+                        <input id="BillingAddress2" name="BillingAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingAddress2'>" />
                     </label>
                     <label for="BillingCity">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">City</span>
                         </span>
-                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingCity'>" /><br />						
+                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingCity'>" />
                     </label>
                     <label id="BillingStateLabel" style="display: none;" for="BillingState">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">State</span>
                         </span>
-                        <select id="BillingState" name="BillingState" size="1" class="f-name" tabindex="0">                            
+                        <select id="BillingState" name="BillingState" size="1" class="f-name" tabindex="0">
                             <#OPTION name="States" selectedValue="<#PARAM name='BillingState'>" defaultValue="Select your state"/>
-                        </select><br />
+                        </select>
                     </label>
                     <label for="BillingCountry">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">Country</span>
                         </span>
-                        
+
                         <select id="BillingCountry" name="BillingCountry" size="1" class="f-name" tabindex="0" title="Selecting a country will dynamically show or hide the state address field." onchange="setStateVisibility();">
 							    <#OPTION name="Countries" selectedValue="<#PARAM name=BillingCountry>" defaultValue="Select your country" />
-						</select><br />
-                    </label>                    
+						</select>
+                    </label>
                     <label for="BillingPostCode">
                         <span class="field">
                             <span class="req">*</span>
                             <span class="bold">Postal Code</span>
                         </span>
-                        <input id="BillingPostCode" name="BillingPostCode" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPostCode'>" /><br />						
+                        <input id="BillingPostCode" name="BillingPostCode" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPostCode'>" />
                     </label>
                     <label for="BillingPhone">
                         <span class="field">
                             <span class="bold">Phone Number</span>
                         </span>
-                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPhone'>" /><br />						
+                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingPhone'>" />
                     </label>
                     <label for="BillingEmail">
                         <span class="field">
                             <span class="bold">Email Address</span>
                         </span>
-                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingEmail'>" /><br />						
+                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name='BillingEmail'>" />
                     </label>
 
                     <div class="f-submit-wrap" align="right">
@@ -182,7 +182,7 @@
                     </div>
                 </fieldset>
                 </form>
-                
+
             </div>
         </div>
     </div>

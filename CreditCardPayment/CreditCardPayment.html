@@ -14,7 +14,7 @@
         <#INCLUDE filename="include_header.html">
         <div id="content-wrap">
             <#INCLUDE filename="include_menu.html">
-            
+
             <script language="javascript">
                 transactionNumbers = "<#PARAM name='TransactionNumbers'>";
                 sessionID = "<#PARAM name="SessionID">";
@@ -70,10 +70,10 @@
 
             </script>
 
-            
+
             <div id="content">
-                <div class="default-table">			
-                    <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests" 
+                <div class="default-table">
+                    <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests"
                      column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal" orderby="TransactionNumber DESC">
                 </div>
 
@@ -89,66 +89,66 @@
                         <span class="field">
                             <span class="bold">First Name</span>
                         </span>
-                        <input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='FirstName'>"><br />						
+                        <input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='FirstName'>">
                     </label>
 
                     <label for="LastName">
                         <span class="field">
                             <span class="bold">Last Name</span>
                         </span>
-                        <input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='LastName'>"><br />						
+                        <input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='LastName'>">
                     </label>
                     <label for="BillingPhone">
                         <span class="field">
                             <span class="bold">Phone Number</span>
                         </span>
-                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='Phone'>"><br />						
+                        <input id="BillingPhone" name="BillingPhone" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='Phone'>">
                     </label>
                     <label for="BillingEmail">
                         <span class="field">
                             <span class="bold">Email Address</span>
                         </span>
-                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='EMailAddress'>"><br />						
+                        <input id="BillingEmail" name="BillingEmail" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='EMailAddress'>">
                     </label>
                     <label for="BillingAddress">
                         <span class="field">
                             <span class="bold">Billing Address</span>
                         </span>
-                        <input id="BillingAddress" name="BillingAddress" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='Address'>"><br />						
+                        <input id="BillingAddress" name="BillingAddress" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='Address'>">
                     </label>
                     <label for="BillingCity">
                         <span class="field">
                             <span class="bold">Billing City</span>
                         </span>
-                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='City'>"><br />						
+                        <input id="BillingCity" name="BillingCity" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='City'>">
                     </label>
                     <label for="BillingState">
                         <span class="field">
                             <span class="bold">Billing State</span>
                         </span>
-                        <input id="BillingState" name="BillingState" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='State'>"><br />						
+                        <input id="BillingState" name="BillingState" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='State'>">
                     </label>
                     <label for="BillingCountry">
                         <span class="field">
                             <span class="bold">Billing Country</span>
                         </span>
                         <select id="BillingCountry" name="BillingCountry" size="1" class="f-name" tabindex="0">
-                        </select><br />
+                        </select>
                     </label>
                     <label for="BillingZipCode">
                         <span class="field">
                             <span class="bold">Billing Zip Code</span>
                         </span>
-                        <input id="BillingZipCode" name="BillingZipCode" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='Zip'>"><br />						
+                        <input id="BillingZipCode" name="BillingZipCode" type="text" size="40" class="f-name" tabindex="0" value="<#USER field='Zip'>">
                     </label>
 
-                    <div class="f-submit-wrap" align="right">                
+                    <div class="f-submit-wrap" align="right">
                         <input type="button" value="Pay Now" class="f-submit" tabindex="0" onclick="HandlePayment();"/>
                         <input type="submit" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
                     </div>
                 </form>
                 <#INCLUDE filename="include_footer.html">
-            </div>    
+            </div>
         </div>
     </div>
 </body>
