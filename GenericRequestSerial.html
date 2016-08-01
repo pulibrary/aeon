@@ -39,22 +39,22 @@
 							</span>
 							<select id="Site" name="Site" size="1" class="f-name" tabindex="0">
 								<#OPTION name="Sites" selectedValue="<#PARAM name=Site>" defaultName="Choose a Site" defaultValue="">
-							</select><br />
+							</select>
 						</label>
 
 						<label for="ItemTitle">
 							<span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span><br />
+								<span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span>
 							</span>
-							<textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea><br />
+							<textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea>
 						</label>
 
                         <label for="ItemPlace">
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemPlace">"><span class="bold">Place of Publication</span></span>
                             </span>
-                            <input id="ItemPlace" name="ItemPlace" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPlace">"><br />
+                            <input id="ItemPlace" name="ItemPlace" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPlace">">
                         </label>
 
                         <!--
@@ -62,7 +62,7 @@
                             <span class="field">
                                 <span class="<#ERROR name="ERRORItemPublisher">"><span class="bold">Publisher</span></span>
                             </span>
-                            <input id="ItemPublisher" name="ItemPublisher" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPublisher">"><br />
+                            <input id="ItemPublisher" name="ItemPublisher" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPublisher">">
                         </label>
                         -->
 
@@ -70,21 +70,21 @@
 							<span class="field">
 								<span class="<#ERROR name="ERRORItemDate">"><span class="bold">Date</span></span>
 							</span>
-							<input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">"><br />
+							<input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">">
 						</label>
 
 						<label for="ItemVolume">
 							<span class="field">
 								<span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume</span></span>
 							</span>
-							<input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">"><br />
+							<input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">">
 						</label>
 
 						<label for="ItemIssue">
 							<span class="field">
 								<span class="<#ERROR name="ERRORItemIssue">"><span class="bold">Issue/Number</span></span>
 							</span>
-							<input id="ItemIssue" name="ItemIssue" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemIssue">"><br />
+							<input id="ItemIssue" name="ItemIssue" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemIssue">">
 						</label>
 
                         <!--
@@ -94,7 +94,7 @@
 								<br/>
 								<span class="note">Additional citation information can be added as notes.</span>
 							</span>
-							<input id="ItemPages" name="ItemPages" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPages">"><br />
+							<input id="ItemPages" name="ItemPages" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemPages">">
 						</label>
 					    -->
 
@@ -103,7 +103,7 @@
 							<span class="field">
 								<span class="<#ERROR name="ERRORItemISxN">"><span class="bold">ISxN</span></span>
 							</span>
-							<input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">"><br />
+							<input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">">
 						</label>
 						-->
 
@@ -111,14 +111,14 @@
 							<span class="field">
 								<span class="<#ERROR name="ERRORCallNumber">"><span class="bold">Call Number</span></span>
 							</span>
-							<input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">"><br />
+							<input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">">
 						</label>
 
 						<label for="Location">
 							<span class="field">
 								<span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Location</span></span>
 							</span>
-							<input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">"><br />
+							<input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">">
 						</label>
 
 						<span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
@@ -128,24 +128,24 @@
                                 </span>
                                 <select id="RequestLink" name="RequestLink" size="1" class="f-name" tabindex="0">
                                     <#OPTION name="RequestLinks" hideUsernames="true">
-                                </select><br />
+                                </select>
                             </label>
                         </span>
 
 						<label for="Notes">
 							<span class="field">
-								<span class="<#ERROR name="ERRORNotes">"><span class="bold">My Notes</span></span><br />
+								<span class="<#ERROR name="ERRORNotes">"><span class="bold">My Notes</span></span>
 								<span class="note">Enter any notes about this request for your personal reference.</span>
 							</span>
-							<textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="Notes"></textarea><br />
+							<textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="Notes"></textarea>
 						</label>
 
 						<label for="SpecialRequest">
 							<span class="field">
-								<span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span><br />
+								<span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span>
 								<span class="note">Please enter any special requests or questions for library staff.</span>
 							</span>
-							<textarea id="SpecialRequest" name="SpecialRequest" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="SpecialRequest"></textarea><br />
+							<textarea id="SpecialRequest" name="SpecialRequest" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="SpecialRequest"></textarea>
 						</label>
 
 						<#INCLUDE filename="include_ResearcherTags.html">

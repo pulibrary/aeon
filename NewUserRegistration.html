@@ -26,7 +26,7 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
 							</span>
-							<input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">"><br />
+							<input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">">
 						</label>
 
 						<label for="LastName">
@@ -34,14 +34,14 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
 							</span>
-							<input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">"><br />
+							<input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">">
 						</label>
 
 						<label for="DateOfBirth">
 							<span class="field">
 								<span class="<#ERROR name="ERRORDateOfBirth">"><span class="bold">Date of Birth</span></span>
 							</span>
-							<input id="DateOfBirth" name="DateOfBirth" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="DateOfBirth">"><br />
+							<input id="DateOfBirth" name="DateOfBirth" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="DateOfBirth">">
 						</label>
 
 						<label for="IDType">
@@ -51,7 +51,7 @@
 							</span>
 							<select id="IDTypeOption" name="IDType" size="1" class="f-name" tabindex="0">
 								<#OPTION name="IDTypes" selectedValue="<#PARAM name=IDType>" defaultName="Choose an ID Type" defaultValue="">
-							</select><br />
+							</select>
 						</label>
 
                         <label for="ID">
@@ -59,7 +59,7 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORID">"><span class="bold">ID Number</span></span>
 							</span>
-							<input id="ID" name="ID" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ID">"><br />
+							<input id="ID" name="ID" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ID">">
 						</label>
 
 						<label for="EMailAddress">
@@ -67,7 +67,7 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERROREMailAddress">"><span class="bold">Email Address</span></span>
 							</span>
-							<input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">"><br />
+							<input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">">
 						</label>
 
 						<label for="Phone">
@@ -75,7 +75,7 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORPhone">"><span class="bold">Daytime Phone</span></span>
 							</span>
-							<input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">"><br />
+							<input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">">
 						</label>
 
 						<label for="Address">
@@ -83,14 +83,14 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORAddress">"><span class="bold">Primary Address Line 1</span></span>
 							</span>
-							<input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">"><br />
+							<input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">">
 						</label>
 
 						<label for="Address2">
 							<span class="field">
 								<span class="<#ERROR name="ERRORAddress2">"><span class="bold">Primary Address Line 2</span></span>
 							</span>
-							<input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">"><br />
+							<input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">">
 						</label>
 
 						<label for="City">
@@ -98,7 +98,7 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORCity">"><span class="bold">Primary Address City</span></span>
 							</span>
-							<input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">"><br />
+							<input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">">
 						</label>
 
 						<label for="State">
@@ -108,7 +108,7 @@
 							</span>
 							<select id="State" name="State" size="1" class="f-name" tabindex="0">
 								<#OPTION name="States" selectedValue="<#PARAM name=State>" defaultName="Choose a State" defaultValue="">
-							</select><br />
+							</select>
 						</label>
 
 						<label for="Zip">
@@ -116,7 +116,7 @@
 								<span class="req">*</span>
 								<span class="<#ERROR name="ERRORZip">"><span class="bold">Primary Address Zip</span></span>
 							</span>
-							<input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">"><br />
+							<input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">">
 						</label>
 
                         <label for="Country">
@@ -126,28 +126,28 @@
 							</span>
                             <select id="Country" name="Country" size="1" class="f-name" tabindex="0">
 							    <#OPTION name="Countries" selectedValue="<#PARAM name=Country>"  defaultName="Choose a Country" defaultValue="">
-						    </select><br />
+						    </select>
 						</label>
 
 						<label for="SAddress">
 							<span class="field">
 								<span class="<#ERROR name="ERRORSAddress">"><span class="bold">Alternate Address Line 1</span></span>
 							</span>
-							<input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">"><br />
+							<input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">">
 						</label>
 
 						<label for="SAddress2">
 							<span class="field">
 								<span class="<#ERROR name="ERRORSAddress2">"><span class="bold">Alternate Address Line 2</span></span>
 							</span>
-							<input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">"><br />
+							<input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">">
 						</label>
 
 						<label for="SCity">
 							<span class="field">
 								<span class="<#ERROR name="ERRORSCity">"><span class="bold">Alternate Address City</span></span>
 							</span>
-							<input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">"><br />
+							<input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">">
 						</label>
 
 						<label for="SState">
@@ -156,14 +156,14 @@
 							</span>
 							<select id="SState" name="SState" size="1" class="f-name" tabindex="0">
 								<#OPTION name="States" selectedValue="<#PARAM name=SState>" defaultName="Choose a State" defaultValue="">
-							</select><br />
+							</select>
 						</label>
 
 						<label for="SZip">
 							<span class="field">
 								<span class="<#ERROR name="ERRORSZip">"><span class="bold">Alternate Address Zip</span></span>
 							</span>
-							<input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">"><br />
+							<input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">">
 						</label>
 
                         <label for="SCountry">
@@ -172,7 +172,7 @@
 							</span>
                             <select id="SCountry" name="SCountry" size="1" class="f-name" tabindex="0">
 							    <#OPTION name="Countries" selectedValue="<#PARAM name=SCountry>" defaultName="Choose a Country" defaultValue="">
-						    </select><br />
+						    </select>
 						</label>
 
 						<label for="Status">
@@ -182,7 +182,7 @@
 							</span>
 							<select id="StatusOption" name="Status" size="1" class="f-name" tabindex="0">
 								<#OPTION name="Statuses" selectedValue="<#PARAM name=Status>" defaultName="Choose a Status" defaultValue="">
-							</select><br />
+							</select>
 						</label>
 
 						<label for="Department">
@@ -192,54 +192,54 @@
 							</span>
 							<select id="Department" name="Department" size="1" class="f-name" tabindex="0">
 								<#OPTION name="Departments" selectedValue="<#PARAM name=Department>" defaultName="Choose a Department" defaultValue="">
-							</select><br />
+							</select>
 						</label>
 
 						<label for="Organization">
 							<span class="field">
 								<span class="<#ERROR name="ERROROrganization">"><span class="bold">Organization</span></span>
 							</span>
-							<input id="Organization" name="Organization" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Organization">"><br />
+							<input id="Organization" name="Organization" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Organization">">
 						</label>
 
 						<label for="ResearchTopics">
 							<span class="field">
 								<span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
 							</span>
-							<textarea id="ResearchTopics" name="ResearchTopics" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ResearchTopics"></textarea><br />
+							<textarea id="ResearchTopics" name="ResearchTopics" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ResearchTopics"></textarea>
 						</label>
 
 						<label for="ResearchTopicsSharing">
 							<span class="field">
 								<span class="<#ERROR name="ERRORResearchTopicsSharing">"><span class="bold">Share Research Topics?</span></span>
 							</span>
-							<input id="ResearchTopicsSharing" name="ResearchTopicsSharing" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="ResearchTopicsSharing" default="true">><br />
+							<input id="ResearchTopicsSharing" name="ResearchTopicsSharing" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="ResearchTopicsSharing" default="true">>
 						</label>
 
 						<label for="Username">
 							<span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORUsername">"><span class="bold">Choose a Username</span></span><br />
+								<span class="<#ERROR name="ERRORUsername">"><span class="bold">Choose a Username</span></span>
 							</span>
-							<input id="Username" name="Username" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="NewUsername">"><br />
+							<input id="Username" name="Username" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="NewUsername">">
 						</label>
 
 						<label for="Password1">
 							<span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORPassword1">"><span class="bold">Choose a Password</span></span><br />
+								<span class="<#ERROR name="ERRORPassword1">"><span class="bold">Choose a Password</span></span>
 								<span class="note">Case sensitive</span>
 							</span>
-							<input id="Password1" name="Password1" type="password" size="40" class="f-name" tabindex="0" value="<#PARAM name="Password1">"><br />
+							<input id="Password1" name="Password1" type="password" size="40" class="f-name" tabindex="0" value="<#PARAM name="Password1">">
 						</label>
 
 						<label for="Password2">
 							<span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORPassword2">"><span class="bold">Re-enter Password</span></span><br />
+								<span class="<#ERROR name="ERRORPassword2">"><span class="bold">Re-enter Password</span></span>
 								<span class="note">Case sensitive</span>
 							</span>
-							<input id="Password2" name="Password2" type="password" size="40" class="f-name" tabindex="0" value="<#PARAM name="Password2">"><br />
+							<input id="Password2" name="Password2" type="password" size="40" class="f-name" tabindex="0" value="<#PARAM name="Password2">">
 						</label>
 
 						<div class="f-submit-wrap" align="right">
