@@ -1,6 +1,6 @@
 <html lang="en-US">
 <head>
-<title>Aeon - Approve Billing</title>
+<title>Special Collections Research Account - Approve Billing</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 <!--[if lte IE 6]>
@@ -14,17 +14,17 @@
 		<#INCLUDE filename="include_header.html">
 		<div id="content-wrap">
 			<#INCLUDE filename="include_menu.html">
-			
+
             <script language="javascript">
                 transactionNumbers = "<#PARAM name='TransactionNumbers'>";
 				sessionID = "<#PARAM name="SessionID">";
-                
+
                 $(document).ready(function(){
-                    $("#pay").click(function() {                                   
+                    $("#pay").click(function() {
                          $("#loadingPanel").show();
                          $("input[type=button]").attr("disabled", "disabled");
                          $.get("aeon.dll/ajax?query=InitiatePayment", { TransactionNumbers: transactionNumbers, SessionID: sessionID, ProviderSystemId: 'PayPal' }, function(response, status, xhr){
-                                
+
                                 var hasError = false;
 
                                 if(response.toLowerCase().indexOf("error: ") == 0)
@@ -42,8 +42,8 @@
                                 {
                                     $("#loadingPanel").hide()
                                     $("#paymentResult").toggleClass("error", true);
-                                    $("#paymentResult").toggleClass("success", false);                                                                        
-                                    $("input[type=button]").removeAttr("disabled"); 
+                                    $("#paymentResult").toggleClass("success", false);
+                                    $("input[type=button]").removeAttr("disabled");
                                 }
                                 else
                                 {
@@ -61,47 +61,47 @@
                 });
             </script>
 
-            
+
             <div id="content">
-                <div class="default-table">			
-				    <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests" 
+                <div class="default-table">
+				    <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests"
 					 column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal" orderby="TransactionNumber DESC">
-			    </div> 
+			    </div>
                 Payment Method: PayPal
 
                 <div style="display:none" id="paymentResult"></div>
                 <div style="display:none" id="loadingPanel">
                     Your payment is being submitted.  To prevent errors in the payment process, please do not hit your browser's back or refresh buttons.
                 </div>
-                                               
+
                 <form id="paypalform" action="<#PAYMENTPROVIDERURL>" method="post">
-                    <!--Enter your currency code based on PayPal accepted codes. https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_currency_codes -->                    
+                    <!--Enter your currency code based on PayPal accepted codes. https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_currency_codes -->
                     <input type="hidden" name="currency_code" value="USD">
-                                      
+
                     <!--The notify URL should point to your nonshib folder if using remote auth e.g. http://aeon.institution.edu/aeon/nonshib/aeon.dll?action=11&type=106 -->
                     <input type="hidden" name="notify_url" value="<#CUSTOMIZATION name=WebURL />/aeon.dll?action=11&type=106" />
 
                     <!--System defined values -->
                     <input type="hidden" name="business" value="<#CUSTOMIZATION name=PaymentProviderMerchantId />">
                     <input type="hidden" name="item_name_1" value="<#CUSTOMIZATION name=CreditCardTransactionsDescription />">
-                    <input type="hidden" name="return" value="<#DLL absoluteUrl=true queryFields=false />?action=11&type=105" />                    
+                    <input type="hidden" name="return" value="<#DLL absoluteUrl=true queryFields=false />?action=11&type=105" />
                     <input type="hidden" name="cmd" value="_cart">
                     <input type="hidden" name="upload" value="1">
                     <input type="hidden" id="invoice" name="invoice" value="">
-                    <input type="hidden" name="custom" value="<#PARAM name='TransactionNumbers'>">                    
+                    <input type="hidden" name="custom" value="<#PARAM name='TransactionNumbers'>">
                     <input type="hidden" id="totalCharges" name="amount_1" value="<#TOTALBILLINGCHARGES>">
                     <input type="hidden" name="no_shipping" value="1">
                     <input type="hidden" name="no_note" value="1">
-                    <input type="hidden" name="rm" value="2">                   
-                                        
-                    <div class="f-submit-wrap" align="right">                
+                    <input type="hidden" name="rm" value="2">
+
+                    <div class="f-submit-wrap" align="right">
                         <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0"/>
 						<input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
 					</div>
                 </form>
 
 				<#INCLUDE filename="include_footer.html">
-			</div>    
+			</div>
 		</div>
 	</div>
 </body>
