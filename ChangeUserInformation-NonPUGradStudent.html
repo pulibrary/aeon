@@ -1,228 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - Change User Information</title>
-<#INCLUDE filename="include_head.html">
+  <title>Special Collections Research Account - Change User Information</title>
+  <#INCLUDE filename="include_head.html">
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-  <div id="content-wrap" class="panel-display--three_nine l-page">
-    <section class="l-main">
-      <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
           <#INCLUDE filename="include_menu.html">
-      </nav>
-      <main role="main" class="three_nine-region--second">
-      	<div id="status"><#STATUS></div>
-	      <h1>Change Personal Information</h1>
-	      <div class="button"><a href="<#ACTION action="10" form="83">">Change Password</a></div>
-				<form action="aeon.dll" method="post" name="ChangeUserInformation" class="f-wrap-request">
-					<input type="hidden" name="AeonForm" value="ChangeUserInformation">
-					<input type="hidden" name="NotificationMethod" value="Email">
-					<fieldset>
-						<div class="req"><span class="bold">*</span> Indicates required field</div>
-						<label for="FirstName">
-							<span class="field">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <form action="aeon.dll" method="post" name="ChangeUserInformation" class="f-wrap-request">
+            <input type="hidden" name="AeonForm" value="ChangeUserInformation">
+            <input type="hidden" name="NotificationMethod" value="Email">
+            <input type="hidden" name="NVTGC" value="ILL">
+            <input type="hidden" name="DeliveryGroup" value="Hold for Pickup">
+            <input type="hidden" name="LoanDeliveryGroup" value="Hold for Pickup">
+            <input type="hidden" name="WebDeliveryGroup" value="Yes">
+            <input type="hidden" name="NotificationMethod" value="E-Mail">
+            <fieldset>
+              <h1>Change Personal Information</h1>
+              <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
+              <p>Please contact the Department of Rare Books and Special Collections at <a href="mailto:rbsc@princeton.edu">rbsc@princeton.edu</a> if you need to change your username.</p>
+              <label for="FirstName">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
-							</span>
-							<input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">">
-						</label>
-
-						<label for="LastName">
-							<span class="field">
+                <span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
+                </span>
+                <input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">">
+              </label>
+              <!-- Middle name field added from old instance -->
+              <label for="UserInfo1">
+                <span class="field">
+                <span class="<#ERROR name="ERRORUserInfo1">"><span class="bold">Middle Name</span></span>
+                </span>
+                <input id="UserInfo1" name="UserInfo1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="UserInfo1">">
+              </label>
+              <label for="LastName">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
-							</span>
-							<input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">">
-						</label>
-
-						<label for="DateOfBirth">
-							<span class="field">
-								<span class="<#ERROR name="ERRORDateOfBirth">"><span class="bold">Date of Birth</span></span>
-							</span>
-							<input id="DateOfBirth" name="DateOfBirth" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="DateOfBirth">">
-						</label>
-
-						<label for="IDType">
-							<span class="field">
+                <span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
+                </span>
+                <input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">">
+              </label>
+              <label for="EMailAddress">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORIDType">"><span class="bold">ID Type</span></span>
-							</span>
-							<select id="IDTypeOption" name="IDType" size="1" class="f-name" tabindex="0">
-								<#OPTION name="IDTypes" selectedValue="<#PARAM name=IDType>" defaultName="Choose an ID Type" defaultValue="">
-							</select>
-						</label>
-
-                        <label for="ID">
-							<span class="field">
+                <span class="<#ERROR name="ERROREMailAddress">"><span class="bold">Email Address</span></span>
+                </span>
+                <input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">">
+              </label>
+              <label for="Phone">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORID">"><span class="bold">ID Number</span></span>
-							</span>
-							<input id="ID" name="ID" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ID">">
-						</label>
-
-						<label for="EMailAddress">
-							<span class="field">
+                <span class="<#ERROR name="ERRORPhone">"><span class="bold">Telephone</span></span>
+                </span>
+                <input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">">
+              </label>
+              <h3>Permanent Address</h3>
+              <label for="Address">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERROREMailAddress">"><span class="bold">Email Address</span></span>
-							</span>
-							<input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">">
-						</label>
-
-						<label for="Phone">
-							<span class="field">
+                <span class="<#ERROR name="ERRORAddress">"><span class="bold">Street</span></span>
+                </span>
+                <input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">">
+              </label>
+              <label for="Address2">
+                <span class="field">
+								<span class="<#ERROR name="ERRORAddress2">"><span class="bold">Line Two</span></span>
+                </span>
+                <input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">">
+              </label>
+              <label for="UserInfo2">
+                <span class="field">
+								<span class="<#ERROR name="ERRORUserInfo2">"><span class="bold">Line Three</span></span>
+                </span>
+                <input id="UserInfo2" name="UserInfo2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="UserInfo2">">
+              </label>
+              <label for="City">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORPhone">"><span class="bold">Daytime Phone</span></span>
-							</span>
-							<input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">">
-						</label>
-
-						<label for="Address">
-							<span class="field">
+                <span class="<#ERROR name="ERRORCity">"><span class="bold">City</span></span>
+                </span>
+                <input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">">
+              </label>
+              <label for="State">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORAddress">"><span class="bold">Primary Address Line 1</span></span>
-							</span>
-							<input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">">
-						</label>
-
-						<label for="Address2">
-							<span class="field">
-								<span class="<#ERROR name="ERRORAddress2">"><span class="bold">Primary Address Line 2</span></span>
-							</span>
-							<input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">">
-						</label>
-
-						<label for="City">
-							<span class="field">
+                <span class="<#ERROR name="ERRORState">"><span class="bold">State/Province</span></span>
+                </span>
+                <input id="State" name="State" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="State">">
+              </label>
+              <label for="Country">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORCity">"><span class="bold">Primary Address City</span></span>
-							</span>
-							<input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">">
-						</label>
-
-						<label for="State">
-							<span class="field">
+                <span class="<#ERROR name="ERRORCountry">"><span class="bold">Country</span></span>
+                </span>
+                <input id="Country" name="Country" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Country">">
+              </label>
+              <label for="Zip">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORState">"><span class="bold">Primary Address State</span></span>
-							</span>
-							<select id="State" name="State" size="1" class="f-name" tabindex="0">
-								<#OPTION name="States" selectedValue="<#PARAM name=State>" defaultName="Choose a State" defaultValue="">
-							</select>
-						</label>
-
-                        <label for="Country">
-							<span class="field">
+                <span class="<#ERROR name="ERRORZip">"><span class="bold">Zip or Postal Code</span></span>
+                </span>
+                <input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">">
+              </label>
+              <h3>Local Address</h3>
+              <label for="SAddress">
+                <span class="field">
+								<span class="<#ERROR name="ERRORSAddress">"><span class="bold">Street</span></span>
+                </span>
+                <input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">">
+              </label>
+              <label for="SAddress2">
+                <span class="field">
+								<span class="<#ERROR name="ERRORSAddress2">"><span class="bold">Line 2</span></span>
+                </span>
+                <input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">">
+              </label>
+              <label for="SCity">
+                <span class="field">
+								<span class="<#ERROR name="ERRORSCity">"><span class="bold">City</span></span>
+                </span>
+                <input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">">
+              </label>
+              <label for="SState">
+                <span class="field">
+								<span class="<#ERROR name="ERRORSState">"><span class="bold">State/Province</span></span>
+                </span>
+                <input id="SState" name="SState" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SState">">
+              </label>
+              <label for="SZip">
+                <span class="field">
+								<span class="<#ERROR name="ERRORSZip">"><span class="bold">Zip or Postal Code</span></span>
+                </span>
+                <input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">">
+              </label>
+              <label for="Status">
+                <span class="field">
 								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORCountry">"><span class="bold">Primary Address Country</span></span>
-							</span>
-                            <select id="Country" name="Country" size="1" class="f-name" tabindex="0">
-							    <#OPTION name="Countries" selectedValue="<#PARAM name=Country>"  defaultName="Choose a Country" defaultValue="">
-						    </select>
-						</label>
-
-						<label for="Zip">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORZip">"><span class="bold">Primary Address Zip</span></span>
-							</span>
-							<input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">">
-						</label>
-
-						<label for="SAddress">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSAddress">"><span class="bold">Alternate Address Line 1</span></span>
-							</span>
-							<input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">">
-						</label>
-
-						<label for="SAddress2">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSAddress2">"><span class="bold">Alternate Address Line 2</span></span>
-							</span>
-							<input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">">
-						</label>
-
-						<label for="SCity">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSCity">"><span class="bold">Alternate Address City</span></span>
-							</span>
-							<input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">">
-						</label>
-
-						<label for="SState">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSState">"><span class="bold">Alternate Address State</span></span>
-							</span>
-							<select id="SState" name="SState" size="1" class="f-name" tabindex="0">
-								<#OPTION name="States" selectedValue="<#PARAM name=SState>" defaultName="Choose a State" defaultValue="">
-							</select>
-						</label>
-
-                        <label for="SCountry">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSCountry">"><span class="bold">Alternate Address Country</span></span>
-							</span>
-                            <select id="SCountry" name="SCountry" size="1" class="f-name" tabindex="0">
-							    <#OPTION name="Countries" selectedValue="<#PARAM name=SCountry>" defaultName="Choose a Country" defaultValue="">
-						    </select>
-						</label>
-
-						<label for="SZip">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSZip">"><span class="bold">Alternate Address Zip</span></span>
-							</span>
-							<input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">">
-						</label>
-
-						<label for="Status">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORStatus">"><span class="bold">Status</span></span>
-							</span>
-							<select id="StatusOption" name="Status" size="1" class="f-name" tabindex="0">
-								<#OPTION name="Statuses" selectedValue="<#PARAM name=Status>" defaultName="Choose a Status" defaultValue="">
-							</select>
-						</label>
-
-						<label for="Department">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORDepartment">"><span class="bold">Department</span></span>
-							</span>
-							<select id="Department" name="Department" size="1" class="f-name" tabindex="0">
-								<#OPTION name="Departments" selectedValue="<#PARAM name=Department>" defaultName="Choose a Department" defaultValue="">
-							</select>
-						</label>
-
-						<label for="Organization">
-							<span class="field">
-								<span class="<#ERROR name="ERROROrganization">"><span class="bold">Organization</span></span>
-							</span>
-							<input id="Organization" name="Organization" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Organization">">
-						</label>
-
-						<label for="ResearchTopics">
-							<span class="field">
-								<span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
-							</span>
-							<textarea id="ResearchTopics" name="ResearchTopics" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ResearchTopics"></textarea>
-						</label>
-
-						<label for="ResearchTopicsSharing">
-							<span class="field">
-								<span class="<#ERROR name="ERRORResearchTopicsSharing">"><span class="bold">Share Research Topics?</span></span>
-							</span>
-							<input id="ResearchTopicsSharing" name="ResearchTopicsSharing" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="ResearchTopicsSharing" default="true">>
-						</label>
-
-						<div class="f-submit-wrap" align="right">
-							<input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
-						</div>
-					</fieldset>
-				</form>
-			</main>
-		</section>
-	</div>
-	<#INCLUDE filename="include_footer.html">
+                <span class="<#ERROR name="ERRORStatus">"><span class="bold">Status</span></span>
+                </span>
+                <select id="Status" name="Status" size="1" class="f-name" tabindex="0">
+                  <option selected>
+                    <#PARAM name="Status">
+                  </option>
+                  <option value="NonPUFaculty">Faculty</option>
+                  <option value="NonPUGradStudent">Graduate Student</option>
+                  <option value="NonPUUndergradStudent">Undergraduate Student</option>
+                  <option value="IndependentResearcher">Independent Researcher</option>
+                </select>
+              </label>
+              <label for="Organization">
+                <span class="field">
+                <span class="req">*</span>
+                <span class="<#ERROR name="ERROROrganization">"><span class="bold">Institutional Affiliation</span></span>
+                </span>
+                <input id="Organization" name="Organization" type="text" size="100" class="f-name" tabindex="0" value="<#PARAM name="Organization">">
+              </label>
+              <label for="Department">
+                <span class="field">
+                <span class="<#ERROR name="ERRORDepartment">"><span class="bold">Department</span></span>
+                </span>
+                <input id="Department" name="Department" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Department">">
+              </label>
+              <label for="ResearchTopics">
+                <span class="field">
+                <span class="req">*</span>
+                <span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
+                </span>
+                <select id="ResearchTopics" name="ResearchTopics" size="1" class="f-name" tabindex="0">
+                  <option selected>
+                    <#PARAM name="ResearchTopics" </option>
+                      <option>Africa</option>
+                      <option>American history</option>
+                      <option>American history/20th century</option>
+                      <option>American history/Civil War and Reconstruction</option>
+                      <option>American history/Colonial</option>
+                      <option>American history/Early national</option>
+                      <option>American history/Gilded Age, Populism, Progressivism</option>
+                      <option>American history/Revolution</option>
+                      <option>American literature</option>
+                      <option>American politics and government</option>
+                      <option>Ancient history</option>
+                      <option>Archaeology</option>
+                      <option>Architecture</option>
+                      <option>Art history</option>
+                      <option>Book history and arts</option>
+                      <option>British literature</option>
+                      <option>Cartography</option>
+                      <option>Children's books</option>
+                      <option>Chinese studies</option>
+                      <option>Classical literature</option>
+                      <option>Cold War</option>
+                      <option>Demography</option>
+                      <option>Diplomacy</option>
+                      <option>East Asian studies</option>
+                      <option>Economic history</option>
+                      <option>Education</option>
+                      <option>Environmental studies</option>
+                      <option>Ethiopic manuscripts</option>
+                      <option>European history</option>
+                      <option>European literature</option>
+                      <option>Games and recreation</option>
+                      <option>Garden and landscape studies</option>
+                      <option>Genealogy</option>
+                      <option>History of science</option>
+                      <option>International organizations</option>
+                      <option>Islamic manuscripts (Arabic, Persian, Ottoman, Turkish)</option>
+                      <option>Japanese studies</option>
+                      <option>Journalism</option>
+                      <option>Korean studies</option>
+                      <option>Latin American history</option>
+                      <option>Latin American literature and culture</option>
+                      <option>Legal history</option>
+                      <option>Literature</option>
+                      <option>Medieval and Renaissance manuscripts</option>
+                      <option>Middle East (modern history and politics)</option>
+                      <option>Modern Greek studies</option>
+                      <option>Music</option>
+                      <option>Native American history</option>
+                      <option>New Jerseyana</option>
+                      <option>Numismatics</option>
+                      <option>Papyri</option>
+                      <option>Philosophy</option>
+                      <option>Photography</option>
+                      <option>Political cartoons</option>
+                      <option>Princeton University</option>
+                      <option>Public policy/20th century</option>
+                      <option>Publishing history</option>
+                      <option>Religion</option>
+                      <option>Russia</option>
+                      <option>Theater/Dance/Film</option>
+                      <option>Travel</option>
+                      <option>Urban Studies</option>
+                      <option>Western Americana</option>
+                      <option>Women's studies</option>
+                      <option>World War I</option>
+                      <option>World War II</option>
+                      <option>Other</option>
+                </select>
+              </label>
+              <label for="UserInfo4">
+                <span class="field">
+                <span class="req">*</span>
+                <span class="<#ERROR name="ERRORUserInfo4">"><span class="bold">Research Purpose</span></span>
+                </span>
+                <select id="UserInfo4" name="UserInfo4" size="1" class="f-name" tabindex="0">
+                  <option selected>
+                    <#PARAM name="UserInfo4">
+                  </option>>
+                  <option>Article</option>
+                  <option>Book</option>
+                  <option>Course Work</option>
+                  <option>Genealogy</option>
+                  <option>Local History</option>
+                  <option>M.A. Thesis</option>
+                  <option>Ph.D. Dissertation</option>
+                  <option>Undergraduate Thesis</option>
+                  <option>Other:</option>
+                </select>
+              </label>
+              <label for="UserInfo5">
+                <span class="field">
+								<span class="<#ERROR name="ERRORUserInfo5">">Check the box to receive invitations and announcements for Friends of the Princeton University Library Events</span>
+                </span>
+                <input id="UserInfo5" name="UserInfo5" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="UserInfo5" default="true">>
+              </label>
+              <div class="f-submit-wrap" align="right">
+                <input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
+              </div>
+            </fieldset>
+          </form>
+          <h2>Change Password</h2>
+          <p>If you would like t change your password, please proceed to <a href="<#ACTION action=" 10 " form="83 ">">this form</a></p>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>
