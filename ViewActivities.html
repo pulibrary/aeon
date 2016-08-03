@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - Events</title>
-<#INCLUDE filename="include_head.html">
-<#INCLUDE filename="include_sortableTables.html">
+  <title>Special Collections Research Account - Events</title>
+  <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_sortableTables.html">
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
-	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-	    	<div id="status"><#STATUS></div>
-	    	<h1>Events</h1>
-				<div class="default-table">
-					<#TABLE name="ViewActivities" headerText="Activities" noDataAction="ShowMessageRow" noDataMessage="No Activities" column="DownloadDetails:Download" column="ID" column="Name" column="Description" column="ActivityStatus:Status" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
-				</div>
-			</main>
-		</section>
-	</div>
-	<#INCLUDE filename="include_footer.html">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>Events</h1>
+          <div class="default-table">
+            <#TABLE name="ViewEvents" noDataAction="ShowMessageRow" noDataMessage="No Events" column="ID" column="Name" column="Description:Faculty/Other Contact" column="Location" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
+          </div>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>

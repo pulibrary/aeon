@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Special Collections Research Account - Activity Requests</title>
-<#INCLUDE filename="include_head.html">
-<#INCLUDE filename="include_sortableTables.html">
-</head>
-<body id="type-b">
-	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
-	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-	    	<div id="status"><#STATUS></div>
-	    	<h1>View Event Requests</h1>
-        <a href="<#ACTION action="10" form="92">&Value=<#PARAM name="Value">">Download Excel workbook with all Activity details</a>
-        <a href="<#ACTION action="10" form="93">&Value=<#PARAM name="Value">">Download iCalendar file</a>
-        <#INCLUDE filename="ActivityInformation.html">
 
-				<div class="default-table">
-					<#TABLE name="ViewActivityRequests" headerText="Activity Requests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
-					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" orderby="TransactionNumber">
-				</div>
-			</main>
-		</section>
-	</div>
-	<#INCLUDE filename="include_footer.html">
+<head>
+  <title>Special Collections Research Account - Activity Requests</title>
+  <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_sortableTables.html">
+</head>
+
+<body id="type-b">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>Event Requests</h1>
+          <a href="<#ACTION action=" 10 " form="92 ">&Value=<#PARAM name="Value ">">Download Excel workbook with all Activity details</a>
+          <a href="<#ACTION action=" 10 " form="93 ">&Value=<#PARAM name="Value ">">Download iCalendar file</a>
+          <#INCLUDE filename="ActivityInformation.html">
+            <div class="default-table">
+              <#TABLE name="ViewEventRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" column="ItemInfo5:URL" column="TransactionStatus:Status" orderby="TransactionNumber">
+            </div>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>
