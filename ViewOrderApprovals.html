@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - Approve Billing</title>
-<#INCLUDE filename="include_head.html">
-<#INCLUDE filename="include_sortableTables.html">
-<script type="text/javascript" src="utility.js"></script>
+  <title>Special Collections Research Account - Approve Billing</title>
+  <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_sortableTables.html">
+      <script type="text/javascript" src="utility.js"></script>
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
-	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-	    	<div id="status"><#STATUS></div>
-	    	<h1>Orders to Approve/Pay</h1>
-				<form action="aeon.dll" method="post" name="ViewOrderApprovals" class="f-wrap-request">
-					<input type="hidden" name="AeonForm" value="ViewOrderApprovals">
-
-					Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', false);">None</a>
-
-					<div class="default-table">
-						<#TABLE name="ViewOrderBilling" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
-						 column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" column="Subtotal" orderby="t.TransactionNumber DESC">
-					</div>
-
-					<div class="f-submit-wrap" align="right">
-						<input type="submit" name="SubmitButton" value="Approve Orders" class="f-submit" tabindex="0" />
-					</div>
-				</form>
-			</main>
-		</section>
-	</div>
-	<#INCLUDE filename="include_footer.html">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>Orders to Approve/Pay</h1>
+          <form action="aeon.dll" method="post" name="ViewOrderApprovals" class="f-wrap-request">
+            <input type="hidden" name="AeonForm" value="ViewOrderApprovals"> Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', false);">None</a>
+            <div class="default-table">
+              <#TABLE name="ViewOrderBilling" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" column="Subtotal" orderby="t.TransactionNumber DESC">
+            </div>
+            <div class="f-submit-wrap" align="right">
+              <input type="submit" name="SubmitButton" value="Approve Orders" class="f-submit" tabindex="0" />
+              <input type="submit" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0" />
+            </div>
+          </form>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>
