@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - Approve Billing</title>
-<#INCLUDE filename="include_head.html">
-<script type="text/javascript" src="utility.js"></script>
+  <title>Special Collections Research Account - Approve Billing</title>
+  <#INCLUDE filename="include_head.html">
+    <script type="text/javascript" src="utility.js"></script>
+    <script type="text/javascript" src="pul-custom.js"></script>
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
-	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-        <div id="status"><#STATUS></div>
-        <span class="statusError">A payment gateway has not been configured.</span>
-      </main>
-    </section>
-  </div>
-	<#INCLUDE filename="include_footer.html">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <div class="default-table">
+            <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests" column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal" orderby="TransactionNumber DESC">
+          </div>
+          <h3>Payment Method: PayPal</h3>
+          <div style="display:none" id="paymentResult"></div>
+          <div style="display:none" id="loadingPanel">
+            Your payment is being submitted. To prevent errors in the payment process, please do not hit your browser's back or refresh buttons.
+          </div>
+          <form id="paypalform" action="<#CUSTOMIZATION name=PaymentProviderURL />" method="post">
+            <!--Enter your currency code based on PayPal accepted codes. https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_currency_codes -->
+            <input type="hidden" name="currency_code" value="USD">
+            <!--The notify URL should point to your nonshib folder if using remote auth e.g. http://aeon.institution.edu/aeon/nonshib/aeon.dll?action=11&type=106 -->
+            <input type="hidden" name="notify_url" value="<#CUSTOMIZATION name=WebURL />/aeon.dll?action=11&type=106" />
+            <!--System defined values -->
+            <input type="hidden" name="business" value="<#CUSTOMIZATION name=PaymentProviderMerchantId />">
+            <input type="hidden" name="item_name_1" value="<#CUSTOMIZATION name=CreditCardTransactionsDescription />">
+            <input type="hidden" name="return" value="<#DLL absoluteUrl=true queryFields=false />?action=11&type=105" />
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="upload" value="1">
+            <input type="hidden" id="invoice" name="invoice" value="">
+            <input type="hidden" name="custom" value="<#PARAM name='TransactionNumbers'>">
+            <input type="hidden" id="totalCharges" name="amount_1" value="<#TOTALBILLINGCHARGES>">
+            <input type="hidden" name="no_shipping" value="1">
+            <input type="hidden" name="no_note" value="1">
+            <input type="hidden" name="rm" value="2">
+            <div class="f-submit-wrap" align="right">
+              <input type="submit" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0" />
+            </div>
+          </form>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>

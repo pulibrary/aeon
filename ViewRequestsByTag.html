@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - <#PARAM name='ResearcherTag'></title>
-<#INCLUDE filename="include_head.html">
-<#INCLUDE filename="include_sortableTables.html">
+  <title>Special Collections Research Account -
+    <#PARAM name='ResearcherTag'>
+  </title>
+  <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_sortableTables.html">
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-  <div id="content-wrap" class="panel-display--three_nine l-page">
-    <section class="l-main">
-      <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
           <#INCLUDE filename="include_menu.html">
-      </nav>
-      <main role="main" class="three_nine-region--second">
-        <div id="status"><#STATUS></div>
-        <h1>All Requests - <#PARAM name='ResearcherTag'></h1>
-				<div class="default-table">
-					<#TABLE name="ViewAllRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
-					 column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" researcherTag="<#PARAM name='ResearcherTag'>" orderby="TransactionNumber DESC">
-				</div>
-      </main>
-    </section>
-  </div>
-	<#INCLUDE filename="include_footer.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>All Requests - <#PARAM name='ResearcherTag'></h1>
+          <div class="default-table">
+            <#TABLE name="ViewAllRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" researcherTag="<#PARAM name='ResearcherTag'>" orderby="TransactionNumber DESC">
+          </div>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>
