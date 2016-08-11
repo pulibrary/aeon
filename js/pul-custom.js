@@ -1,6 +1,7 @@
+// Not sure if this was part of the work done for the ordering system. Isolating it. It is currently not included in any of the pages.
+
 transactionNumbers = "<#PARAM name='TransactionNumbers'>";
-sessionID = "<#PARAM name="
-SessionID ">";
+sessionID = "<#PARAM name='SessionID'>";
 
 $(document).ready(function() {
   $("#pay").click(function() {

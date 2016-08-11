@@ -1,42 +1,58 @@
 Dear <#USER field='FirstName'> <#USER field='LastName'>,
 
-Thank you for registering to use the <#LOCALINFO field='LibraryName'>.
+	Thank you for registering for a Princeton University Library Special Collections Research Account.  Research accounts replace paper registration forms and call slips for scholars wishing to consult rare books, manuscripts, and special collections material housed in the Department of Rare Books and Special Collections of the Firestone Library, Seeley G. Mudd Manuscript Library and the Marquand Library of Art and Archaeology.  If you have a research or photoduplication question, please submit them to either rbsc@princeton.edu , mudd@princeton.edu or marquand@princeton.edu based on the location of the item in question.
 
-Upon your first visit, please be prepared to present government-issued identification to verify the credentials you submitted as part of the online registration process.
+	To access your research account, you may login with the username (<#USER field='Username'>) and password you created during the registration process by visiting: 
 
-In the meantime, you may proceed to place advance requests to view materials in our reading room through our online catalog and finding aids. You may also place requests for photoduplication orders through your research account if you know already what materials you would like to have reproduced.
+	https://libweb10.princeton.edu/aeon/ 
 
-To access your research account at <#LOCALINFO field='SystemName'>, you may login with the username (<#USER field='Username'>) and password you created during the registration process by visiting: <#LOCALINFO field='SystemURL'>.
+	A summary of the information you provided during the registration process is included at the end of this message for your convenient reference. You may also refer to update these and other details from the Change User Information menu option in your research account.
 
-A summary of the information you provided during the registration process is included at the end of this message for your convenient reference. You may also refer to update these and other details from the Change User Information menu option in your research account.
+	Research Account Summary:
+	Username: <#USER field='Username'>
+	<#USER field='IDType'>: <#USER field='ID'>
+	Status: <#USER field='Status'>
+	Department: <#USER field='Department'>
+	Organization: <#USER field='Organization'>
+	Phone: <#USER field='Phone'>
+	Email Address: <#USER field='EmailAddress'>
+	Address:
+	<#USER field='Address'>
+	<#USER field='Address2'>
+	<#USER field='City'> <#USER field='State'> <#USER field='Zip'>
+	Research Topics:
+	<#USER field='ResearchTopics'>
 
-Should you have any questions or comments about this service, please feel free to contact us at:
 
-  <#LOCALINFO field='GeneralEMailAddress'>
+	Research accounts also allow researchers to submit page requests via the Main Catalog (http://catalog.princeton.edu), Finding Aids (http://findingaids.princeton.edu/), and the library's new discovery tool, SearchIt@Princeton (http://library.princeton.edu). Instructions on submitting requests to view material can be found at the following URL: 
 
-   or
+	http://blogs.princeton.edu/research-account
+	
+	Researchers may submit page requests in advance of their visit (in fact, this is encouraged).  Material, however, will be paged after your arrival at the appropriate special collections reading room. Special collections items housed in the Firestone Library are paged twice an hour, at a quarter past and a quarter of the hour. Special collections housed in the Mudd Library and Marquand Library are paged directly upon your arrival. 
 
-   <#LOCALINFO field='GeneralPhone'>
+	Readers must finalize their registration upon arrival.  Please have available your academic ID (or valid photo ID, such as a driver's license incorporating a picture or a passport). Notes must be taken in pencil, although laptops are permitted. Personal photocopiers and scanners are not allowed. Permission must be granted for the use of cameras, tape recorders, and other special equipment. Furthermore, any personal articles will be inspected as readers leave the Department's reading rooms.
 
-We look forward to serving you. 
 
-Yours sincerely,
+	The Dulles Reading Room of the Department of Rare Books and Special Collections in the Firestone Library is open Monday through Friday from 9:00 a.m. - 4:45 p.m. (Summer Hours 8:45 a.m - 4:15 p.m.), with the exception of major holidays.  For more information, please visit http://www.princeton.edu/~rbsc or contact rbsc@princeton.edu or (609) 258-3184.  
 
-<#LOCALINFO field='LibraryName'>
-<#LOCALINFO field='InstitutionName'>
 
-Research Account Summary:
-Username: <#USER field='Username'>
-<#USER field='IDType'>: <#USER field='ID'>
-Status: <#USER field='Status'>
-Department: <#USER field='Department'>
-Organization: <#USER field='Organization'>
-Phone: <#USER field='Phone'>
-E-mail Address: <#USER field='EmailAddress'>
-Address:
-<#USER field='Address'>
-<#USER field='Address2'>
-<#USER field='City'> <#USER field='State'> <#USER field='Zip'>
-Research Topics:
-<#USER field='ResearchTopics'>
+	The Seeley G. Mudd Manuscript Library Reading Room is open Monday through Friday from 9:00 am - 4:45 pm (Summer Hours 8:45 a.m. - 4:15 p.m.), with the exception of major holidays. For more information, please visit www.princeton.edu/mudd or contact mudd@princeton.edu or (609) 258-6345.
+
+
+	The Rare Book Reading Room of the Marquand Library of Art and Archaeology is open Monday through Friday from 9:00 a.m. - 5:00 p.m., with the exception of major holidays.  For more information, please visit www.marquand.princeton.edu or contact marquand@princeton.edu or (609) 258-3783.
+
+	Directional and parking information can be found at the following URL:
+
+
+	http://blogs.princeton.edu/research-account/faq/planning-a-visit-faq/
+
+
+We look forward to meeting you.
+
+
+Sincerely,
+
+
+Princeton University Library
+
 

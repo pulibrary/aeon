@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - Transaction <#PARAM name="TransactionNumber"></title>
-<#INCLUDE filename="include_head.html">
+  <title>Special Collections Research Account - Transaction
+    <#PARAM name="TransactionNumber">
+  </title>
+  <#INCLUDE filename="include_head.html">
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
-	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-	    	<div id="status"><#STATUS></div>
-	    	<h1>Item Details</h1>
-				<#MENU name="transaction" separator="|" item="Edit:Edit Request" item="Cancel:Cancel Request"  item="RemoveHold:Remove from Hold" item="Resubmit:Resubmit Request" item="RequestCopy:Request Copy" item="Clone:Clone Request" item="CloneToCopy:Clone to Copy" item="ViewFile:View Item" item="DeleteFile:Delete Item" item="Submit:Submit Request" item="ApproveOrderEstimate:Approve Estimate" item="ApproveOrderBilling:Approve Billing" item="ExportRIS:Export Citation">
-
-				<#INCLUDE type="DetailedDocTypeInformation">
-				<#INCLUDE filename="include_ResearcherTagsUpdate.html">
-
-				<div class="default-table">
-					<#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes"
-					 column="NoteDate:Note Date" column="Note" column="Username">
-				</div>
-
-				<div class="default-table">
-					<#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking"
-					 column="ChangedDate:Changed Date" column="ChangedTo:Status" column="ChangedBy:Changed By">
-				</div>
-			</main>
-		</section>
-	</div>
-	<#INCLUDE filename="include_footer.html">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>Item Details</h1>
+          <#MENU name="transaction" separator="|" item="Edit:Edit Request" item="Cancel:Cancel Request" item="RemoveHold:Remove from Hold" item="Resubmit:Resubmit Request" item="RequestCopy:Request Copy" item="Clone:Clone Request" item="CloneToCopy:Clone to Copy" item="ViewFile:View Item" item="DeleteFile:Delete Item" item="Submit:Submit Request" item="ApproveOrderEstimate:Approve Estimate" item="ApproveOrderBilling:Approve Billing" item="ExportRIS:Export Citation">
+            <#INCLUDE type="DetailedDocTypeInformation">
+              <!-- <#INCLUDE filename="include_ResearcherTagsUpdate.html"> -->
+                <div class="default-table">
+                  <#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes" column="NoteDate:Note Date" column="Note" column="Username">
+                </div>
+                <div class="default-table">
+                  <#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking" column="ChangedDate:Changed Date" column="ChangedTo:Status" column="ChangedBy:Changed By">
+                </div>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Special Collections Research Account - New Department File Loan Request</title>
+  <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_head_request.html">
+</head>
+
+<body id="type-b">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>Request a Princeton University Department File Loan</h1>
+          <form action="aeon.dll" method="post" id="RequestForm" class="f-wrap-request">
+            <input type="hidden" name="AeonForm" value="GenericRequestDepartment">
+            <input type="hidden" name="Username" value="<#PARAM name="Username">">
+            <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+            <input type="hidden" name="TransactionLink" value="<#PARAM name="TransactionLink">">
+            <input type="hidden" name="ReferenceNumber" value="<#PARAM name="ReferenceNumber">">
+            <input type="hidden" name="ItemNumber" value="<#PARAM name="ItemNumber">">
+            <input type="hidden" name="RequestType" value="Loan">
+            <input type="hidden" name="DocumentType" value="Department File">
+            <input type="hidden" name="FormValidationOverride" value="AllRequests">
+            <input type="hidden" name="Citation" value="<#PARAM name="Citation">">
+            <input type="hidden" name="Site" value="MUDD">
+            <input type="hidden" name="ItemTitle" value="Princeton University Department File Loan">
+            <fieldset>
+              <#STATUS>
+                <h2>Describe the item you want</h2>
+                <div class="req"><span class="bold">*</span> Indicates required field</div>
+                <p> Please use the following databases to locate box numbers:</p>
+                <ul>
+                  <li><a href="http://rbsc.princeton.edu/databases/faculty-and-professional-staff-index" target="_blank"> (AC107) Faculty and Professional Staff Index, 1764-2006</a></li>
+                  <li><a href="http://rbsc.princeton.edu/databases/undergraduate-alumni-index-part-2" target="_blank"> (AC198) Undergraduate Alumni Index, 1921-2015 </a></li>
+                  <li><a href="http://rbsc.princeton.edu/databases/princeton-university-graduate-alumni-index" target="_blank"> (AC105) Graduate Alumni Index, 1839-1998</a></li>
+                </ul>
+                <label for="Site">
+                  <span class="field">
+                  <span class="<#ERROR name="ERRORSite">"><span class="bold">Library: Mudd Library</span></span>
+                  </span>
+                </label>
+                <label for="ItemTitle">
+                  <span class="field">
+                  <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title: Princeton University Department File Loan</span></span>
+                </label>
+                <label for="ItemAuthor">
+                  <span class="field">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORItemAuthor">"><span class="bold">File Name and Date</span></span>
+                  <span class="note">Last Name, First Name; (Graduation year, if applicable)</span>
+                  </span>
+                  <input id="ItemAuthor" name="ItemAuthor" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemAuthor">">
+                </label>
+                <label for="CallNumber">
+                  <span class="field">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORCallNumber">"><span class="bold">File Type</span></span>
+                  </span>
+                  <select id="CallNumber" name="CallNumber" size="1" class="f-name" tabindex="0">
+                    <br />
+                    <option selected>
+                      <#PARAM name="CallNumber">
+                    </option>
+                    <option value="AC107">AC107 Faculty File</option>
+                    <option value="AC198">AC198 Undergraduate Alumni File</option>
+                    <option value="AC105">AC105 Graduate Alumni File</option>
+                    <option value="AC136">AC136 Discipline File</option>
+                    <option value="AC240">AC240 Donor File</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label for="ItemVolume">
+                  <span class="field">
+                        <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume/Box Number(s)</span></span>
+                  <span class="note">See links above. If not applicable use n/a.</span>
+                  </span>
+                  <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">">
+                </label>
+                <label for="ItemInfo3">
+                  <span class="field">
+                        <span class="<#ERROR name="ERRORItemInfo3">"><span class="bold">Undergraduate College (2008-) / Graduate Department (if known)</span></span>
+                  </span>
+                  <input id="ItemInfo3" name="ItemInfo3" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemInfo3">">
+                </label>
+                <label for="Notes">
+                  <span class="field">
+                        <span class="<#ERROR name="ERRORNotes">"><span class="bold">Notes</span></span>
+                  <span class="note">Enter any additional information to help us identify the specific item(s) you are requesting.</span>
+                  </span>
+                  <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0">
+                    <#PARAM name="Notes">
+                  </textarea>
+                </label>
+                <p>When I receive the materials above, I recognize that they are the property of Princeton University, in the custody of the University Archives. I accept full responsibility for the materials while they are in my possession and agree to return them within 30 days unless otherwise specified. The materials will be hand-carried to the Archives, NOT returned by mail. I will not permit any other office to use the materials unless such use is approved by the Office of Origin and the Archives. I agree that I will take all reasonable measures to protect the materials from, but not limited to, the following: theft; loss; disarrangement; burns; spillage; marking; tearing; scoring; folding; stapling; pinning; taping; gluing; labeling; vermin infestation; prolonged exposure to ultraviolet radiation (sunlight and/or fluorescent light).</p>
+                <p>Normally files will be delivered within two full business days; however, if this is an emergency, submit your request then call X6345.</p>
+                <#INCLUDE filename="include_ResearcherTags.html">
+                <#INCLUDE filename="include_scheduleddate_review_toggle.html">
+                <#INCLUDE filename="include_request_buttons.html">
+            </fieldset>
+          </form>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
+</body>
+
+</html>
