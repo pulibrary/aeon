@@ -4,6 +4,18 @@
 <head>
   <title>Special Collections Research Account - Change User Information</title>
   <#INCLUDE filename="include_head.html">
+  <script type="text/javascript">
+    function addOption(theSel) {
+      oc = theSel.options.length;
+      if (theSel.selectedIndex == oc - 1) {
+        newOpt = window.prompt("Please specify your other information.", "");
+        if (newOpt + "" > "") {
+          theSel.options[oc] = new Option(theSel.options[oc - 1].text);
+          theSel.options[oc - 1] = new Option(newOpt, newOpt, true, true);
+        }
+      }
+    }
+  </script>
 </head>
 
 <body id="type-b">
@@ -176,76 +188,77 @@
                 <span class="req">*</span>
                 <span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
                 </span>
-                <select id="ResearchTopics" name="ResearchTopics" size="1" class="f-name" tabindex="0">
+                <select id="ResearchTopics" name="ResearchTopics" size="1" class="f-name" tabindex="0" onChange="addOption(this)">
                   <option selected>
-                    <#PARAM name="ResearchTopics" </option>
-                      <option>Africa</option>
-                      <option>American history</option>
-                      <option>American history/20th century</option>
-                      <option>American history/Civil War and Reconstruction</option>
-                      <option>American history/Colonial</option>
-                      <option>American history/Early national</option>
-                      <option>American history/Gilded Age, Populism, Progressivism</option>
-                      <option>American history/Revolution</option>
-                      <option>American literature</option>
-                      <option>American politics and government</option>
-                      <option>Ancient history</option>
-                      <option>Archaeology</option>
-                      <option>Architecture</option>
-                      <option>Art history</option>
-                      <option>Book history and arts</option>
-                      <option>British literature</option>
-                      <option>Cartography</option>
-                      <option>Children's books</option>
-                      <option>Chinese studies</option>
-                      <option>Classical literature</option>
-                      <option>Cold War</option>
-                      <option>Demography</option>
-                      <option>Diplomacy</option>
-                      <option>East Asian studies</option>
-                      <option>Economic history</option>
-                      <option>Education</option>
-                      <option>Environmental studies</option>
-                      <option>Ethiopic manuscripts</option>
-                      <option>European history</option>
-                      <option>European literature</option>
-                      <option>Games and recreation</option>
-                      <option>Garden and landscape studies</option>
-                      <option>Genealogy</option>
-                      <option>History of science</option>
-                      <option>International organizations</option>
-                      <option>Islamic manuscripts (Arabic, Persian, Ottoman, Turkish)</option>
-                      <option>Japanese studies</option>
-                      <option>Journalism</option>
-                      <option>Korean studies</option>
-                      <option>Latin American history</option>
-                      <option>Latin American literature and culture</option>
-                      <option>Legal history</option>
-                      <option>Literature</option>
-                      <option>Medieval and Renaissance manuscripts</option>
-                      <option>Middle East (modern history and politics)</option>
-                      <option>Modern Greek studies</option>
-                      <option>Music</option>
-                      <option>Native American history</option>
-                      <option>New Jerseyana</option>
-                      <option>Numismatics</option>
-                      <option>Papyri</option>
-                      <option>Philosophy</option>
-                      <option>Photography</option>
-                      <option>Political cartoons</option>
-                      <option>Princeton University</option>
-                      <option>Public policy/20th century</option>
-                      <option>Publishing history</option>
-                      <option>Religion</option>
-                      <option>Russia</option>
-                      <option>Theater/Dance/Film</option>
-                      <option>Travel</option>
-                      <option>Urban Studies</option>
-                      <option>Western Americana</option>
-                      <option>Women's studies</option>
-                      <option>World War I</option>
-                      <option>World War II</option>
-                      <option>Other</option>
+                    <#PARAM name="ResearchTopics">
+                  </option>
+                  <option>Africa</option>
+                  <option>American history</option>
+                  <option>American history/20th century</option>
+                  <option>American history/Civil War and Reconstruction</option>
+                  <option>American history/Colonial</option>
+                  <option>American history/Early national</option>
+                  <option>American history/Gilded Age, Populism, Progressivism</option>
+                  <option>American history/Revolution</option>
+                  <option>American literature</option>
+                  <option>American politics and government</option>
+                  <option>Ancient history</option>
+                  <option>Archaeology</option>
+                  <option>Architecture</option>
+                  <option>Art history</option>
+                  <option>Book history and arts</option>
+                  <option>British literature</option>
+                  <option>Cartography</option>
+                  <option>Children's books</option>
+                  <option>Chinese studies</option>
+                  <option>Classical literature</option>
+                  <option>Cold War</option>
+                  <option>Demography</option>
+                  <option>Diplomacy</option>
+                  <option>East Asian studies</option>
+                  <option>Economic history</option>
+                  <option>Education</option>
+                  <option>Environmental studies</option>
+                  <option>Ethiopic manuscripts</option>
+                  <option>European history</option>
+                  <option>European literature</option>
+                  <option>Games and recreation</option>
+                  <option>Garden and landscape studies</option>
+                  <option>Genealogy</option>
+                  <option>History of science</option>
+                  <option>International organizations</option>
+                  <option>Islamic manuscripts (Arabic, Persian, Ottoman, Turkish)</option>
+                  <option>Japanese studies</option>
+                  <option>Journalism</option>
+                  <option>Korean studies</option>
+                  <option>Latin American history</option>
+                  <option>Latin American literature and culture</option>
+                  <option>Legal history</option>
+                  <option>Literature</option>
+                  <option>Medieval and Renaissance manuscripts</option>
+                  <option>Middle East (modern history and politics)</option>
+                  <option>Modern Greek studies</option>
+                  <option>Music</option>
+                  <option>Native American history</option>
+                  <option>New Jerseyana</option>
+                  <option>Numismatics</option>
+                  <option>Papyri</option>
+                  <option>Philosophy</option>
+                  <option>Photography</option>
+                  <option>Political cartoons</option>
+                  <option>Princeton University</option>
+                  <option>Public policy/20th century</option>
+                  <option>Publishing history</option>
+                  <option>Religion</option>
+                  <option>Russia</option>
+                  <option>Theater/Dance/Film</option>
+                  <option>Travel</option>
+                  <option>Urban Studies</option>
+                  <option>Western Americana</option>
+                  <option>Women's studies</option>
+                  <option>World War I</option>
+                  <option>World War II</option>
+                  <option>Other</option>
                 </select>
               </label>
               <label for="UserInfo4">
@@ -253,7 +266,7 @@
                 <span class="req">*</span>
                 <span class="<#ERROR name="ERRORUserInfo4">"><span class="bold">Research Purpose</span></span>
                 </span>
-                <select id="UserInfo4" name="UserInfo4" size="1" class="f-name" tabindex="0">
+                <select id="UserInfo4" name="UserInfo4" size="1" class="f-name" tabindex="0" onChange="addOption(this)">
                   <option selected>
                     <#PARAM name="UserInfo4">
                   </option>>
@@ -265,7 +278,7 @@
                   <option>M.A. Thesis</option>
                   <option>Ph.D. Dissertation</option>
                   <option>Undergraduate Thesis</option>
-                  <option>Other:</option>
+                  <option>Other</option>
                 </select>
               </label>
               <label for="UserInfo5">
@@ -280,7 +293,7 @@
             </fieldset>
           </form>
           <h2>Change Password</h2>
-          <p>If you would like t change your password, please proceed to <a href="<#ACTION action=" 10 " form="83 ">">this form</a></p>
+          <p>If you would like t change your password, please proceed to <a href="<#ACTION action="10" form="83">">this form</a></p>
         </main>
       </section>
     </div>

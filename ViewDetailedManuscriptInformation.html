@@ -1,75 +1,122 @@
 <div class="default-table simple-table">
-    <!--					<#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true">					 -->
-    <table class="default-table">
-        <thead>
-            <caption>Manuscript Information</caption>
-        </thead>
-        <tbody>
-            <tr class="row-even">
-                <th scope="row">
-                    Title
-                </th>
-                <td>
-                    <#TRANSACTION field="ItemTitle">
-                </td>
-            </tr>
-            <tr class="row-odd">
-                <th scope="row">
-                    Author/Creator
-                </th>
-                <td>
-                    <#TRANSACTION field="ItemAuthor">
-                </td>
-            </tr>
-            <tr class="row-even">
-                <th scope="row">
-                    Date(s)
-                </th>
-                <td>
-                    <#TRANSACTION field="ItemDate">
-                </td>
-            </tr>
-            <tr class="row-odd">
-                <th scope="row">
-                    Collection Name/Location
-                </th>
-                <td>
-                    <#TRANSACTION field="Location">
-                </td>
-            </tr>
-            <tr class="row-even">
-                <th scope="row">
-                    Call Number
-                </th>
-                <td>
-                    <#TRANSACTION field="CallNumber">
-                </td>
-            </tr>
-            <tr class="row-odd">
-                <th scope="row">
-                    Box(es)/Folder(s)
-                </th>
-                <td>
-                    <#TRANSACTION field="ItemVolume">
-                </td>
-            </tr>
-            <tr class="row-even">
-                <th scope="row">Requested For (if applicable)</th>
-                <td><#TRANSACTION field="ResearcherUsername"></td>
-            </tr>
-            <tr class="row-odd">
-                <th scope="row">Activity Number (if applicable)</th>
-                <td><#TRANSACTION field="ActivityID"></td>
-            </tr>
-            <tr class="row-even">
-                <th scope="row">Scheduled Date (if applicable)</th>
-                <td><#TRANSACTION field="ScheduledDate"></td>
-            </tr>
-            <tr class="row-odd">
-                <th scope="row">Special Request (if applicable)</th>
-                <td><#TRANSACTION field="SpecialRequest"></td>
-            </tr>
-        </tbody>
-    </table>
-
+  <!--                  <#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true">                    -->
+  <table class="default-table">
+    <thead class="row-header">
+      <caption>Transaction Information</caption>
+    </thead>
+    <tbody>
+      <tr class="row-even">
+        <th scope="row">
+          Library
+        </th>
+        <td>
+          <#TRANSACTION field="Site">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">
+          Call Number
+        </th>
+        <td>
+          <#TRANSACTION field="CallNumber">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">
+          Title
+        </th>
+        <td>
+          <#TRANSACTION field="ItemTitle">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">
+          Author
+        </th>
+        <td>
+          <#TRANSACTION field="ItemAuthor">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">
+          Date
+        </th>
+        <td>
+          <#TRANSACTION field="ItemDate">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">
+          Publisher/Place of Publication
+        </th>
+        <td>
+          <#TRANSACTION field="ItemCitation">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">
+          Edition
+        </th>
+        <td>
+          <#TRANSACTION field="ItemEdition">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">
+          Location
+        </th>
+        <td>
+          <#TRANSACTION field="Location">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">
+          Shelf Location
+        </th>
+        <td>
+          <#TRANSACTION field="SubLocation">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">
+          Finding Aid URL
+        </th>
+        <td>
+          <#TRANSACTION field="ItemInfo5">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">
+          Box/Volume Number(s)
+        </th>
+        <td>
+          <#TRANSACTION field="ItemVolume">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">Folder(s)</th>
+        <td>
+          <#TRANSACTION field="ItemInfo3">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">Restrictions</th>
+        <td>
+          <#TRANSACTION field="ItemInfo1">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">Record ID</th>
+        <td>
+          <#TRANSACTION field="ReferenceNumber">
+        </td>
+      </tr>
+      <tr class="row-even">
+        <th scope="row">Barcode</th>
+        <td>
+          <#TRANSACTION field="ItemNumber">
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

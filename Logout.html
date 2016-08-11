@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Special Collections Research Account Logout</title>
-<#INCLUDE filename="include_head.html">
-</head>
-<body id="type-a">
-	<script language="javascript" type="text/javascript">
-		//This command will wait 5 seconds (5000 milliseconds) and then load the page defined in the WebLogoutURL or RemoteAuthWebLogoutURL customization key, as appropriate.
-		window.setTimeout('window.location.replace("<#PARAM name='LogoutUrl'>");', 5000);
-	</script>
 
-	<#INCLUDE filename="include_header.html">
-  <div id="content-wrap" class="panel-display--six_six l-page">
-    <section class="l-main">
-      <main role="main" class="six_six-region--first">
-        <div id="status"><#STATUS></div>
-  			<p>If you are not redirected within five seconds, <a href="<#PARAM name='LogoutUrl'>">click here.</a></p>
-      </main>
-    </section>
-  </div>
-	<#INCLUDE filename="include_footer.html">
+<head>
+  <title>Special Collections Research Account Logout</title>
+  <#INCLUDE filename="include_head.html">
+</head>
+
+<body id="type-a">
+  <script language="javascript" type="text/javascript">
+  //This command will wait 5 seconds (5000 milliseconds) and then load the page defined in the WebLogoutURL or RemoteAuthWebLogoutURL customization key, as appropriate.
+  window.setTimeout('window.location.replace("<#PARAM name='LogoutUrl'>");', 5000);
+  </script>
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--six_six l-page">
+      <section class="l-main">
+        <main role="main" class="six_six-region--first">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <p>If you are not redirected within five seconds, <a href="<#PARAM name='LogoutUrl'>">click here.</a></p>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>

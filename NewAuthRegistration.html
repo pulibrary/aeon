@@ -1,256 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Special Collections Research Account - New User Registration</title>
-<#INCLUDE filename="include_head.html">
+  <title>Special Collections Research Account - New User Registration</title>
+  <#INCLUDE filename="include_head.html">
+    <script>
+    function addOption(theSel) {
+      oc = theSel.options.length;
+      if (theSel.selectedIndex == oc - 1) {
+        newOpt = window.prompt("Please specify your other information.", "");
+        if (newOpt + "" > "") {
+          theSel.options[oc] = new Option(theSel.options[oc - 1].text);
+          theSel.options[oc - 1] = new Option(newOpt, newOpt, true, true);
+        }
+      }
+    }
+    </script>
 </head>
+
 <body id="type-b">
-	<#INCLUDE filename="include_header.html">
-	<div id="content-wrap" class="panel-display--three_nine l-page">
-	  <section class="l-main">
-	    <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-	        <#INCLUDE filename="include_menu.html">
-	    </nav>
-	    <main role="main" class="three_nine-region--second">
-	    	<div id="status"><#STATUS></div>
-	    	<h1>First Time User Registration for Special Collections Research Account</h1>
-				<form action="aeon.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
-					<input type="hidden" name="AeonForm" value="NewAuthRegistration">
-					<input type="hidden" name="NotificationMethod" value="Email">
-                    <#FORMSTATE>
-					<fieldset>
-						<p>
-						To request an item, you must first identify yourself to the library's Special Collections Research Account system. To do this you fill out a registration form using your Web browser.
-						Registration has two purposes:
-						</p>
-
-						<ul>
-							<li>Entering your personal information into the Special Collections Research Account system means you will not have to supply the information again when making future requests.</li>
-							<li>Having your email and regular mail addresses on file with Special Collections enables us to notify you promptly and deliver materials accurately.</li>
-						</ul>
-
-						<h2 data-toggle="collapse" data-target="#copyright" title="Click to expand section">Important Copyright Information</h2>
-						<div id="copyright" class="collapse">
-							<p>WARNING CONCERNING COPYRIGHT RESTRICTIONS</p>
-							<p>The copyright law of the United States (Title 17, United States Code) governs the making of photocopies or other reproductions of copyrighted materials.</p>
-							<p>Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy or other reproduction. One of these specified conditions is that the
-							   photocopy or reproduction is not to be &quot;used for any purpose other than private study, scholarship, or research&quot;. If a user makes a request for, or later uses,
-							   a photocopy or reproduction for purposes in excess of &quot;fair use&quot;, that user may be liable for copyright infringement.</p>
-							<p>This institution reserves the right to refuse to accept a copying order if, in its judgment, fulfillment of the order would involve violation of copyright law.</p>
-						</div>
-
-						<h2 data-toggle="collapse" data-target="#faq" title="Click to expand section">Special Collections Research Account FAQ (Frequently Asked Questions)</h2>
-						<div id="faq" class="collapse">
-							<p>Before registering, you may wish to read the Special Collections Research Account <a href="FAQ.html" target="_self">FAQ</a>. The FAQ may answer other questions you have about the Special Collections Research Account Special Collections Management System.</p>
-
-							<p>By submitting this form you acknowledge and agree to all of the terms and conditions above. Please pay particular attention to the copyright statement and the Special Collections Research Account FAQ. After reading
-							   this information, you can fill out your personal details and click the &quot;Submit Information&quot; button to continue.</p>
-						</div>
-
-						<div class="req"><span class="bold">*</span> Indicates required field</div>
-						<label for="FirstName">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
-							</span>
-							<input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">">
-						</label>
-
-						<label for="LastName">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
-							</span>
-							<input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">">
-						</label>
-
-						<label for="DateOfBirth">
-							<span class="field">
-								<span class="<#ERROR name="ERRORDateOfBirth">"><span class="bold">Date of Birth</span></span>
-							</span>
-							<input id="DateOfBirth" name="DateOfBirth" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="DateOfBirth">">
-						</label>
-
-						<label for="IDType">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORIDType">"><span class="bold">ID Type</span></span>
-							</span>
-							<select id="IDTypeOption" name="IDType" size="1" class="f-name" tabindex="0">
-								<#OPTION name="IDTypes" selectedValue="<#PARAM name=IDType>" defaultName="Choose an ID Type" defaultValue="">
-							</select>
-						</label>
-
-                        <label for="ID">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORID">"><span class="bold">ID Number</span></span>
-							</span>
-							<input id="ID" name="ID" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ID">">
-						</label>
-
-						<label for="EMailAddress">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERROREMailAddress">"><span class="bold">Email Address</span></span>
-							</span>
-							<input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">">
-						</label>
-
-						<label for="Phone">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORPhone">"><span class="bold">Daytime Phone</span></span>
-							</span>
-							<input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">">
-						</label>
-
-						<label for="Address">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORAddress">"><span class="bold">Primary Address Line 1</span></span>
-							</span>
-							<input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">">
-						</label>
-
-						<label for="Address2">
-							<span class="field">
-								<span class="<#ERROR name="ERRORAddress2">"><span class="bold">Primary Address Line 2</span></span>
-							</span>
-							<input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">">
-						</label>
-
-						<label for="City">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORCity">"><span class="bold">Primary Address City</span></span>
-							</span>
-							<input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">">
-						</label>
-
-						<label for="State">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORState">"><span class="bold">Primary Address State</span></span>
-							</span>
-							<select id="State" name="State" size="1" class="f-name" tabindex="0">
-								<#OPTION name="States" selectedValue="<#PARAM name=State>" defaultName="Choose a State" defaultValue="">
-							</select>
-						</label>
-
-						<label for="Zip">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORZip">"><span class="bold">Primary Address Zip</span></span>
-							</span>
-							<input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">">
-						</label>
-
-                        <label for="Country">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORCountry">"><span class="bold">Primary Address Country</span></span>
-							</span>
-                            <select id="Country" name="Country" size="1" class="f-name" tabindex="0">
-							    <#OPTION name="Countries" selectedValue="<#PARAM name=Country>"  defaultName="Choose a Country" defaultValue="">
-						    </select>
-						</label>
-
-						<label for="SAddress">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSAddress">"><span class="bold">Alternate Address Line 1</span></span>
-							</span>
-							<input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">">
-						</label>
-
-						<label for="SAddress2">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSAddress2">"><span class="bold">Alternate Address Line 2</span></span>
-							</span>
-							<input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">">
-						</label>
-
-						<label for="SCity">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSCity">"><span class="bold">Alternate Address City</span></span>
-							</span>
-							<input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">">
-						</label>
-
-						<label for="SState">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSState">"><span class="bold">Alternate Address State</span></span>
-							</span>
-							<select id="SState" name="SState" size="1" class="f-name" tabindex="0">
-								<#OPTION name="States" selectedValue="<#PARAM name=SState>" defaultName="Choose a State" defaultValue="">
-							</select>
-						</label>
-
-						<label for="SZip">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSZip">"><span class="bold">Alternate Address Zip</span></span>
-							</span>
-							<input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">">
-						</label>
-
-                        <label for="SCountry">
-							<span class="field">
-								<span class="<#ERROR name="ERRORSCountry">"><span class="bold">Alternate Address Country</span></span>
-							</span>
-                            <select id="SCountry" name="SCountry" size="1" class="f-name" tabindex="0">
-							    <#OPTION name="Countries" selectedValue="<#PARAM name=SCountry>" defaultName="Choose a Country" defaultValue="">
-						    </select>
-						</label>
-
-						<label for="Status">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORStatus">"><span class="bold">Status</span></span>
-							</span>
-							<select id="StatusOption" name="Status" size="1" class="f-name" tabindex="0">
-								<#OPTION name="Statuses" selectedValue="<#PARAM name=Status>" defaultName="Choose a Status" defaultValue="">
-							</select>
-						</label>
-
-						<label for="Department">
-							<span class="field">
-								<span class="req">*</span>
-								<span class="<#ERROR name="ERRORDepartment">"><span class="bold">Department</span></span>
-							</span>
-							<select id="Department" name="Department" size="1" class="f-name" tabindex="0">
-								<#OPTION name="Departments" selectedValue="<#PARAM name=Department>" defaultName="Choose a Department" defaultValue="">
-							</select>
-						</label>
-
-						<label for="Organization">
-							<span class="field">
-								<span class="<#ERROR name="ERROROrganization">"><span class="bold">Organization</span></span>
-							</span>
-							<input id="Organization" name="Organization" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Organization">">
-						</label>
-
-						<label for="ResearchTopics">
-							<span class="field">
-								<span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
-							</span>
-							<textarea id="ResearchTopics" name="ResearchTopics" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ResearchTopics"></textarea>
-						</label>
-
-						<label for="ResearchTopicsSharing">
-							<span class="field">
-								<span class="<#ERROR name="ERRORResearchTopicsSharing">"><span class="bold">Share Research Topics?</span></span>
-							</span>
-							<input id="ResearchTopicsSharing" name="ResearchTopicsSharing" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="ResearchTopicsSharing" default="true">>
-						</label>
-
-						<div class="f-submit-wrap" align="right">
-							<input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
-						</div>
-					</fieldset>
-				</form>
-			</main>
-		</section>
-	</div>
-	<#INCLUDE filename="include_footer.html">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second">
+          <div id="status">
+            <#STATUS>
+          </div>
+          <h1>User Registration</h1>
+          <form action="aeon.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
+            <input type="hidden" name="AeonForm" value="NewAuthRegistration">
+            <input type="hidden" name="NotificationMethod" value="Email">
+            <input type="hidden" name="NVTGC" value="ILL">
+            <input type="hidden" name="DeliveryGroup" value="Hold for Pickup">
+            <input type="hidden" name="LoanDeliveryGroup" value="Hold for Pickup">
+            <input type="hidden" name="WebDeliveryGroup" value="Yes">
+            <input type="hidden" name="NotificationMethod" value="E-Mail">
+            <input type="hidden" name="Organization" value="Princeton University">
+            <input type="hidden" name="Country" value="USA">
+            <#FORMSTATE>
+              <fieldset>
+                <p>
+                  Princeton University Library welcomes all researchers to its special collections reading rooms in the Harvey S. Firestone Library, Seeley G. Mudd Manuscript Library, and Marquand Library of Art and Archaeology. To submit a request to view materials, readers must first register for a Special Collections Research Account.
+                </p>
+                <p>
+                  <strong>Patrons without a Princeton University ID must obtain a Rare Books and Special Collections Access Card upon arrival.  Access cards are issued at the Access Office, located in the Firestone Library.</strong>
+                </p>
+                <h2>Rules for use of the collections</h2>
+                <p>
+                  Reading room privileges are granted subject to specific rules that are intended to protect collections in the Princeton University Library Special Collections and insure their preservation for future researchers.</p>
+                <ul>
+                  <li>Completion of registration with valid photo identification will be required upon arrival. <strong>Patrons without a Princeton University ID must obtain a Rare Books and Special Collections Access Card upon arrival.  Access cards are issued at the Access Office, located in the Firestone Library.</strong>
+                  </li>
+                  <li>Patrons must wear their Princeton University ID or Access Card to enter the Special Collections reading rooms.</li>
+                  <li>Only pencils, laptop computers, and approved digital cameras are permitted in the reading room. The libraries will supply paper for reading room use. An Authorization Form dated and signed by a staff member must be submitted in order to use personal copies of books, personal papers, or digital cameras. Cell phone use is prohibited.</li>
+                  <li>Personal belongings, including coats, rain gear, purses, briefcases, computer cases, camera bags, bound notepads, parcels, envelopes and closed folders are not permitted in the reading rooms. </li>
+                  <li>Personal articles will be inspected as researchers leave the room.</li>
+                  <li>All requests for materials must be placed 30 minutes prior to closing.</li>
+                  <li>Eating, drinking, chewing gum, and hard candies are prohibited in all areas.</li>
+                </ul>
+                <h2>Handling the materials</h2>
+                <ul>
+                  <li>Occasionally written permission is required to use Special Collections holdings, and some are closed for a period by the donor. Consult with staff concerning access to these collections.</li>
+                  <li>Access may be denied when papers are awaiting processing or when their physical condition warrants. Consult with staff concerning these restrictions.</li>
+                  <li>Materials must not be marked on, defaced, leaned on, altered, folded anew, or traced on. They are not to be placed in the lap or propped against edge of the table. Book supports may be used where appropriate. Use of gloves may be required to handle photographic and other fragile material. Photographs may not be removed from mylar coverings without permission.</li>
+                  <li>The existing order and arrangement of material must be maintained. If an item seems to be out of order, please inform a staff member.</li>
+                </ul>
+                <h2>Photoduplication</h2>
+                <ul>
+                  <li>Permission must be granted for the use of tape recorders, digital cameras, and other special equipment. Use of tripods, copy stands, flash, personal copiers, and scanners is not allowed.</li>
+                  <li>All approved digital camera self-photography requests are for personal reference purposes only and cannot be reproduced; transferred to any other individual, institution, or collection; exhibited; performed; broadcast; published; posted on the internet; or used commercially.</li>
+                  <li>Photoduplication is the responsibility of Princeton University staff. Most forms of duplication can be made available, with appropriate fees applied, but may be limited with particular materials and collections for a variety of reasons, including but not restricted to physical condition, format, legal and donor-imposed restrictions, etc. </li>
+                  <li>All photoduplication requests are contingent upon curatorial approval. The library reserves the right to refuse a request, or to limit the amount or format of duplication. Entire books or manuscript boxes (or substantial portions of either) will not be duplicated (unless otherwise authorized by curator). </li>
+                </ul>
+                <h2>Publication</h2>
+                <h3>Notice Warning Concerning Copyright Restrictions</h3>
+                <p>The copyright law of the United States (Title 17, United States Code) governs the making of photocopies or other reproductions of copyrighted material. Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy or other reproduction. One of these specified conditions is that the photocopy or reproduction is not to be “used for any purpose other than private study, scholarship, or research.” If a user makes a request for, or later uses, a photocopy or reproduction for purposes in excess of “fair use,” that user may be liable for copyright infringement. This institution reserves the right to refuse to accept a copying order if, in its judgment, fulfillment of the order would involve violation of copyright law.</p>
+                <h3>Rights and Permissions</h3>
+                <p>Researchers must make a written request for permission to quote or publish manuscripts in the Department of Rare Books and Special Collections, or for one-time permission to reproduce images of any items found in the Department. In most cases, Princeton University owns only the physical item, not the literary property or copyright, and therefore assumes no responsibility for violations of such rights or for any other legal issues resulting from the use or publication of the items. It is the responsibility of the researcher to secure permission from the appropriate copyright holder to quote, publish, or reproduce items from Princeton collections, and to acknowledge in print that the materials are used or published “with permission of the Princeton University Library.” Fees for the reproduction or broadcast of any materials from the collections may apply depending on medium, distribution size, intended audience, and holding location. The library requests gratis copies of any publication that includes images from its collections.</p>
+                <h2>Data Collection and Use</h2>
+                <p>The Princeton University Library may retain, indefinitely, all data and information regarding patron use of special collections items, including registration, circulation, duplication and publishing requests, as well as related correspondence. This information may be shared with third parties to address issues of legality, security, the administration of library collections, and other endeavors in support of the mission of Princeton University.</p>
+                <p><strong>I AGREE TO INDEMNIFY, HOLD HARMLESS, AND RELEASE PRINCETON UNIVERSTY, ITS TRUSTEES, OFFICERS, ADMINISTRATORS, FACULTY, STAFF, AND OTHER EMPLOYEES OR AGENTS AGAINST ANY AND ALL CLAIMS, DEMANDS, LIABILITES, DAMAGES, COSTS, AND EXPENSES INCLUDING ATTORNEY’S FEES, WITHOUT LIMITATION, INCURRED THROUGH THE USE OF THE PRINCETON UNIVERSITY LIBRARY AND ITS MATERIAL.</strong></p>
+                <hr />
+                <p><strong>Continuing with your registration below indicates your acknowledgement of having read the above rules and regulations and confirms your agreement to observe them.</strong></p>
+                <h3>First-time User Registration Form</h3>
+                <div class="req"><span class="bold">*</span> Indicates required field</div>
+                <label for="FirstName">
+                  <span class="field">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
+                  </span>
+                  <input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">">
+                </label>
+                <label for="UserInfo1">
+                  <span class="field">
+                  <span class="<#ERROR name="ERRORUserInfo1">"><span class="bold">Middle Name</span></span>
+                  </span>
+                  <input id="UserInfo1" name="UserInfo1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="UserInfo1">">
+                </label>
+                <label for="LastName">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
+                  </span>
+                  <input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">">
+                </label>
+                <label for="EMailAddress">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERROREMailAddress">"><span class="bold">Email Address</span></span>
+                  </span>
+                  <input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">">
+                </label>
+                <label for="Phone">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORPhone">"><span class="bold">Campus Telephone</span></span>
+                  </span>
+                  <input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">">
+                </label>
+                <label for="Fax">
+                  <span class="field">
+                  <span class="<#ERROR name="ERRORFax">"><span class="bold">Alternate Telephone</span></span>
+                  </span>
+                  <input id="Fax" name="Fax" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Fax">">
+                </label>
+                <label for="Address">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORAddress">"><span class="bold">Campus Building</span></span>
+                  </span>
+                  <input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">">
+                </label>
+                <label for="Address2">
+                  <span class="field">
+                <span class="<#ERROR name="ERRORAddress2">"><span class="bold">Street</span></span>
+                  </span>
+                  <input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">">
+                </label>
+                <label for="UserInfo2">
+                  <span class="field">
+                <span class="<#ERROR name="ERRORUserInfo2">"><span class="bold">Line Three</span></span>
+                  </span>
+                  <input id="UserInfo2" name="UserInfo2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="UserInfo2">">
+                </label>
+                <label for="City">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORCity">"><span class="bold">City</span></span>
+                  </span>
+                  <input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="Princeton">
+                </label>
+                <label for="State">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORState">"><span class="bold">State</span></span>
+                  </span>
+                  <input id="State" name="State" type="text" size="40" class="f-name" tabindex="0" value="New Jersey">
+                </label>
+                <label for="Zip">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORZip">"><span class="bold">Zip or Postal Code</span></span>
+                  </span>
+                  <input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="08544">
+                </label>
+                <label for="Status">
+                  <span class="field">
+                <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORStatus">"><span class="bold">Status</span></span>
+                  </span>
+                  <select id="StatusOption" name="Status" size="1" class="f-name" tabindex="0">
+                    <option selected>
+                      <#PARAM name="Status">
+                    </option>
+                    <option value="Faculty">Faculty</option>
+                    <option value="Staff">Staff</option>
+                    <option value="GraduateStudent">GraduateStudent</option>
+                    <option value="UndergraduateStudent">UndergraduateStudent</option>
+                  </select>
+                </label>
+                <label for="Department">
+                  <span class="field">
+                  <span class="<#ERROR name="ERRORDepartment">"><span class="bold">Department</span></span>
+                  </span>
+                  <input id="Department" name="Department" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Department">">
+                </label>
+                <label for="ResearchTopics">
+                  <span class="field">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
+                  </span>
+                  <select id="ResearchTopcis" name="ResearchTopcis" size="1" class="f-name" onChange="addOption(this)">
+                    <option selected>
+                      <#PARAM name="ResearchTopics">
+                    </option>
+                    <option>Africa</option>
+                    <option>American history</option>
+                    <option>American history/20th century</option>
+                    <option>American history/Civil War and Reconstruction</option>
+                    <option>American history/Colonial</option>
+                    <option>American history/Early national</option>
+                    <option>American history/Gilded Age, Populism, Progressivism</option>
+                    <option>American history/Revolution</option>
+                    <option>American literature</option>
+                    <option>American politics and government</option>
+                    <option>Ancient history</option>
+                    <option>Archaeology</option>
+                    <option>Architecture</option>
+                    <option>Art history</option>
+                    <option>Book history and arts</option>
+                    <option>British literature</option>
+                    <option>Cartography</option>
+                    <option>Children's books</option>
+                    <option>Chinese studies</option>
+                    <option>Classical literature</option>
+                    <option>Cold War</option>
+                    <option>Demography</option>
+                    <option>Diplomacy</option>
+                    <option>East Asian studies</option>
+                    <option>Economic history</option>
+                    <option>Education</option>
+                    <option>Environmental studies</option>
+                    <option>Ethiopic manuscripts</option>
+                    <option>European history</option>
+                    <option>European literature</option>
+                    <option>Games and recreation</option>
+                    <option>Garden and landscape studies</option>
+                    <option>Genealogy</option>
+                    <option>History of science</option>
+                    <option>International organizations</option>
+                    <option>Islamic manuscripts (Arabic, Persian, Ottoman, Turkish)</option>
+                    <option>Japanese studies</option>
+                    <option>Journalism</option>
+                    <option>Korean studies</option>
+                    <option>Latin American history</option>
+                    <option>Latin American literature and culture</option>
+                    <option>Legal history</option>
+                    <option>Literature</option>
+                    <option>Medieval and Renaissance manuscripts</option>
+                    <option>Middle East (modern history and politics)</option>
+                    <option>Modern Greek studies</option>
+                    <option>Music</option>
+                    <option>Native American history</option>
+                    <option>New Jerseyana</option>
+                    <option>Numismatics</option>
+                    <option>Papyri</option>
+                    <option>Philosophy</option>
+                    <option>Photography</option>
+                    <option>Political cartoons</option>
+                    <option>Princeton University</option>
+                    <option>Public policy/20th century</option>
+                    <option>Publishing history</option>
+                    <option>Religion</option>
+                    <option>Russia</option>
+                    <option>Theater/Dance/Film</option>
+                    <option>Travel</option>
+                    <option>Urban Studies</option>
+                    <option>Western Americana</option>
+                    <option>Women's studies</option>
+                    <option>World War I</option>
+                    <option>World War II</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label for="UserInfo4">
+                  <span class="field">
+                  <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORUserInfo4">"><span class="bold">Research Purpose</span></span>
+                  </span>
+                  <select id="UserInfo4" name="UserInfo4" size="1" class="f-name" onChange="addOption(this)">
+                    <option selected>
+                      <#PARAM name="UserInfo4">
+                    </option>>
+                    <option>Article</option>
+                    <option>Book</option>
+                    <option>Course Work</option>
+                    <option>Genealogy</option>
+                    <option>Local History</option>
+                    <option>M.A. Thesis</option>
+                    <option>Ph.D. Dissertation</option>
+                    <option>Undergraduate Thesis</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label for="UserInfo5">
+                  <span class="field">
+                    <span class="<#ERROR name="ERRORUserInfo5">"><b>Check the box to receive invitations and announcements for Friends of the Princeton University Library Events</b></span>
+                  </span>
+                  <input id="UserInfo5" name="UserInfo5" class="f-checkbox" tabindex="120" value="Yes" type="checkbox" <#CHECKED name="UserInfo5" default="true">>
+                </label>
+                <div class="f-submit-wrap" align="right">
+                  <input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
+                </div>
+              </fieldset>
+          </form>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
 </body>
+
 </html>

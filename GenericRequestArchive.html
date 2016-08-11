@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Special Collections Research Account - New Request</title>
+  <title>Special Collections Research Account - New Archive Request</title>
   <#INCLUDE filename="include_head.html">
     <#INCLUDE filename="include_head_request.html">
 </head>
@@ -18,21 +18,21 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>New Monograph Request</h1>
-          <form action="aeon.dll" method="post" name="DefaultRequest" id="RequestForm" class="f-wrap-request">
-            <input type="hidden" name="AeonForm" value="GenericRequestMonograph">
+          <h1>New Archive Request</h1>
+          <form action="aeon.dll" method="post" id="RequestForm" class="f-wrap-request">
+            <input type="hidden" name="AeonForm" value="GenericRequestArchive">
             <input type="hidden" name="Username" value="<#PARAM name="Username">">
             <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
             <input type="hidden" name="TransactionLink" value="<#PARAM name="TransactionLink">">
             <input type="hidden" name="ReferenceNumber" value="<#PARAM name="ReferenceNumber">">
             <input type="hidden" name="ItemNumber" value="<#PARAM name="ItemNumber">">
             <input type="hidden" name="RequestType" value="Loan">
-            <input type="hidden" name="DocumentType" value="Monograph">
+            <input type="hidden" name="DocumentType" value="Manuscript">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
+            <input type="hidden" name="Citation" value="<#PARAM name="Citation">">
             <fieldset>
-              <#STATUS>
                 <h2>Describe the item you want</h2>
-                <div class="req-indicator"><span class="bold">*</span> Indicates required field</div>
+                <div class="req"><span class="bold">*</span> Indicates required field</div>
                 <label for="ItemTitle">
                   <span class="field">
                         <span class="req">*</span>
@@ -49,47 +49,23 @@
                   </span>
                   <input id="ItemAuthor" name="ItemAuthor" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemAuthor">">
                 </label>
-                <label for="ItemDate">
-                  <span class="field">
-                        <span class="<#ERROR name="ERRORItemDate">"><span class="bold">Publisher/Place/Date</span></span>
-                  </span>
-                  <input id="ItemDate" name="ItemDate" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemDate">">
-                </label>
-                <label for="ItemEdition">
-                  <span class="field">
-                        <span class="<#ERROR name="ERRORItemEdition">"><span class="bold">Edition</span></span>
-                  </span>
-                  <input id="ItemEdition" name="ItemEdition" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemEdition">">
-                </label>
-                <label for="ItemVolume">
-                  <span class="field">
-                        <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume/Copy</span></span>
-                  </span>
-                  <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">">
-                </label>
-                <label for="ItemCitation">
-                    <span class="field">
-                        <span class="<#ERROR name="ERRORItemCitation">"><span class="bold">Size/Physical Description</span></span>
-                    </span>
-                    <input id="ItemCitation" name="ItemCitation" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemCitation">">
-                </label>
-                <label for="ItemISxN">
-                    <span class="field">
-                        <span class="<#ERROR name="ERRORItemISxN">"><span class="bold">ISxN</span></span>
-                    </span>
-                    <input id="ItemISxN" name="ItemISxN" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="ItemISxN">">
-                </label>
                 <label for="CallNumber">
                   <span class="field">
                         <span class="<#ERROR name="ERRORCallNumber">"><span class="bold">Call Number</span></span>
                   </span>
-                  <input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">">
+                  <input id="CallNumber" name="CallNumber" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="CallNumber">">
                 </label>
                 <label for="Location">
                   <span class="field">
-                        <span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Location</span></span>
+                        <span class="<#ERROR name="ERRORLocation">"><span class="bold">Collection Name/Accession Number</span></span>
                   </span>
-                  <input id="Location" name="Location" type="text" size="20" class="f-name" tabindex="0" value="<#PARAM name="Location">">
+                  <input id="Location" name="Location" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Location">">
+                </label>
+                <label for="ItemVolume">
+                  <span class="field">
+                        <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Box(es)/Folder(s)</span></span>
+                  </span>
+                  <input id="ItemVolume" name="ItemVolume" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemVolume">">
                 </label>
                 <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
                      <label for="RequestLink">
@@ -115,7 +91,7 @@
                         <span class="<#ERROR name="ERRORUserReview">"><span class="bold">Keep In Review</span></span>
                   <span class="note">Keep request in a review state before submitting to processing.</span>
                   </span>
-                  <input type="checkbox" name="UserReview" id="UserReview" class="f-checkbox" value="Yes" <#CHECKED name="UserReview" default="false">>
+                  <input id="UserReview" name="UserReview" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="UserReview" default="false">>
                 </label>
                 <#INCLUDE filename="include_ResearcherTags.html">
                 <#INCLUDE filename="include_scheduleddate_review_toggle.html">
