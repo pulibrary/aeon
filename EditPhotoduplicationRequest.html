@@ -18,7 +18,6 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>Edit Photoduplication Request</h1>
           <form action="aeon.dll" method="post" class="f-wrap-request">
             <input type="hidden" name="AeonForm" value="EditPhotoduplicationRequest">
             <input type="hidden" name="Username" value="<#PARAM name="Username">">
@@ -29,17 +28,14 @@
             <input type="hidden" name="RequestType" value="Copy">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
             <fieldset>
-              <#STATUS>
-                <h2>Describe the item you want</h2>
-                <div class="req"><span class="bold">*</span> Indicates required field</div>
+              <h1>Edit Photoduplication Request</h1>
+                <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
                 <label for="ItemTitle">
                   <span class="field">
                         <span class="req">*</span>
                   <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span>
                   </span>
-                  <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">>
-                    <#PARAM name="ItemTitle">
-                  </textarea>
+                  <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">><#PARAM name="ItemTitle"></textarea>
                 </label>
                 <label for="ItemAuthor">
                   <span class="field">
@@ -123,18 +119,14 @@
                         <span class="<#ERROR name="ERRORNotes">"><span class="bold">My Notes</span></span>
                     <span class="note">Enter any notes about this request for your personal reference.</span>
                     </span>
-                    <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">>
-                      <#PARAM name="Notes">
-                    </textarea>
+                    <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">><#PARAM name="Notes"></textarea>
                   </label>
                   <label for="SpecialRequest">
                     <span class="field">
                         <span class="<#ERROR name="ERRORSpecialRequest">"><span class="bold">Special Requests/Questions?</span></span>
                     <span class="note">Please enter any special requests or questions for library staff.</span>
                     </span>
-                    <textarea id="SpecialRequest" name="SpecialRequest" rows="2" cols="40" class="f-name" tabindex="0" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">>
-                      <#PARAM name="SpecialRequest">
-                    </textarea>
+                    <textarea id="SpecialRequest" name="SpecialRequest" rows="2" cols="40" class="f-name" tabindex="0" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">><#PARAM name="SpecialRequest"></textarea>
                   </label>
                   <#INCLUDE filename="include_ResearcherTags.html">
                   <#INCLUDE filename="include_request_buttons.html">

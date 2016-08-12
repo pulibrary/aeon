@@ -18,7 +18,6 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>Edit a Princeton University Thesis Request</h1>
           <form action="aeon.dll" method="post" id="RequestForm" class="f-wrap-request">
             <input type="hidden" name="AeonForm" value="EditGenericRequestThesis">
             <input type="hidden" name="Username" value="<#PARAM name="Username">">
@@ -33,19 +32,16 @@
             <input type="hidden" name="CallNumber" value="AC102">
             <input type="hidden" name="Site" value="MUDD">
             <fieldset>
-              <#STATUS>
-                <h2>Describe the item you want</h2>
+              <h1>Edit a Princeton University Thesis Request</h1>
+              <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
                 <h3>To locate Princeton Thesis, please search the <a href="http://dataspace.princeton.edu/jspui/handle/88435/dsp019c67wm88m" target="_blank"><u> Senior Theses Catalog</u></a>.</h3>
-                <div class="req"><span class="bold">*</span> Indicates required field</div>
                 <label for="ItemTitle">
                   <span class="field">
                 <span class="req">*</span>
                   <span class="<#ERROR name="ERRORItemTitle">"><span class="bold">Title</span></span>
                   <span class="note">Please do not abbreviate unless your citation is abbreviated.</span>
                   </span>
-                  <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0">
-                    <#PARAM name="ItemTitle">
-                  </textarea>
+                  <textarea id="ItemTitle" name="ItemTitle" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="ItemTitle"></textarea>
                 </label>
                 <label for="ItemAuthor">
                   <span class="field">
@@ -83,9 +79,7 @@
                 <span class="<#ERROR name="ERRORNotes">"><span class="bold">Notes</span></span>
                   <span class="note">Enter any additional information to help us identify the specific item(s) you are requesting.</span>
                   </span>
-                  <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0">
-                    <#PARAM name="Notes">
-                  </textarea>
+                  <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="Notes"></textarea>
                 </label>
                 <label for="UserReview">
                   <span class="field">
