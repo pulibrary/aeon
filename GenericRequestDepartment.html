@@ -18,7 +18,6 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>Request a Princeton University Department File Loan</h1>
           <form action="aeon.dll" method="post" id="RequestForm" class="f-wrap-request">
             <input type="hidden" name="AeonForm" value="GenericRequestDepartment">
             <input type="hidden" name="Username" value="<#PARAM name="Username">">
@@ -33,9 +32,8 @@
             <input type="hidden" name="Site" value="MUDD">
             <input type="hidden" name="ItemTitle" value="Princeton University Department File Loan">
             <fieldset>
-              <#STATUS>
-                <h2>Describe the item you want</h2>
-                <div class="req"><span class="bold">*</span> Indicates required field</div>
+              <h1>Request a Princeton University Department File Loan</h1>
+                <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
                 <p> Please use the following databases to locate box numbers:</p>
                 <ul>
                   <li><a href="http://rbsc.princeton.edu/databases/faculty-and-professional-staff-index" target="_blank"> (AC107) Faculty and Professional Staff Index, 1764-2006</a></li>
@@ -95,9 +93,7 @@
                         <span class="<#ERROR name="ERRORNotes">"><span class="bold">Notes</span></span>
                   <span class="note">Enter any additional information to help us identify the specific item(s) you are requesting.</span>
                   </span>
-                  <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0">
-                    <#PARAM name="Notes">
-                  </textarea>
+                  <textarea id="Notes" name="Notes" rows="2" cols="40" class="f-name" tabindex="0"><#PARAM name="Notes"></textarea>
                 </label>
                 <p>When I receive the materials above, I recognize that they are the property of Princeton University, in the custody of the University Archives. I accept full responsibility for the materials while they are in my possession and agree to return them within 30 days unless otherwise specified. The materials will be hand-carried to the Archives, NOT returned by mail. I will not permit any other office to use the materials unless such use is approved by the Office of Origin and the Archives. I agree that I will take all reasonable measures to protect the materials from, but not limited to, the following: theft; loss; disarrangement; burns; spillage; marking; tearing; scoring; folding; stapling; pinning; taping; gluing; labeling; vermin infestation; prolonged exposure to ultraviolet radiation (sunlight and/or fluorescent light).</p>
                 <p>Normally files will be delivered within two full business days; however, if this is an emergency, submit your request then call X6345.</p>

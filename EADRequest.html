@@ -36,7 +36,6 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>Finding Aid Requests</h1>
           <!--
       Commented out original form declaration. New method requires javascript, but can handle large EADs
       <form action="aeon.dll" method="post" name="EADRequest" class="f-wrap-request">
@@ -47,10 +46,8 @@
             <input type="hidden" ID="SessionID" name="FormDataField" value="<#PARAM name="SessionID">">
             <input type="hidden" ID="DocumentType" name="FormDataField" value="Manuscript">
             <fieldset>
-              <div id="requestStatus">
-                <#STATUS>
-              </div>
-              <div class="req"><span class="bold">*</span> Indicates required field</div>
+              <h1>Finding Aid Requests</h1>
+              <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
               <#PARAM name="EADRequests">
                 <h2>Common Request Information</h2> Note: The notes will be used for all of the submitted requests.
                 <label for="Notes">
@@ -58,9 +55,7 @@
                     <span class="<#ERROR name="ERRORNotes">"><span class="bold">Notes</span></span>
                   <span class="note">Please include any additional information that might help us locate the specific items requested, as well as other pertinent information.</span>
                   </span>
-                  <textarea id="Notes" name="FormDataField" rows="2" cols="40" class="f-name">
-                    <#PARAM name="Notes">
-                  </textarea>
+                  <textarea id="Notes" name="FormDataField" rows="2" cols="40" class="f-name"><#PARAM name="Notes"></textarea>
                 </label>
                 <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled " disabled="RequestForDisabled ">">
                  <label for="RequestLink">
