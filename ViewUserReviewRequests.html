@@ -29,8 +29,8 @@
           <h1>Requests in Review</h1>
           <form action="aeon.dll" method="post" id="ViewUserReviewRequests" name="ViewUserReviewRequests" class="f-wrap-request">
             <input type="hidden" name="AeonForm" value="ViewUserReviewRequests"> Select: <a href="#" onclick="ToggleCheckBoxes('ViewUserReviewRequests', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewUserReviewRequests', false);">None</a>
-            <div class="default-table">
-              <#TABLE name="ViewUserReviewRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" column="ItemInfo5:URL" orderby="TransactionNumber DESC">
+            <div class="default-table table-responsive">
+              <#TABLE name="ViewUserReviewRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" orderby="TransactionNumber DESC">
             </div>
             <div class="f-submit-wrap" align="left">
               <label for="ScheduledDate">

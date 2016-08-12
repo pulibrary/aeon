@@ -21,9 +21,9 @@
           </div>
           <h1>Outstanding Requests</h1>
           <#TAGCLOUD>
-            <div class="default-table" id="table-main-outstanding-requests">
-              <#TABLE name="ViewOutstandingRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" column="ItemInfo5:URL" orderby="TransactionNumber DESC">
-            </div>
+          <div class="default-table table-responsive" id="table-main-outstanding-requests">
+            <#TABLE name="ViewOutstandingRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" orderby="TransactionNumber DESC">
+          </div>
         </main>
       </section>
     </div>

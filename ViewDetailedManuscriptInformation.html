@@ -82,7 +82,7 @@
           Finding Aid URL
         </th>
         <td>
-          <#TRANSACTION field="ItemInfo5">
+          <a href="<#TRANSACTION field="ItemInfo5">" target="_blank"><#TRANSACTION field="ItemInfo5"></a>
         </td>
       </tr>
       <tr class="row-even">
@@ -115,6 +115,12 @@
         <th scope="row">Barcode</th>
         <td>
           <#TRANSACTION field="ItemNumber">
+        </td>
+      </tr>
+      <tr class="row-odd">
+        <th scope="row">Scheduled Date</th>
+        <td>
+          <#TRANSACTION field="ScheduledDate">
         </td>
       </tr>
     </tbody>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Special Collections Research Account - Events</title>
+  <title>Special Collections Research Account - Activities</title>
   <#INCLUDE filename="include_head.html">
     <#INCLUDE filename="include_sortableTables.html">
 </head>
@@ -18,9 +18,9 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>Events</h1>
-          <div class="default-table">
-            <#TABLE name="ViewEvents" noDataAction="ShowMessageRow" noDataMessage="No Events" column="ID" column="Name" column="Description:Faculty/Other Contact" column="Location" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
+          <h1>Activities for Class Visits and Events</h1>
+          <div class="default-table table-responsive-activities">
+            <#TABLE name="ViewEvents" noDataAction="ShowMessageRow" noDataMessage="No Activities" column="ID" column="Name" column="Description:Faculty/Other Contact" column="Location" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
           </div>
         </main>
       </section>
