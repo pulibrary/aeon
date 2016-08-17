@@ -477,6 +477,10 @@ a.toplink {padding-left:10px; font-size:x-small}
 .collapse-control-collapse:before {content:url(images/collapse.png); margin-right: 5px;}
 .collapse {display:none}
 
+/* Request Copy */
+form.f-wrap-request label input:disabled, form.f-wrap-request label textarea:disabled, form.f-wrap-request label select:disabled, .appear-disabled  {color: #555 ; background-color: #E9E9E9;}
+
+
 /*
 LEGAL
 =====

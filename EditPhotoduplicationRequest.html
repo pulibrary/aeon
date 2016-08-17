@@ -18,7 +18,7 @@
           <div id="status">
             <#STATUS>
           </div>
-          <form action="aeon.dll" method="post" class="f-wrap-request">
+          <form action="aeon.dll" method="post" class="f-wrap-request" onsubmit="$('input:disabled, textarea:disabled, select:disabled').addClass('appear-disabled').removeAttr('disabled')">
             <input type="hidden" name="AeonForm" value="EditPhotoduplicationRequest">
             <input type="hidden" name="Username" value="<#PARAM name="Username">">
             <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
