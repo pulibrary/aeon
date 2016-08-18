@@ -30,7 +30,7 @@
     $(document).ready(function () {
         scheduledDateLabel = $('label[for="ScheduledDate"]');
         userReviewLabel = $('label[for="UserReview"]');
-		
+
         if ((scheduledDateLabel != null) && (userReviewLabel != null) && ($('#VisitScheduled') != null) && ($('#VisitReview') != null) && ($('#UserReview') != null)) {
 
 			if (scheduledDateLabel.children(":disabled").length + userReviewLabel.children(":disabled").length == 0) {
@@ -43,7 +43,7 @@
 				$('#VisitReview').click(function () {
 					showReview();
 				});
-				
+
 				if ($('#UserReview').prop("checked")) {
 					showReview();
 				} else {
