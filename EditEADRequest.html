@@ -26,16 +26,10 @@
             <input type="hidden" name="RequestType" value="Loan">
             <input type="hidden" name="DocumentType" value="Manuscript">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
+            <input type="hidden" name="Site" value="<#PARAM name="Site">">
             <fieldset>
               <h1>Edit Finding Aid Request - TN <#PARAM name="TransactionNumber"></h1>
               <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
-              <label for="Site">
-                <span class="field">
-                <span class="req">*</span>
-                <span class="<#ERROR name="ERRORSite">"><span class="bold">Library</span></span>
-                </span>
-                <input id="Site" name="Site" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Site">">
-              </label>
               <label for="CallNumber">
                 <span class="field">
                 <span class="req">*</span>
