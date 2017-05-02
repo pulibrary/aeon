@@ -27,6 +27,7 @@
             <input type="hidden" name="DocumentType" value="Manuscript">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
             <input type="hidden" name="Site" value="<#PARAM name="Site">">
+            <input type="hidden" name="ItemInfo5" value="<#PARAM name="ItemInfo5">">
             <fieldset>
               <h1>Edit Finding Aid Request - TN <#PARAM name="TransactionNumber"></h1>
               <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
@@ -75,12 +76,6 @@
                 </span>
                 <input id="SubLocation" name="SubLocation" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SubLocation">">
               </label>
-              <label for="ItemInfo5">
-                <span class="field">
-                <span class="<#ERROR name="ItemInfo5">"><span class="bold">Finding Aid URL</span></span>
-                </span>
-                <input id="ItemInfo5" name="ItemInfo5" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemInfo5">">
-              </label>
               <label for="ItemVolume">
                 <span class="field">
                         <span class="<#ERROR name="ERRORItemVolume">"><span class="bold">Volume/Box Number(s)</span></span>
@@ -104,6 +99,12 @@
                 <span class="<#ERROR name="ItemNumber">"><span class="bold">Barcode</span></span>
                 </span>
                 <input id="ItemNumber" name="ItemNumber" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemNumber">">
+              </label>
+              <label for="ItemInfo5">
+                <span class="field">
+                <span class="<#ERROR name="ItemInfo5">"><span class="bold">Item ID</span></span>
+                </span>
+                <input id="ItemInfo5" name="ItemInfo5" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemInfo5">">
               </label>
               <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled" disabled="RequestForDisabled">">
                      <label for="RequestLink">
