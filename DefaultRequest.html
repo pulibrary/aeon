@@ -28,6 +28,7 @@
             <input type="hidden" name="RequestType" value="Loan">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
             <input type="hidden" name="Site" value="<#PARAM name="Site">">
+            <input type="hidden" name="ItemInfo5" value="<#PARAM name="ItemInfo5">">
             <fieldset>
               <h1>New Request</h1>
                 <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
@@ -108,6 +109,18 @@
                         <span class="<#ERROR name="ERRORItemInfo1">"><span class="bold">Restrictions</span></span>
                   </span>
                   <input id="ItemInfo1" name="ItemInfo1" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemInfo1">">
+                </label>
+                <label for="ReferenceNumber">
+                  <span class="field">
+                        <span class="<#ERROR name="ERRORReferenceNumber">"><span class="bold">Record ID</span></span>
+                  </span>
+                  <input id="ReferenceNumber" name="ReferenceNumber" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ReferenceNumber">">
+                </label>
+                <label for="ItemNumber">
+                  <span class="field">
+                        <span class="<#ERROR name="ERRORItemNumber">"><span class="bold">Barcode</span></span>
+                  </span>
+                  <input id="ItemNumber" name="ItemNumber" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="ItemNumber">">
                 </label>
                 <span class="<#PARAM name="RequestLinksVisible" enabled="RequestForEnabled " disabled="RequestForDisabled ">">
                      <label for="RequestLink">

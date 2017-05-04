@@ -389,3 +389,10 @@ label {
 .logon {
 	margin-bottom: 1em;
 }
+#ScheduledDate {
+	display:inline-block;
+}
+
+.ui-datepicker-trigger {
+	vertical-align: middle;
+}
