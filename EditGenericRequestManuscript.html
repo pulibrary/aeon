@@ -29,11 +29,25 @@
             <input type="hidden" name="DocumentType" value="Manuscript">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
             <input type="hidden" name="Citation" value="<#PARAM name="Citation">">
-            <input type="hidden" name="Site" value="<#PARAM name="Site">">
             <input type="hidden" name="ItemInfo5" value="<#PARAM name="ItemInfo5">">
             <fieldset>
               <h1>Edit Manuscript Request</h1>
                 <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
+                <label for="Site">
+                  <span class="field">
+                    <span class="req">*</span>
+                  <span class="<#ERROR name="ERRORSite">"><span class="bold">Library</span></span>
+                  </span>
+                  <select id="Site" name="Site" size="1" class="f-name" tabindex="0">
+                    <option selected>
+                      <#PARAM name="Site">
+                    </option>
+                    <option value="MUDD">RBSC Mudd Library</option>
+                    <option value="MARQ">Marquand Library</option>
+                    <option value="RBSC">RBSC Firestone</option>
+                    <option value="EAL">East Asian Library</option>
+                  </select>
+                </label>
                 <label for="CallNumber">
                   <span class="field">
                   <span class="req">*</span>
