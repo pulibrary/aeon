@@ -19,14 +19,13 @@
           <div id="status">
             <#STATUS>
           </div>
-          <h1>Orders to Approve/Pay</h1>
+          <h1>Orders to Pay</h1>
           <form action="aeon.dll" method="post" name="ViewOrderApprovals" class="f-wrap-request">
             <input type="hidden" name="AeonForm" value="ViewOrderApprovals"> Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', false);">None</a>
             <div class="default-table">
               <#TABLE name="ViewOrderBilling" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" column="Subtotal" orderby="t.TransactionNumber DESC">
             </div>
             <div class="f-submit-wrap" align="right">
-              <input type="submit" name="SubmitButton" value="Approve Orders" class="f-submit" tabindex="0" />
               <input type="submit" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0" />
             </div>
           </form>
