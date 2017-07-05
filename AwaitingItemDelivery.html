@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Paid Orders</title>
+  <#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+  <#INCLUDE filename="include_header.html">
+    <div id="content-wrap" class="panel-display--three_nine l-page">
+      <section class="l-main">
+        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
+          <#INCLUDE filename="include_menu.html">
+        </nav>
+        <main role="main" class="three_nine-region--second export">
+          <h1>All Paid Orders</h1>
+					<p>Current paid orders will display in the table below. Your order will not be delivered until it has been paid.</p>
+          <div class="default-table table-responsive">
+            <#TABLE name="ViewRequests" QueueID="19" headerText="Requests Awaiting Delivery" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Title" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal" column="BillingPayments.PaymentDate:Payment&nbsp;Date" orderby="t.TransactionNumber DESC">
+          </div>
+        </main>
+      </section>
+    </div>
+    <#INCLUDE filename="include_footer.html">
+	</body>
+</html>
