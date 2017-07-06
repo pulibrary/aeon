@@ -207,7 +207,7 @@ span.note-warning {
 	color: black;
 }
 
-button, input[type=submit],.search-bar .f-submit {
+button, input[type=submit], input[type=button], .search-bar .f-submit {
 	background: #2d78b9;
 }
 
@@ -395,4 +395,32 @@ label {
 
 .ui-datepicker-trigger {
 	vertical-align: middle;
+}
+
+#status span {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: flash;
+  background: #e87722;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+  display: block;
+  margin: 0 0 1em;
+  padding: 1em;
+}
+
+#status .statusNormal {
+	display: none;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
