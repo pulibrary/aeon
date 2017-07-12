@@ -272,7 +272,7 @@ p.record--title {
 	font-weight: bold;
 }
 .statusNormal {
-	display: none;
+	font-weight: bold;
 }
 
 .nav {
