@@ -14,9 +14,6 @@
         <#INCLUDE filename="include_menu.html">
       </nav>
       <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
           <script language="javascript">
               transactionNumbers = "<#PARAM name='TransactionNumbers'>";
 
@@ -64,8 +61,10 @@
           </script>
 
           <div id="content">
-              <div class="default-table">
-                  <#TABLE name="CreditCardPayment" headerText="Payment Details" noDataAction="ShowMessageRow" noDataMessage="No Requests"
+              <div class="default-table small-caption">
+                <h1>Payment Details</h1>
+                <p>Please verify your imaging order below then click Pay Now to proceed with your credit card payment (Visa or MasterCard only)</p>
+                  <#TABLE name="CreditCardPayment" headerText="" noDataAction="ShowMessageRow" noDataMessage="No Requests"
                    column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="Subtotal" orderby="TransactionNumber DESC">
               </div>
               <form id="paymentform" action="<#PAYMENTPROVIDERURL>" method="post">
@@ -100,7 +99,7 @@
 
                   <div class="f-submit-wrap" align="right">
                       <input type="button" id="pay" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0" />
-                      <input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" />
+                      <!-- <input type="button" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="f-submit" tabindex="0" /> -->
                   </div>
               </form>
             </div>
