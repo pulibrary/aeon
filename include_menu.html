@@ -4,20 +4,24 @@
 <div id="utility">
   <ul id="nav" class="nav ac-container">
     <li class="active">
-      <input type="checkbox" id="ac-1" name="accordion-1" checked>
-      <label for="ac-1" class="label">Search Requests</label>
-    </li>
-    <form action="Aeon.dll" name="Search" method="post" class="menu--search-form">
-      <input type="hidden" name="AeonForm" value="Search" />
-      <input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">" />
-      <label for="SearchCriteria">
-        <input id="SearchCriteria" name="SearchCriteria" type="text" class="f-criteria" />
-      </label>
-      <input type="submit" name="SubmitButton" value="Search" class="f-submit" />
-    </form>
-    </li>
-    <li class="active"><a href="<#ACTION action="10" form="10">" class="nav-group">Requests</a>
+      <span class="label">Search Requests</span>
       <ul>
+        <li>
+          <form action="Aeon.dll" name="Search" method="post" class="menu--search-form">
+            <input type="hidden" name="AeonForm" value="Search" />
+            <input id="SessionID" name="SessionID" type="hidden" value="<#PARAM name="SessionID">" />
+            <label for="SearchCriteria">
+              <input id="SearchCriteria" name="SearchCriteria" type="text" class="f-criteria" />
+            </label>
+            <input type="submit" name="SubmitButton" value="Search" class="f-submit" />
+          </form>
+        </li>
+      </ul>
+    </li>
+    <li class="active">
+      <label for="ac-2">Requests</label>
+      <input type="checkbox" id="ac-2" name="accordion-1" checked>
+      <ul class="ac-group collapsable">
         <li class="first"><a href="<#ACTION action="10" form="20" value="NewRequests">">Create a New Request</a></li>
         <li><a href="<#ACTION action="10" form="76">">Review Requests to Submit</a></li>
         <li><a href="<#ACTION action="10" form="62">">Outstanding Requests</a></li>
@@ -27,20 +31,21 @@
       </ul>
     </li>
     <li class="active">
-      <a href="<#ACTION action="10" form="78">" class="nav-group">Orders</a>
-		<ul>
-			<li><a href="<#ACTION action="10" form="78">">Make Payment</a></li>
-      <li><a href="<#ACTION action="10" form="2" value="AwaitingItemDelivery">">Paid Orders</a></li>
-			<li><a href="<#ACTION action="10" form="64">">Delivered Items</a></li>
-		</ul>
-	</li>
+      <label for="ac-3">Orders</label>
+      <input type="checkbox" id="ac-3" name="accordion-1" checked>
+  		<ul class="ac-group collapsable">
+  			<li><a href="<#ACTION action="10" form="78">">Make Payment</a></li>
+        <li><a href="<#ACTION action="10" form="2" value="AwaitingItemDelivery">">Paid Orders</a></li>
+  			<li><a href="<#ACTION action="10" form="64">">Delivered Items</a></li>
+  		</ul>
+  	</li>
     <li class="active"><a href="<#ACTION action="10" form="90">" class="nav-group">Activities</a></li>
     <li class="active"><a href="<#ACTION action="10" form="81">" class="nav-group">Preferences</a></li>
     <li class="active"><a href="<#ACTION action="10" form="1">" class="nav-group">Contact Us</a></li>
     <li class="active">
-      <input type="checkbox" id="ac-5" name="accordion-5">
       <label for="ac-5" class="label">Hours</label>
-      <ul class="ac-group li-3">
+      <input type="checkbox" id="ac-5" name="accordion-5">
+      <ul class="ac-group collapsable">
         <li class="active">
           <a href="https://library.princeton.edu/hours/rbsc" target=blank>
             <font color="000000">RBSC Firestone</a>
