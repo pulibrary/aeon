@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Special Collections Research Account - New Archive Request</title>
+  <title>Special Collections Research Account - New Request</title>
   <#INCLUDE filename="include_head.html">
     <#INCLUDE filename="include_head_request.html">
 </head>
@@ -29,9 +29,9 @@
             <input type="hidden" name="DocumentType" value="Manuscript">
             <input type="hidden" name="FormValidationOverride" value="AllRequests">
             <input type="hidden" name="Citation" value="<#PARAM name="Citation">">
+            <input type="hidden" name="Site" value="<#PARAM name="Site">">
             <input type="hidden" name="ItemInfo5" value="<#PARAM name="ItemInfo5">">
-            <fieldset>
-              <h1>New Archive Request</h1>
+              <h1>New Request</h1>
                 <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
                 <label for="ItemTitle">
                   <span class="field">
@@ -92,7 +92,6 @@
                 <#INCLUDE filename="include_ResearcherTags.html">
                 <#INCLUDE filename="include_scheduleddate_review_toggle.html">
                 <#INCLUDE filename="include_request_buttons.html">
-            </fieldset>
           </form>
         </main>
       </section>

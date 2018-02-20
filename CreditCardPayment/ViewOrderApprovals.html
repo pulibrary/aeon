@@ -17,7 +17,7 @@
 
 					Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', false);">None</a>
 
-					<div class="default-table">
+					<div class="default-table simple-table">
 						<#TABLE name="ViewOrderBilling" headerText="Orders to Approve" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true"
 						 column="TransactionNumber:TN" column="DocumentType:Type" column="Title" column="ItemAuthor:Author" column="Format" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="TransactionStatus:Status" column="PhotoduplicationStatus:Order Status" column="Subtotal" orderby="t.TransactionNumber DESC">
 					</div>

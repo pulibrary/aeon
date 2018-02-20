@@ -46,7 +46,6 @@
             <input type="hidden" ID="SessionID" name="FormDataField" value="<#PARAM name="SessionID">">
             <input type="hidden" ID="DocumentType" name="FormDataField" value="Manuscript">
             <input type="hidden" name="ItemInfo5" value="<#PARAM name="ItemInfo5">">
-            <fieldset>
               <h1>Finding Aid Requests</h1>
               <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
               <#PARAM name="EADRequests">
@@ -76,7 +75,6 @@
                   <input id="UserReview" name="FormDataField" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="UserReview" default="false">>
                 </label>
                 <#INCLUDE filename="include_request_buttons.html">
-            </fieldset>
           </form>
         </main>
       </section>
