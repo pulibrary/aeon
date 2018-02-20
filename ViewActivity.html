@@ -21,7 +21,7 @@
           <h1>Activities Requests</h1>
           <a href="<#ACTION action="10" form="92">&Value=<#PARAM name="Value ">">Download Excel workbook with all Activity details</a>
           <#INCLUDE filename="ActivityInformation.html">
-            <div class="default-table table-responsive">
+            <div class="default-table table-responsive simple-table">
               <#TABLE name="ViewEventRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" orderby="TransactionNumber">
             </div>
         </main>

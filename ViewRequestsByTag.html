@@ -21,7 +21,7 @@
             <#STATUS>
           </div>
           <h1>All Requests - <#PARAM name='ResearcherTag'></h1>
-          <div class="default-table">
+          <div class="default-table simple-table">
             <#TABLE name="ViewAllRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author/Creator" column="CallNumber:Call&nbsp;Number" column="ItemVolume:Volume/Box" column="TransactionStatus:Status" researcherTag="<#PARAM name='ResearcherTag'>" orderby="TransactionNumber DESC">
           </div>
         </main>
