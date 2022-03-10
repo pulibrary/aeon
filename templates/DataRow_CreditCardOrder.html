@@ -1,0 +1,46 @@
+<div class="card" id="transaction<#DATAROW field='TransactionNumber'>" data-totalCharge="<#DATAROW field='BalanceRemaining' Display='Numeric'>">
+  <div id="request<#DATAROW field='TransactionNumber'>">
+    <div class="card-body">
+
+    	<div class="row">
+    		<div class="col-lg-8 col-md-12">
+    			<div class="card-title h4">
+    				<a href="aeon.dll?&Action=10&Form=63&Value=<#DATAROW field='TransactionNumber'>"><#DATAROW field="ItemTitle"></a>
+				</div>
+    			<div class="card-subtitle h5 mb2 text-muted"><#DATAROW field="ItemSubtitle"></div>
+    		</div>
+
+        <div class="col-lg-4 col-md-12 text-right">
+    			<div class="btn-group" role="group" aria-label="Actions for Request <#DATAROW field='TransactionNumber'>">
+    			  <a class="text-info btn btn-light" role="button" aria-controls="collapseRequest<#DATAROW field='TransactionNumber'>" href="<#DLL queryFields='false'>?Action=10&Form=63&Value=<#DATAROW field='TransactionNumber'>"><span aria-hidden="true" class="fa fa-info-circle text-info mr-1"></span>Details</a>
+    			</div>
+    			<div class="mt-4">
+    				<div class="row field">
+    					<div class="col-sm-8 field-label font-weight-bold">Balance Due</div>
+    					<div class="col-sm-4 field-value text-right"><#DATAROW field="BalanceRemaining" Display="Currency"></div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+
+  		<div id="requestDetails<#DATAROW field='TransactionNumber'>">
+  			<div class="row field">
+  				<div class="col-sm-3 field-label font-weight-bold">Type</div>
+  				<div class="field-value text-left"><#DATAROW field="DocumentType"></div>
+  			</div>
+  			<div class="row field">
+  				<div class="col-sm-3 field-label font-weight-bold">Format</div>
+  				<div class="field-value text-left"><#DATAROW field="Format"></div>
+  			</div>
+  			<div class="row field">
+  				<div class="col-sm-3 field-label font-weight-bold">Service Level</div>
+  				<div class="field-value text-left"><#DATAROW field="ServiceLevel"></div>
+  			</div>
+  			<div class="row field">
+  				<div class="col-sm-3 field-label font-weight-bold">Shipping</div>
+  				<div class="field-value text-left"><#DATAROW field="ShippingOption"></div>
+  			</div>
+  		</div>
+    </div>
+  </div>
+</div>

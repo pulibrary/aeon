@@ -1,0 +1,21 @@
+<html lang="en-US">
+
+<head>
+    <title>Aeon Site Map</title>
+    <#INCLUDE filename="include_head.html">
+    <script src="js/buildSiteMap.js"></script>
+</head>
+
+<body>
+    <#INCLUDE filename="include_header.html">
+    <#INCLUDE filename="include_menu.html" restriction="IsValidSession">
+   
+    <div id="content" class="container" role="heading" aria-label="Content">
+        <div id="site-map"></div>
+
+        <#INCLUDE filename="include_footer.html">
+    </div>
+
+</body>
+
+</html>

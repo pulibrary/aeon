@@ -1,0 +1,48 @@
+<form id="paymentform" action="https://your.upay.url" method="post">
+    <input id="paymentform-ticket" type="hidden" name="TICKET" value="">
+    <input type="hidden" name="TICKET_NAME" value="Aeon Reproductions">
+    <input type="hidden" name="UPAY_SITE_ID" value="YourSiteID">
+    
+    <#INCLUDE filename="templates/payment/include_payment_buttons.html">
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#payOrder").click(function() {
+			$("#payOrder, #cancel").attr('disabled', true);
+            $.ajax({
+                type: "GET",
+                url:"aeon.dll/ajax?query=GenerateTouchNetTicket",
+                cache: false,
+                data: {
+                    tlinkUrl: "https://your.tlink.url",
+                    transactionNumbers: "<#PARAM name='TransactionNumbers'>",
+                    ticketName: "Aeon Reproductions",
+                    successLink: "<#CUSTOMIZATION name='WebURL'>aeon.dll?action=30&type=112",
+                    errorLink: "<#CUSTOMIZATION name='WebURL'>aeon.dll?action=30&type=113",
+                    cancelLink: "<#CUSTOMIZATION name='WebURL'>aeon.dll?action=30&type=104",
+                },
+                success: function(data, textStatus, jqXHR) {
+					$("#payOrder, #cancel").attr('disabled', false);
+                    if (data.messages.resultCode == 'Error') {
+                        var errMessage = 'Unable to process payment.\r\n';
+                        errMessage = errMessage + data.messages.message[0].code + ': ' + data.messages.message[0].text;
+                        alert(errMessage);
+                    } else {
+                        $("#paymentform-ticket").val(data.ticket);
+                        $("#paymentform").submit();
+                    }
+                },
+                error: function(jqXHR,textStatus,errorThrown) {
+                    $("#payOrder, #cancel").attr('disabled', false);
+                    throw errorThrown;
+                }
+            });
+        });
+
+        $("#cancel").click(function() {
+            window.location.replace("<#DLL queryFields=false>?action=10&form=10");
+        });
+
+    });
+</script>

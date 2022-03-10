@@ -1,38 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account - Transaction
-    <#PARAM name="TransactionNumber">
-  </title>
-  <#INCLUDE filename="include_head.html">
+    <title>Aeon - Transaction
+        <#PARAM name="TransactionNumber">
+    </title>
+    <#INCLUDE filename="include_head.html">
 </head>
 
-<body id="type-b">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Item Details</h1>
-          <#MENU name="transaction" separator="|" item="Edit:Edit Request" item="Cancel:Cancel Request" item="RemoveHold:Remove from Hold" item="Resubmit:Resubmit Request" item="RequestCopy:Request Copy" item="Clone:Clone Request" item="ViewFile:View Item" item="DeleteFile:Delete Item" item="Submit:Submit Request" item="ApproveOrderEstimate:Approve Estimate" item="ApproveOrderBilling:Approve Billing" item="ExportRIS:Export Citation">
-          <#INCLUDE type="DetailedDocTypeInformation">
-          <#INCLUDE filename="include_ResearcherTagsUpdate.html">
-          <div class="default-table simple-table">
-            <#TABLE name="NotesInformation" headerText="Notes" noDataAction="ShowMessageRow" noDataMessage="No Notes" column="NoteDate:Note Date" column="Note" column="Username">
-          </div>
-          <div class="default-table simple-table">
-            <#TABLE name="TrackingInformation" headerText="Tracking" noDataAction="ShowMessageRow" noDataMessage="No Tracking" column="ChangedDate:Changed Date" column="ChangedTo:Status">
-          </div>
-        </main>
-      </section>
+<body>
+    <#INCLUDE filename="include_header.html">
+
+    <#INCLUDE filename="include_menu.html">
+
+    <div class="container" id="content" role="heading" aria-label="Content">
+        <#INCLUDE filename="include_TransactionMenu.html">
+        <#INCLUDE type="DetailedDocTypeInformation">
+        <#INCLUDE filename="include_ResearcherTagsUpdate.html">
+
+        <h3 class="header-detailed">Notes</h3>
+        <#DATAREPEATER name="NotesInformation" TemplateFile="templates/DataRow_DefaultNote.html" noDataAction="You have no notes">
+
+            <h3 class="header-detailed">Tracking</h3>
+            <div class="table">
+                <#TABLE name="TrackingInformation" noDataAction="ShowMessageRow" noDataMessage="You have no tracking information" column="ChangedDate:Changed Date" column="ChangedTo:Status" column="ChangedBy:Changed By">
+            </div>
+
+            <#INCLUDE filename="include_footer.html">
     </div>
-    <#INCLUDE filename="include_footer.html">
+
 </body>
 
 </html>

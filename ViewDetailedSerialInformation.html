@@ -1,96 +1,115 @@
-<div class="default-table simple-table">
-  <!-- <#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true">                     -->
-  <table class="default-table">
-    <thead>
-      <caption>Serial Information</caption>
-    </thead>
-    <tbody>
-      <tr class="row-even">
-        <th scope="row">
-          Title
-        </th>
-        <td>
-          <#TRANSACTION field="ItemTitle">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Place of Publication
-        </th>
-        <td>
-          <#TRANSACTION field="ItemPlace">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Date
-        </th>
-        <td>
-          <#TRANSACTION field="ItemDate">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Volume
-        </th>
-        <td>
-          <#TRANSACTION field="ItemVolume">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Issue
-        </th>
-        <td>
-          <#TRANSACTION field="ItemIssue">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Call Number
-        </th>
-        <td>
-          <#TRANSACTION field="CallNumber">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Collection Name/Location
-        </th>
-        <td>
-          <#TRANSACTION field="Location">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">Requested For (if applicable)</th>
-        <td>
-          <#TRANSACTION field="ResearcherUsername">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">Activity Number (if applicable)</th>
-        <td>
-          <#TRANSACTION field="ActivityID">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">Scheduled Date (if applicable)</th>
-        <td>
-          <#TRANSACTION field="ScheduledDate">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">Special Request (if applicable)</th>
-        <td>
-          <#TRANSACTION field="SpecialRequest">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">Scheduled Date</th>
-        <td>
-          <#TRANSACTION field="ScheduledDate">
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <h3 class="header-detailed">Serial Information</h3>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Transaction Number</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="TransactionNumber"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Title</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ItemTitle"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Place of Publication</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ItemPlace"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Date</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ItemDate"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Volume/Box</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ItemVolume"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Issue/Copy</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ItemIssue"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Call Number</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="CallNumber"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Collection Name/Location</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="Location"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Requested For</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ResearcherUsername"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Activity Number</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ActivityID"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Scheduled Date</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="ScheduledDate"></span>
+                    </strong>
+                </div>
+            </div>
+
+            <div class="field list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span>Special Request</span>
+                    <strong>
+                        <span class="field-value"><#TRANSACTION field="SpecialRequest"></span>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+

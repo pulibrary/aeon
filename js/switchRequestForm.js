@@ -1,26 +1,13 @@
-﻿$(document).ready(function () {    
-    /*
-    //Add the onclick handler to the "SwitchToPhotoduplication" link
-    //To use this, add the following link to the request form. The link text can change but the ID should match the ID used in the click handler: <a href="#" id="SwitchToPhotoduplication">Switch to Photoduplication</a>
-    $('#SwitchToPhotoduplication').click(function () 
-        { 
-            return SwitchForm(23, ''); 
+﻿$(document).ready(function () {
+    //Add the onclick handler to the SwitchRequestForm elements
+    $('.switch-request-form').on('click', (function() {        
+        $form = $(this).attr('data-switchrequest-form');
+        $value = $(this).attr('data-switchrequest-value');
+        if ($form != '') {
+            SwitchForm($form, $value);
         }
-     );
-    */
-
-
-    /*
-    //Add the onclick handler to the "SwitchToMonograph" link
-    //To use this, add the following link to the request form. The link text can change but the ID should match the ID used in the click handler: <a href="#" id="SwitchToMonograph">Switch to Monograph</a>
-    $('#SwitchToMonograph').click(function () 
-        { 
-            return SwitchForm(20, 'GenericRequestMonograph'); 
-        }
-     );
-    */
+    }));
 });
-
 
 /*
 SwitchForm is used to show an alternate request form. The information is passed back into the DLL but displayed as an alternate form as defined by the formParam and valueParam parameters.

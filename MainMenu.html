@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account Main Menu</title>
-  <#INCLUDE filename="include_head.html">
-    <#INCLUDE filename="include_sortableTables.html">
-      <link href="<#ACTION action="2" type="40" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">" rel="alternate" type="application/rss+xml" title="Aeon Alerts" />
+    <title>Aeon Main Menu</title>
+    <#INCLUDE filename="include_head.html">
+
+    <link href="<#ACTION action='2' type='40' value='RSSID' valueType='lookup' absolutePath='true' includeSessionID='false'>" rel='alternate' type='application/rss+xml' title='Aeon Alerts'>
 </head>
 
-<body id="type-c">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Outstanding Requests</h1>
-          <#TAGCLOUD>
-          <div class="default-table table-responsive simple-table" id="table-main-outstanding-requests">
-            <#TABLE name="ViewOutstandingRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" orderby="TransactionNumber DESC">
-          </div>
-        </main>
-      </section>
+<body>
+
+    <#INCLUDE filename="include_header.html">
+
+    <#INCLUDE filename="include_menu.html">
+
+    <div id="content" class="container" role="heading" aria-label="Content">
+        <#TAGCLOUD>
+        <h2>Outstanding Requests</h2>
+        <#DATAREPEATER name="ViewOutstandingRequests" TemplateFile="templates/DataRow_DefaultRequest.html" noDataAction="You have no outstanding requests" orderby="TransactionNumber DESC">
+
+        <#INCLUDE filename="include_footer.html">
     </div>
-    <#INCLUDE filename="include_footer.html">
+
 </body>
 
 </html>
+

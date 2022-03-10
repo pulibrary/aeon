@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-  <title>Special Collections Research Account - Activities</title>
-  <#INCLUDE filename="include_head.html">
-    <#INCLUDE filename="include_sortableTables.html">
+    <title>Aeon - Activities</title>
+    <#INCLUDE filename="include_head.html">
 </head>
 
-<body id="type-b">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Activities for Class Visits and Events</h1>
-          <div class="default-table table-responsive-activities simple-table">
-            <#TABLE name="ViewEvents" noDataAction="ShowMessageRow" noDataMessage="No Activities" sortable="true" column="DownloadDetails:Download" column="ID" column="Name" column="Description:Faculty/Other Contact" column="Location" column="BeginDate:Begin Date" column="EndDate:End Date" orderby="BeginDate, EndDate">
-          </div>
-        </main>
-      </section>
-    </div>
-    <#INCLUDE filename="include_footer.html">
-</body>
+<body>
+   
+    <#INCLUDE filename="include_header.html">
 
+    <#INCLUDE filename="include_menu.html">
+    <div id="content" class="container" role="heading" aria-label="Content">    
+        <h2>Activities</h2>
+		<#DATAREPEATER name="ViewActivities" TemplateFile="templates/DataRow_DefaultActivity.html" orderby="BeginDate, EndDate" noDataAction="You have no activities">	            
+	
+	    <#INCLUDE filename="include_footer.html">
+
+    </div>
+</body>
 </html>

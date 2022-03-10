@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-  <title>Special Collections Research Account Logon</title>
-  <#INCLUDE filename="include_head.html">
+    <title>Aeon Logon</title>
+    <#INCLUDE filename="include_head.html">
 </head>
+<body>
+    <#INCLUDE filename="include_header.html">
 
-<body id="type-a">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Disavowed Username</h1>
-          <p>For assistance, please contact <a href="mailto:rbsc@princeton.edu">rbsc@princeton.edu</a></p>
-        </main>
-      </section>
+    <div id="statusLine" class="container">
+        <#STATUS>
     </div>
-    <#INCLUDE filename="include_footer.html">
+    <div id="content" class="container" role="heading" aria-label="Content">
+        Please contact the Special Collections office during normal business hours if you have any questions.
+      
+     <#INCLUDE filename="include_footer.html">
+     
+    </div>
 </body>
-
 </html>

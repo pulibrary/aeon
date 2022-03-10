@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-  <title>Special Collections Research Account - Error</title>
-  <#INCLUDE filename="include_head.html">
+	<title>Aeon - Error</title>
+	<#INCLUDE filename="include_head.html">
 </head>
+<body>
+    <#INCLUDE filename="include_header.html">
 
-<body id="type-a">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
+        <div class="alerts-bar">
+            <div class="container" id="webAlerts"></div>
+        </div>
+
+        <div id="statusLine" class="container">
             <#STATUS>
-          </div>
-          <p>For assistance with registration, please contact <a href="mailto:rbsc@princeton.edu">rbsc@princeton.edu</a></p>
-        </main>
-      </section>
-    </div>
-    <#INCLUDE filename="include_footer.html">
-</body>
+        </div>
 
+        <div id="content" class="container" role="heading" aria-label="Content">
+           
+         <#INCLUDE filename="include_footer.html">
+          
+        </div>
+</body>
 </html>

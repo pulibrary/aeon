@@ -1,0 +1,13 @@
+<form id="paymentform" action="aeon.dll" method="post">
+    <input type="hidden" name="AeonForm" value="TouchNetPaymentConfirmation">
+    <input type="hidden" name="PaymentSessionID" value="<#PARAM name="PaymentSessionID">">
+    <input type="hidden" name="PaymentInvoiceID" value="<#PARAM name="PaymentInvoiceID">">
+    <input type="hidden" name="TLinkURL" value="https://your.tlink.url">
+
+    <h2>Confirm Charges</h2>
+    <div class="mb-3">Your credit card has not yet been charged. Click the <strong>Complete Payment</strong> button to confirm the payment of $<#PARAM name="PaymentAmount"> and complete the transaction.</div>
+    
+    <input type="submit" id="pay" name="SubmitButton" value="Complete Payment" class="btn btn-primary btn-block"/>
+    <input type="submit" id="cancel" name="SubmitButton" value="Cancel - Exit to Main Menu" class="btn btn-primary btn-block" />
+</form>
+

@@ -1,0 +1,70 @@
+<form id="paymentform" action="<#PAYMENTPROVIDERURL>" method="post">
+
+    <input type="hidden" name="profile_id" value="<#CUSTOMIZATION name="PaymentProviderMerchantId">">
+    <input type="hidden" name="access_key" value="<#CUSTOMIZATION name="PaymentProviderToken">">
+
+    <input type="hidden" name="currency" value="USD">
+    <input type="hidden" name="locale" value="en">
+
+    <!-- The values below are all system determined values and typically should not be modified. -->
+
+    <input type="hidden" name="transaction_uuid" value="">
+    <input type="hidden" name="signed_field_names" value="">
+    <input type="hidden" name="unsigned_field_names" value="">
+    <input type="hidden" name="signed_date_time" value="">
+    <input type="hidden" name="transaction_type" value="authorization">
+    <input type="hidden" name="transactionNumbers" value="<#PARAM name="TransactionNumbers">" />
+    <input type="hidden" name="reference_number" value="">
+    <input type="hidden" name="amount" value="">
+    <input type="hidden" name="signature" value="">
+
+    <!-- 
+    If you have a protected Aeon directory because you use a single sign-on system (such as CAS or Shibboleth), you may need to override the URLs CyberSource
+    is configured to use. Check documentation for details on how to set up this page under protected and unprotected web directories.
+    
+    <input type="hidden" name="override_backoffice_post_url" value="https://your.instition.url/aeon/aeon.dll?Action=30&Type=115">
+    <input type="hidden" name="override_custom_cancel_page" value="https://your.instition.url/aeon/aeon.dll?Action=30&Type=116">
+    <input type="hidden" name="override_custom_receipt_page" value="https://your.instition.url/aeon/aeon.dll?Action=30&Type=116">
+    -->
+    
+    <#INCLUDE filename="templates/payment/include_payment_buttons.html">
+</form>
+<script type="text/javascript">
+    transactionNumbers = "<#PARAM name='TransactionNumbers'>";
+    
+    $(document).ready(function(){
+        $("#payOrder").click(function() {
+			$("#payOrder, #cancel").attr('disabled', true);
+            $.ajax({
+                type: "GET",
+                url:"aeon.dll/ajax?query=GenerateCyberSourceHostedSignature",
+                cache: false,
+                data: $("#paymentform").serialize(),
+                success: function(data, textStatus, jqXHR) {
+					$("#payOrder, #cancel").attr('disabled', false);
+					ProcessFingerPrintResponse(data);
+                    },
+                error: function(jqXHR,textStatus,errorThrown) {
+					$("#payOrder, #cancel").attr('disabled', false);
+                    throw errorThrown;
+                }
+            });
+        });
+
+        $("#cancel").click(function() {
+            window.location.replace("<#DLL queryFields=false>?action=10&form=10");
+        });
+    });
+
+    function ProcessFingerPrintResponse(responseData)
+    {
+        $('[name=signature]').val(responseData.signature);
+        $('[name=transaction_uuid]').val(responseData.transaction_uuid);
+        $('[name=reference_number]').val(responseData.reference_number);
+        $('[name=signed_date_time]').val(responseData.signed_date_time);
+        $('[name=signed_field_names]').val(responseData.signed_field_names);
+        $('[name=amount]').val(responseData.amount);
+        
+        $("#paymentform").submit();
+    }
+</script>

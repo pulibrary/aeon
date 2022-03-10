@@ -1,0 +1,90 @@
+
+<nav class="main-navbar navbar navbar-expand-lg navbar-dark">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse my-4 justify-content-center" id="navbarNavDropdown">
+
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="<#ACTION action='10' form='10'>">
+          <span span aria-hidden="true" class="fas fa-home"></span> Main Menu</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarNewRequest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <span aria-hidden="true" class="fas fa-book"></span> New Requests
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarNewRequest">
+          <a class="dropdown-item" href="<#ACTION action='10' form='21'>">Default Request</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='20' value='GenericRequestMonograph'>">Monograph Request</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='20' value='GenericRequestSerial'>">Serial Request</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='20' value='GenericRequestManuscript'>">Manuscript/Archives Request</a>
+          <div class="dropdown-divider"></div>          
+          <a class="dropdown-item" href="<#ACTION action='10' form='23'>">Photoduplication Request</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarOrderHistory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <span aria-hidden="true" class="fas fa-history"></span> Order History</a>
+        <div class="dropdown-menu" aria-labelledby="navbarOrderHistory">          
+          <a class="dropdown-item" href="<#ACTION action='10' form='76'>">Saved Requests</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='62'>">Outstanding Requests</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='70'>">Cancelled Requests</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='68'>">Request History</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='60'>">All Requests</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="<#ACTION action='10' form='77'>">Orders to Submit</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='78'>">Order Billing</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='64'>">Electronically Delivered Items</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<#ACTION action='10' form='90'>">
+           <span aria-hidden="true" class="fas fa-clipboard-list"></span> Activities</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="aeon.dll?Action=10&Form=2&Value=ViewSearchResults">
+           <span aria-hidden="true" class="fas fa-search"></span> Search</a>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarMyProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <span aria-hidden="true" class="fas fa-user"></span> My Profile</a>
+        <div class="dropdown-menu" aria-labelledby="navbarMyProfile">
+          <a class="dropdown-item" href="<#ACTION action='10' form='81'>">
+             <span aria-hidden="true" class="fas fa-user-edit"></span> Change User Information</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='83'>">
+             <span aria-hidden="true" class="fas fa-key"></span> Change Password</a>
+          <a class="dropdown-item" href="<#ACTION action='10' form='73'>">
+            <span class="far fa-bell"></span> View Notifications</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item disabled" type="text">
+            <span class="far fa-id-badge"></span> Logged in as
+            <#PARAM name="Username"></a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<#ACTION action='99'>">
+           <span aria-hidden="true" class="fas fa-sign-out-alt"></span> Logoff</a>
+      </li>
+
+    </ul>
+    </div>
+
+
+</nav>
+<div class="alerts-bar">
+  <div class="container" id="webAlerts">
+  </div>
+</div>
+

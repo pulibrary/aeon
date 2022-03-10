@@ -1,319 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account - New User Registration</title>
-  <#INCLUDE filename="include_head.html">
-  <script type="text/javascript">
-    function addOption(theSel) {
-      oc = theSel.options.length;
-      if (theSel.selectedIndex == oc - 1) {
-        newOpt = window.prompt("Please specify your other information.", "");
-        if (newOpt + "" > "") {
-          theSel.options[oc] = new Option(theSel.options[oc - 1].text);
-          theSel.options[oc - 1] = new Option(newOpt, newOpt, true, true);
-        }
-      }
-    }
-  </script>
+    <title>Aeon - New User Registration</title>
+    <#INCLUDE filename="include_head.html">
 </head>
 
-<body id="type-a">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <main role="main">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <form action="aeon.dll" method="post" name="Registration" class="f-wrap-request">
-            <input type="hidden" name="AeonForm" value="Registration">
-            <input type="hidden" name="NotificationMethod" value="Email">
-            <input type="hidden" name="NVTGC" value="ILL">
-            <input type="hidden" name="DeliveryGroup" value="Hold for Pickup">
-            <input type="hidden" name="LoanDeliveryGroup" value="Hold for Pickup">
-            <input type="hidden" name="WebDeliveryGroup" value="Yes">
-            <input type="hidden" name="NotificationMethod" value="E-Mail">
-            <input type="hidden" name="AuthType" value="Aeon">
-            <#FORMSTATE>
-                <h1>First-time User Registration</h1>
-                <div class="req-indicator"><span class="req">*</span> Indicates required field</div>
-                <label for="FirstName">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORFirstName">"><span class="bold">First Name</span></span>
-                  </span>
-                  <input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="FirstName">">
-                </label>
-                <label for="UserInfo1">
-                  <span class="field">
-  								<span class="<#ERROR name="ERRORUserInfo1">"><span class="bold">Middle Name</span></span>
-                  </span>
-                  <input id="UserInfo1" name="UserInfo1" type="text" size="40" class="f-name" tabindex="10" value="<#PARAM name="UserInfo1">">
-                </label>
-                <label for="LastName">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORLastName">"><span class="bold">Last Name</span></span>
-                  </span>
-                  <input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="LastName">">
-                </label>
-                <label for="EMailAddress">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERROREMailAddress">"><span class="bold">Email Address</span></span>
-                  </span>
-                  <input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="EMailAddress">">
-                </label>
-                <label for="Phone">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORPhone">"><span class="bold">Telephone</span></span>
-                  </span>
-                  <input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Phone">">
-                </label>
-                <h3>Permanent Address</h3>
-                <label for="Address">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORAddress">"><span class="bold">Street</span></span>
-                  </span>
-                  <input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address">">
-                </label>
-                <label for="Address2">
-                  <span class="field">
-								<span class="<#ERROR name="ERRORAddress2">"><span class="bold">Line Two</span></span>
-                  </span>
-                  <input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Address2">">
-                </label>
-                <label for="UserInfo2">
-                  <span class="field">
-  								<span class="<#ERROR name="ERRORUserInfo2">"><span class="bold">Line Three</span></span>
-                  </span>
-                  <input id="UserInfo2" name="UserInfo2" type="text" size="40" class="f-name" tabindex="40" value="<#PARAM name="UserInfo2">">
-                </label>
-                <label for="City">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORCity">"><span class="bold">City</span></span>
-                  </span>
-                  <input id="City" name="City" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="City">">
-                </label>
-                <label for="State">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORState">"><span class="bold">State/Province</span></span>
-                  </span>
-                  <input id="State" name="State" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="State">">
-                </label>
-                <label for="Zip">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORZip">"><span class="bold">Zip or Postal Code</span></span>
-                  </span>
-                  <input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Zip">">
-                </label>
-                <label for="Country">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORCountry">"><span class="bold">Country</span></span>
-                  </span>
-                  <input id="Country" name="Country" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Country">">
-                </label>
-                <h3>Local Address</h3>
-                <label for="SAddress">
-                  <span class="field">
-								<span class="<#ERROR name="ERRORSAddress">"><span class="bold">Street</span></span>
-                  </span>
-                  <input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress">">
-                </label>
-                <label for="SAddress2">
-                  <span class="field">
-								<span class="<#ERROR name="ERRORSAddress2">"><span class="bold">Line Two</span></span>
-                  </span>
-                  <input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SAddress2">">
-                </label>
-                <label for="SCity">
-                  <span class="field">
-								<span class="<#ERROR name="ERRORSCity">"><span class="bold">City</span></span>
-                  </span>
-                  <input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SCity">">
-                </label>
-                <label for="SState">
-                  <span class="field">
-								<span class="<#ERROR name="ERRORSState">"><span class="bold">State</span></span>
-                  </span>
-                  <input id="SState" name="SState" type="text" size="40" class="f-name" tabindex="0">
-                </label>
-                <label for="SZip">
-                  <span class="field">
-								<span class="<#ERROR name="ERRORSZip">"><span class="bold">Zip Code</span></span>
-                  </span>
-                  <input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="SZip">">
-                </label>
-                <label for="Status">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORStatus">"><span class="bold">Status</span></span>
-                  </span>
-                  <select id="StatusOption" name="Status" size="1" class="f-name" tabindex="0">
-                    <option selected>
-                      <#PARAM name="Status">
-                    </option>
-                    <option value="NonPUFaculty">Faculty</option>
-                    <option value="NonPUGradStudent">Graduate Student</option>
-                    <option value="NonPUUndergradStudent">Undergraduate Student</option>
-                    <option value="IndependentResearcher">Independent Researcher</option>
-                  </select>
-                </label>
-                <label for="Organization">
-                  <span class="field">
-                  <span class="req">*</span>
-                  <span class="<#ERROR name="ERROROrganization">"><span class="bold">Institutional Affiliation</span></span>
-                  </span>
-                  <input id="Organization" name="Organization" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Organization">">
-                </label>
-                <label for="Department">
-                  <span class="field">
-                  <span class="<#ERROR name="ERRORDepartment">"><span class="bold">Department</span></span>
-                  </span>
-                  <input id="Department" name="Department" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="Department">">
-                </label>
-                <label for="ResearchTopics">
-                  <span class="field">
-                  <span class="req">*</span>
-                  <span class="<#ERROR name="ERRORResearchTopics">"><span class="bold">Research Topics</span></span>
-                  </span>
-                  <select id="ResearchTopics" name="ResearchTopics" size="1" class="f-name" tabindex="0" onChange="addOption(this)">
-                    <option selected>
-                      <#PARAM name="ResearchTopics">
-                    </option>
-                    <option>Africa</option>
-                    <option>American history</option>
-                    <option>American history/20th century</option>
-                    <option>American history/Civil War and Reconstruction</option>
-                    <option>American history/Colonial</option>
-                    <option>American history/Early national</option>
-                    <option>American history/Gilded Age, Populism, Progressivism</option>
-                    <option>American history/Revolution</option>
-                    <option>American literature</option>
-                    <option>American politics and government</option>
-                    <option>Ancient history</option>
-                    <option>Archaeology</option>
-                    <option>Architecture</option>
-                    <option>Art history</option>
-                    <option>Book history and arts</option>
-                    <option>British literature</option>
-                    <option>Cartography</option>
-                    <option>Children's books</option>
-                    <option>Chinese studies</option>
-                    <option>Classical literature</option>
-                    <option>Cold War</option>
-                    <option>Demography</option>
-                    <option>Diplomacy</option>
-                    <option>East Asian studies</option>
-                    <option>Economic history</option>
-                    <option>Education</option>
-                    <option>Environmental studies</option>
-                    <option>Ethiopic manuscripts</option>
-                    <option>European history</option>
-                    <option>European literature</option>
-                    <option>Games and recreation</option>
-                    <option>Garden and landscape studies</option>
-                    <option>Genealogy</option>
-                    <option>History of science</option>
-                    <option>International organizations</option>
-                    <option>Islamic manuscripts (Arabic, Persian, Ottoman, Turkish)</option>
-                    <option>Japanese studies</option>
-                    <option>Journalism</option>
-                    <option>Korean studies</option>
-                    <option>Latin American history</option>
-                    <option>Latin American literature and culture</option>
-                    <option>Legal history</option>
-                    <option>Literature</option>
-                    <option>Medieval and Renaissance manuscripts</option>
-                    <option>Middle East (modern history and politics)</option>
-                    <option>Modern Greek studies</option>
-                    <option>Music</option>
-                    <option>Native American history</option>
-                    <option>New Jerseyana</option>
-                    <option>Numismatics</option>
-                    <option>Papyri</option>
-                    <option>Philosophy</option>
-                    <option>Photography</option>
-                    <option>Political cartoons</option>
-                    <option>Princeton University</option>
-                    <option>Public policy/20th century</option>
-                    <option>Publishing history</option>
-                    <option>Religion</option>
-                    <option>Russia</option>
-                    <option>Theater/Dance/Film</option>
-                    <option>Travel</option>
-                    <option>Urban Studies</option>
-                    <option>Western Americana</option>
-                    <option>Women's studies</option>
-                    <option>World War I</option>
-                    <option>World War II</option>
-                    <option>Other</option>
-                  </select>
-                </label>
-                <label for="UserInfo4">
-                  <span class="field">
-  								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORUserInfo4">"><span class="bold">Research Purpose</span></span>
-                  </span>
-                  <select id="UserInfo4" name="UserInfo4" size="1" class="f-name" tabindex="0" onChange="addOption(this)">
-                    <option selected>
-                      <#PARAM name="UserInfo4">
-                    </option>>
-                    <option>Article</option>
-                    <option>Book</option>
-                    <option>Course Work</option>
-                    <option>Genealogy</option>
-                    <option>Local History</option>
-                    <option>M.A. Thesis</option>
-                    <option>Ph.D. Dissertation</option>
-                    <option>Undergraduate Thesis</option>
-                    <option>Other</option>
-                  </select>
-                </label>
-                <label for="UserInfo5">
-                  <span class="field">
-  								<span class="<#ERROR name="ERRORUserInfo5">"><span class="bold">Check the box to receive invitations and announcements for Friends of the Princeton University Library Events</span></span>
-                  </span>
-                  <input id="UserInfo5" name="UserInfo5" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="UserInfo5" default="true">>
-                </label>
-                <label for="Username">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORUsername">"><span class="bold">Enter your email address as your username</span></span>
-                  </span>
-                  <input id="Username" name="Username" type="text" size="40" class="f-name" tabindex="0" value="<#PARAM name="NewUsername">">
-                </label>
-                <label for="Password1">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORPassword1">"><span class="bold">Choose a Password</span></span>
-                  <span class="note">Case sensitive</span>
-                  </span>
-                  <input id="Password1" name="Password1" type="password" size="40" class="f-name" tabindex="0" value="<#PARAM name="Password1">">
-                </label>
-                <label for="Password2">
-                  <span class="field">
-								<span class="req">*</span>
-                  <span class="<#ERROR name="ERRORPassword2">"><span class="bold">Re-enter Password</span></span>
-                  <span class="note">Case sensitive</span>
-                  </span>
-                  <input id="Password2" name="Password2" type="password" size="40" class="f-name" tabindex="0" value="<#PARAM name="Password2">">
-                </label>
-                <div class="f-submit-wrap" align="right">
-                  <input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="0" />
-                </div>
-          </form>
-        </main>
-      </section>
+<body>
+
+    <#INCLUDE filename="include_header.html">
+
+    <div class="alerts-bar">
+        <div class="container" id="webAlerts"></div>
     </div>
-    <#INCLUDE filename="include_footer.html">
+
+        <div id="statusLine" class="container"><#STATUS></div>
+        <div id="content" class="container" role="heading" aria-label="Content">
+            <form action="aeon.dll" method="post" name="Registration">
+                <input type="hidden" name="AeonForm" value="Registration">
+                <input type="hidden" name="NotificationMethod" value="Email">
+                <#FORMSTATE>
+
+                    <div class="mainContent">
+                        <h2>New User Registration</h2>
+
+                        <section name="user-info">
+
+                            <h3 class="section-header">User Information</h3>
+
+                            <div class="form-group col-md-5">
+                                <label for="FirstName">
+                                    <span class="<#ERROR name='ERRORFirstName'>">
+                                        First Name
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="FirstName" id="FirstName" value="<#PARAM name='FirstName'>" required>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label for="LastName">
+                                    <span class="<#ERROR name='ERRORLastName'>">
+                                        Last Name
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="LastName" id="LastName" value="<#PARAM name='LastName'>" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="EMailAddress">
+                                    <span class="<#ERROR name='ERROREMailAddress'>">
+                                        Email Address
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="email" class="form-control" name="EMailAddress" id="EMailAddress" value="<#PARAM name='EMailAddress'>" autocomplete="off" required>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="Phone">
+                                    <span class="<#ERROR name='ERRORPhone'>">
+                                        Daytime Phone
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="Phone" id="Phone" value="<#PARAM name='Phone'>" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Status">
+                                    <span class="<#ERROR name='ERRORStatus'>">
+                                        Status
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <select class="custom-select mr-sm-2" name="Status" id="Status" required>
+                                    <#OPTION name="Statuses" selectedValue="<#PARAM name='Status'>" defaultName="Choose a Status" defaultValue="">
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Department">
+                                    <span class="<#ERROR name='ERRORDepartment'>">
+                                        Department
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <select class="custom-select mr-sm-2" name="Department" id="Department" required>
+                                    <#OPTION name="Departments" selectedValue="<#PARAM name='Department'>" defaultName="Choose a Department" defaultValue="">
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label for="Organization">
+                                    <span class="<#ERROR name='ERROROrganization'>">
+                                        Organization
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="Organization" id="Organization" value="<#PARAM name='Organization'>">
+                            </div>
+
+                        </section>
+
+                        <section name="address-info">
+
+                            <h3 class="section-header">Primary Address Information</h3>
+
+                            <div class="form-group col-md-6">
+                                <label for="Address">
+                                    <span class="<#ERROR name='ERRORAddress'>">
+                                        Primary Address Line 1
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="Address" id="Address" value="<#PARAM name='Address'>" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="Address2">
+                                    <span class="<#ERROR name='ERRORAddress2'>">
+                                        Primary Address Line 2
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="Address2" id="Address2" value="<#PARAM name='Address2'>">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="City">
+                                    <span class="<#ERROR name='ERRORCity'>">
+                                        Primary Address City
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="City" id="City" value="<#PARAM name='City'>" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="State">
+                                    <span class="<#ERROR name='ERRORState'>">
+                                        Primary Address State
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <select class="custom-select mr-sm-2" name="State" id="State" required>
+                                    <#OPTION name="States" selectedValue="<#PARAM name='State'>" defaultName="Choose a State" defaultValue="">
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Zip">
+                                    <span class="<#ERROR name='ERRORZip'>">
+                                        Primary Address Zip
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="Zip" id="Zip" value="<#PARAM name='Zip'>" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Country">
+                                    <span class="<#ERROR name='ERRORCountry'>">
+                                        Primary Address Country
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <select class="custom-select mr-sm-2" name="Country" id="Country" required>
+                                    <#OPTION name="Countries" selectedValue="<#PARAM name='Country'>" defaultName="Choose a Country" defaultValue="">
+                                </select>
+                            </div>
+
+                        </section>
+
+                        <section name="alt-address-info" style="<#CONDITIONAL type='CustomizationKey' test='UseSecondaryAddress' false='display:none'>">
+                        
+                            <h3 class="section-header">Alternate Address Information</h3>
+                        
+                            <div class="form-group col-md-6">
+                                <label for="SAddress">
+                                    <span class="<#ERROR name='ERRORSAddress'>">
+                                        Alternate Address Line 1
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="SAddress" id="SAddress" value="<#PARAM name='SAddress'>">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="SAddress2">
+                                    <span class="<#ERROR name='ERRORSAddress2'>">
+                                        Alternate Address Line 2
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="SAddress2" id="SAddress2" value="<#PARAM name='SAddress2'>">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="SCity">
+                                    <span class="<#ERROR name='ERRORSCity'>">
+                                        Alternate Address City
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="SCity" id="SCity" value="<#PARAM name='SCity'>">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="SState">
+                                    <span class="<#ERROR name='ERRORSState'>">
+                                        Alternate Address State
+                                    </span>
+                                </label>
+                                <select class="custom-select mr-sm-2" name="SState" id="SState">
+                                    <#OPTION name="States" selectedValue="<#PARAM name='SState'>" defaultName="Choose a State" defaultValue="">
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="SZip">
+                                    <span class="<#ERROR name='ERRORSZip'>">
+                                        Alternate Address Zip
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="SZip" id="SZip" value="<#PARAM name='SZip'>">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="SCountry">
+                                    <span class="<#ERROR name='ERRORSCountry'>">
+                                        Alternate Address Country
+                                    </span>
+                                </label>
+                                <select class="custom-select mr-sm-2" name="SCountry" id="SCountry">
+                                    <#OPTION name="Countries" selectedValue="<#PARAM name='SCountry'>" defaultName="Choose a Country" defaultValue="">
+                                </select>
+                            </div>
+                        </section>
+
+                        <section name="research-info">
+                            
+                            <h3 class="section-header">Research Information</h3>
+
+                            <div class="form-group col-md-6">
+                                <label for="ResearchTopics">
+                                    <span class="<#ERROR name='ERRORResearchTopics'>">
+                                        Research Topics
+                                    </span>
+                                </label>
+                                <textarea class="form-control" name="ResearchTopics" id="ResearchTopics" rows="2" cols="40"><#PARAM name="ResearchTopics"></textarea>
+                            </div>
+
+                            <div class="form-check ml-3">
+                                <label class="form-check-label <#ERROR name='ERRORResearchTopicsSharing'>" for="ResearchTopicsSharing">
+                                    <input class="form-check-input" type="checkbox" id="ResearchTopicsSharing" name="ResearchTopicsSharing" value="Yes" <#CHECKED name="ResearchTopicsSharing" default="true">>May we share your research topics with others?
+                                </label>
+                            </div>
+
+                        </section>
+
+                        <section name="password-info">
+
+                            <h3 class="section-header">Create Logon Information</h3>
+
+                            <div class="form-group col-md-4">
+                                <label for="Username">
+                                    <span class="<#ERROR name='ERRORUsername'>">
+                                        Username
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="text" class="form-control" name="Username" id="Username" value="<#PARAM name='NewUsername'>" autocomplete="off" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Password1">
+                                    <span class="<#ERROR name='ERRORPassword1'>">
+                                        Password
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="password" class="form-control" name="Password1" id="Password1" autocomplete="off" required>
+                                <div class="small-notes">
+                                    Passwords must be at least eight characters long and contain a lowercase letter, an uppercase letter, and a number.
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="Password2">
+                                    <span class="<#ERROR name='ERRORPassword2'>">
+                                        Re-enter Password
+                                        <span class="req">(required)</span>
+                                    </span>
+                                </label>
+                                <input type="password" class="form-control" name="Password2" id="Password2" autocomplete="off" required>
+                            </div>
+
+                        </section>
+
+                        <button class="btn btn-primary btn-md" type="submit" name="SubmitButton" value="Submit Information">Submit Information</button>
+                        <button class="btn btn-secondary btn-md" type="submit" name="SubmitButton" value="Cancel - Return to Logon page" formnovalidate>Cancel - Return to Logon page</button>
+
+                        <#INCLUDE filename="include_footer.html">
+
+                    </div>
+            </form>
+        </div>
 </body>
 
 </html>

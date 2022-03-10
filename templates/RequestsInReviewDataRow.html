@@ -1,0 +1,32 @@
+<div class="card" data-tn="<#DATAROW field='TransactionNumber'>">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-sm-6 col-lg-1 table-data-row-actions pt-3">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" name="TransactionSelect" aria-label="Selection checkbox for request <#DATAROW field='TransactionNumber'>" value="<#DATAROW field='TransactionNumber'>"><span aria-hidden="true"></span>
+				</div>
+			</div>
+			<div class="col-sm-6 col-lg-2 order-lg-last text-right">
+				<a class="btn btn-primary menuEdit <#DATAROW field='RequestActionAllowed' name='Edit' disabledValue='disabled'>" href="<#DLL queryFields='false'>?Action=20&Value=<#DATAROW field='TransactionNumber'>"><span span aria-hidden="true" class="far fa-edit mr-1"></span>Edit</a>
+			</div>
+			<div class="col-sm-12 col-lg-9 table-data-row-details">
+				<div class="card-title h4">
+					<a href="aeon.dll?&Action=10&Form=63&Value=<#DATAROW field='TransactionNumber'>"><#DATAROW field="ItemTitle"></a>
+				</div>
+				<div class="card-subtitle h5 mb2 text-muted"><#DATAROW field="ItemSubtitle"></div>
+				<div class="field text-muted">Transaction Number<span class="field-value font-weight-bold ml-1"><#DATAROW field="TransactionNumber"></span></div>
+			</div>
+			
+		</div>		
+		<div class="row metadata">		
+			<div class="col-lg-1 d-none d-lg-block"></div>
+			<div class="col-lg-4 col-md-5 col-sm-12 order-lg-last order-md-last text-muted text-md-right creation-date">
+				Added <span class="convert-local" data-iso8601="<#DATAROW field='CreationDate' display='ISO8601'>"><#DATAROW field="CreationDate"></span>
+			</div>
+			<div class="col-lg-7 col-md-7 col-sm-12 text-danger validation-message">
+				<#DATAROW field="ValidationResult" ValidRequestMessage="" InvalidRequestMessage="This request is missing required information.">
+			</div>
+		</div>
+	</div>
+</div>
+

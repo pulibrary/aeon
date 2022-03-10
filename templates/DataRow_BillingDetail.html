@@ -1,0 +1,46 @@
+<div id="billingDetail<#DATAROW field='ID'>" class="billingDetail list-group" data-context="<#DATAROW field='BillingContext'>" data-unitCharge="<#DATAROW field='UnitCharges' display='numeric'>" data-subTotalCharge="<#DATAROW field='SubTotal' display='numeric'>" data-taxCharge="<#DATAROW field='TaxCharges' display='numeric'>" data-totalCharge="<#DATAROW field='total' display='numeric'>">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="list-group-item d-flex justify-content-between">
+				<span>
+					<a class="text-info btn btn-light ml-1" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseBillingDetail<#DATAROW field='TransactionNumber'>" href="#collapseBillingDetail<#DATAROW field='ID'>"><span aria-hidden="true" class="fa fa-chevron-down text-info mr-1"></span></a>
+					<#DATAROW field="BillingContext"><strong class="ml-1"><#DATAROW field="BillingType"></strong>
+				</span>
+				<span class="text-right font-weight-bold"><#DATAROW field="Total" Display="Currency"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="mb-1 ml-5">
+		<ul class="collapse list-group list-group-flush" id="collapseBillingDetail<#DATAROW field='ID'>">
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Billing Date</span>
+				<strong class="convert-local" data-iso8601="<#DATAROW field='BillingDate' display='ISO8601'>"><#DATAROW field="BillingDate"></strong>
+			</li>
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Base Fee</span>
+				<strong><#DATAROW field="BaseFee" Display="Currency"></strong>
+			</li>
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Unit Fee</span>
+				<strong><#DATAROW field="UnitFee" Display="Currency"></strong>
+			</li>
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Quantity</span>
+				<strong><#DATAROW field="Quantity"></strong>
+			</li>
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Total Unit Charges</span>
+				<strong><#DATAROW field="UnitCharges" Display="Currency"></strong>
+			</li>
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Tax Rate</span>
+				<strong><#DATAROW field="TaxRate" Display="Percentage"></strong>
+			</li>
+			<li class="list-group-item d-flex justify-content-between">
+				<span>Tax Charges</span>
+				<strong><#DATAROW field="TaxCharges" Display="Currency"></strong>
+			</li>
+		</ul>
+	</div>
+</div>

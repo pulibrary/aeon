@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+    <div class="btn-group" role="group">
+
+        <a class="btn btn-light menuEdit <#TRANSACTION field='RequestActionAllowed' name='Edit' disabledValue='disabled'>"
+            href="aeon.dll?Action=20&amp;Form=63&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-edit text-primary"></span>  Edit Request
+        </a>
+
+        <a class="btn btn-light menuClone <#TRANSACTION field='RequestActionAllowed' name='Cancel' disabledValue='d-none'>"
+            href="aeon.dll?Action=21&amp;Type=10&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-ban text-danger"></span>  Cancel Request
+        </a>
+    
+        <a class="btn btn-light menuClone <#TRANSACTION field='RequestActionAllowed' name='RemoveFromHold' disabledValue='d-none'>"
+            href="aeon.dll?Action=22&amp;Type=16&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-minus-circle"></span>  Remove from Hold
+        </a>
+    
+        <a class="btn btn-light menuClone <#TRANSACTION field='RequestActionAllowed' name='Resubmit' disabledValue='d-none'>"
+            href="aeon.dll?Action=11&amp;Form=71&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-redo"></span>  Resubmit Request
+        </a>
+    
+        <a class="btn btn-light menuClone <#TRANSACTION field='RequestActionAllowed' name='RequestCopy' disabledValue='d-none'>"
+            href="aeon.dll?Action=20&amp;Form=34&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-copy "></span>  Request Copy
+        </a>
+                
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='Clone' disabledValue='d-none'>"
+            href="aeon.dll?Action=11&amp;Form=32&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-clone text-primary"></span>  Clone Request
+        </a>
+    
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='CloneToCopy' disabledValue='d-none'>"
+            href="aeon.dll?Action=11&amp;Form=33&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-cart-plus text-primary"></span>  Clone to Copy
+        </a>
+    
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='ViewFile' disabledValue='d-none'>"
+            href="aeon.dll?Action=10&amp;Form=75&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-eye"></span>  View Item
+        </a>
+    
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='DeleteFile' disabledValue='d-none'>"
+            href="aeon.dll?Action=22&amp;Form=11&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-trash-alt"></span>  Delete Item
+        </a>
+    
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='Submit' disabledValue='d-none'>"
+            href="aeon.dll?Action=23&amp;Type=12&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-share-square"></span>  Submit Request
+        </a>
+    
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='ApproveOrderEstimate' disabledValue='d-none'>"
+            href="aeon.dll?Action=23&amp;Form=13&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-check-circle"></span>  Approve Estimate
+        </a>
+    
+        <a class="btn btn-light menuPhotoduplication <#TRANSACTION field='RequestActionAllowed' name='ApproveOrderBilling' disabledValue='d-none'>"
+            href="aeon.dll?Action=23&amp;Form=14&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-check-circle"></span>  Approve Billing
+        </a>
+    
+        <a class=" btn btn-light menuExportRIS <#TRANSACTION field='RequestActionAllowed' name='ExportRIS' disabledValue='d-none'>"
+            href="aeon.dll?Action=10&amp;Form=121&amp;Value=<#TRANSACTION field='TransactionNumber'>">
+             <span aria-hidden="true" class="fas fa-download text-primary"></span>  Export Citation
+        </a>
+        
+    </div>
+</div>

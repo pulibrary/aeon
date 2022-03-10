@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Aeon - Update User Information</title>
+    <#INCLUDE filename="include_head.html">
+</head>
+
+<body>
+    <#INCLUDE filename="include_header.html">
+    <#INCLUDE filename="include_nav.html">
+
+        <div id="content" class="container" role="heading" aria-label="Content">
+            <form action="aeon.dll" method="post" name="ExpiredUsers">
+                <input type="hidden" name="AeonForm" value="ExpiredUsers">
+                <input type="hidden" name="NotificationMethod" value="Email">
+                <#FORMSTATE>
+
+                    <h2>Update User Information</h2>
+                    
+                    <div id="statusLine"><#STATUS></div>
+
+                    <div class="mt-3 mb-3">
+                        Your account has expired. Accounts expire once per year. Please confirm or update your information below and click the 'Submit Information' button to continue.
+                    </div>
+                    
+                    <section name="user-info">
+                        
+                        <h3 class="section-header">User Information</h3>
+
+                        <div class="form-group col-md-5">
+                            <label for="FirstName">
+                                <span class="<#ERROR name='ERRORFirstName'>">
+                                    First Name
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="FirstName" id="FirstName" value="<#PARAM name='FirstName'>" required>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="LastName">
+                                <span class="<#ERROR name='ERRORLastName'>">
+                                    Last Name
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="LastName" id="LastName" value="<#PARAM name='LastName'>" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="EMailAddress">
+                                <span class="<#ERROR name='ERROREMailAddress'>">
+                                    Email Address
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="email" class="form-control" name="EMailAddress" id="EMailAddress" value="<#PARAM name='EMailAddress'>" autocomplete="off" required>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="Phone">
+                                <span class="<#ERROR name='ERRORPhone'>">
+                                    Daytime Phone
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="Phone" id="Phone" value="<#PARAM name='Phone'>" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="Status">
+                                <span class="<#ERROR name='ERRORStatus'>">
+                                    Status
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <select class="custom-select mr-sm-2" name="Status" id="Status" required>
+                                <#OPTION name="Statuses" selectedValue="<#PARAM name='Status'>" defaultName="Choose a Status" defaultValue="">
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="Department">
+                                <span class="<#ERROR name='ERRORDepartment'>">
+                                    Department
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <select class="custom-select mr-sm-2" name="Department" id="Department" required>
+                                <#OPTION name="Departments" selectedValue="<#PARAM name='Department'>" defaultName="Choose a Department" defaultValue="">
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="Organization">
+                                <span class="<#ERROR name='ERROROrganization'>">
+                                    Organization
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="Organization" id="Organization" value="<#PARAM name='Organization'>">
+                        </div>
+                    </section>
+
+                    <section name="address-info">
+                            
+                        <h3 class="section-header">Primary Address Information</h3>
+
+                        <div class="form-group col-md-6">
+                            <label for="Address">
+                                <span class="<#ERROR name='ERRORAddress'>">
+                                    Primary Address Line 1
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="Address" id="Address" value="<#PARAM name='Address'>" required>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="Address2">
+                                <span class="<#ERROR name='ERRORAddress2'>">
+                                    Primary Address Line 2
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="Address2" id="Address2" value="<#PARAM name='Address2'>">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="City">
+                                <span class="<#ERROR name='ERRORCity'>">
+                                    Primary Address City
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="City" id="City" value="<#PARAM name='City'>" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="State">
+                                <span class="<#ERROR name='ERRORState'>">
+                                    Primary Address State
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <select class="custom-select mr-sm-2" name="State" id="State" required>
+                                <#OPTION name="States" selectedValue="<#PARAM name='State'>" defaultName="Choose a State" defaultValue="">
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="Zip">
+                                <span class="<#ERROR name='ERRORZip'>">
+                                    Primary Address Zip
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="Zip" id="Zip" value="<#PARAM name='Zip'>" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="Country">
+                                <span class="<#ERROR name='ERRORCountry'>">
+                                    Primary Address Country
+                                    <span class="req">(required)</span>
+                                </span>
+                            </label>
+                            <select class="custom-select mr-sm-2" name="Country" id="Country" required>
+                                <#OPTION name="Countries" selectedValue="<#PARAM name='Country'>" defaultName="Choose a Country" defaultValue="">
+                            </select>
+                        </div>
+                    </section>
+
+                    <section name="alt-address-info" style="<#CONDITIONAL type='CustomizationKey' test='UseSecondaryAddress' false='display:none'>">
+                        <h3 class="section-header">Alternate Address Information</h3>
+
+                        <div class="form-group col-md-6">
+                            <label for="SAddress">
+                                <span class="<#ERROR name='ERRORSAddress'>">
+                                    Alternate Address Line 1
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="SAddress" id="SAddress" value="<#PARAM name='SAddress'>">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="SAddress2">
+                                <span class="<#ERROR name='ERRORSAddress2'>">
+                                    Alternate Address Line 2
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="SAddress2" id="SAddress2" value="<#PARAM name='SAddress2'>">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="SCity">
+                                <span class="<#ERROR name='ERRORSCity'>">
+                                    Alternate Address City
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="SCity" id="SCity" value="<#PARAM name='SCity'>">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="SState">
+                                <span class="<#ERROR name='ERRORSState'>">
+                                    Alternate Address State
+                                </span>
+                            </label>
+                            <select class="custom-select mr-sm-2" name="SState" id="SState">
+                                <#OPTION name="States" selectedValue="<#PARAM name='SState'>" defaultName="Choose a State" defaultValue="">
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="SZip">
+                                <span class="<#ERROR name='ERRORSZip'>">
+                                    Alternate Address Zip
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" name="SZip" id="SZip" value="<#PARAM name='SZip'>">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="SCountry">
+                                <span class="<#ERROR name='ERRORSCountry'>">
+                                    Alternate Address Country
+                                </span>
+                            </label>
+                            <select class="custom-select mr-sm-2" name="SCountry" id="SCountry">
+                                <#OPTION name="Countries" selectedValue="<#PARAM name='SCountry'>" defaultName="Choose a Country" defaultValue="">
+                            </select>
+                        </div>
+
+                    </section>
+
+                    <section name="research-info">
+                        <h3 class="section-header">Research Information</h3>
+                        
+                        <div class="form-group col-md-6">
+                            <label for="ResearchTopics">
+                                <span class="<#ERROR name='ERRORResearchTopics'>">
+                                    Research Topics
+                                </span>
+                            </label>
+                            <textarea class="form-control" name="ResearchTopics" id="ResearchTopics" rows="2" cols="40"><#PARAM name="ResearchTopics"></textarea>
+                        </div>
+                        
+                        <div class="form-check ml-3">
+							<label class="form-check-label <#ERROR name='ERRORResearchTopicsSharing'>" for="ResearchTopicsSharing">
+                                <input class="form-check-input" type="checkbox" id="ResearchTopicsSharing" name="ResearchTopicsSharing" value="Yes" <#CHECKED name="ResearchTopicsSharing" default="true">>May we share your research topics with others?
+                            </label>
+                        </div>
+                    </section>
+
+                    <section name="policies">
+                        <div class="info-block ml-3">
+                            <h2>Terms and Conditions</h2>
+                            <div>
+                                By pressing the button below, you acknowledge and agree to all of the terms and conditions below.
+                                Please pay particular attention to the copyright statement and the Aeon FAQ.
+                                After reading this information, you can press the "Submit Information" button below.
+                            </div>
+                        </div>
+
+                        <div class="info-block ml-3">
+                            <h2>Important Copyright Information</h2>
+                            <div>WARNING CONCERNING COPYRIGHT RESTRICTIONS</div>
+                            <div>The copyright law of the United States (Title 17, United States Code) governs the making of photocopies or other reproductions of copyrighted materials.</div>
+                            <div>Under certain conditions specified in the law, libraries and archives are authorized to furnish a photocopy
+                                or other reproduction. One of these specified conditions is that the photocopy or reproduction is not
+                                to be &quot;used for any purpose other than private study, scholarship, or research&quot;. If a user
+                                makes a request for, or later uses, a photocopy or reproduction for purposes in excess of &quot;fair
+                                use&quot;, that user may be liable for copyright infringement.
+                            </div>
+                            <div>This institution reserves the right to refuse to accept a copying order if, in its judgment, fulfillment
+                                of the order would involve violation of copyright law.
+                            </div>
+                        </div>
+
+                        <h2 class="ml-3">Aeon FAQ (Frequently Asked Questions)</h2>
+                        <div class="ml-3">
+                            Before registering, you may wish to read the Aeon
+                            <a href="<#ACTION action='10' form='4'>">FAQ</a>. The FAQ may answer other questions you have about the Aeon Special Collections Request System.
+                        </div>
+
+                        <div class="ml-3 mb-3">
+                            By pressing this button you acknowledge and agree to all of the terms and conditions above. Please pay particular
+                            attention to the copyright statement and the Aeon FAQ. After reading this information, you can press
+                            the &quot;Submit Information&quot; button to continue.
+                        </div>
+                    </section>
+                    
+                    <button class="btn btn-primary btn-md" type="submit" name="SubmitButton" value="Submit Information">Submit Information</button>
+                    <button class="btn btn-secondary btn-md" type="submit" name="SubmitButton" value="Cancel - Exit to Main Menu" formnovalidate>Cancel - Exit to Main Menu</button>
+                </form>
+
+                <footer>
+                    <#INCLUDE filename="include_footer.html">
+                </footer>
+            </div>
+</body>
+</html>

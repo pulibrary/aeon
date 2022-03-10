@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account - Search Results</title>
-  <#INCLUDE filename="include_head.html">
-    <#INCLUDE filename="include_sortableTables.html">
+    <title>Aeon - Search</title>
+    <#INCLUDE filename="include_head.html">
+    <script type="text/javascript" src="js/search.js"></script>
 </head>
 
-<body id="type-b">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Search Results</h1>
-          <div class="default-table table-responsive simple-table">
-            <#TABLE name="ViewSearchResults" noDataAction="ShowMessageRow" noDataMessage="No Results" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" column="TransactionStatus:Status">
-          </div>
-        </main>
-      </section>
-    </div>
-    <#INCLUDE filename="include_footer.html">
-</body>
+<body>
 
+    <#INCLUDE filename="include_header.html">
+    <#INCLUDE filename="include_menu.html">
+    <div id="content" class="container" role="heading" aria-label="Content">
+        <h2>Search</h2>
+    
+        <div id="search">
+            <form action="aeon.dll" name="Search" method="post">
+                <input type="hidden" name="AeonForm" value="Search">
+                <input id="SearchCriteria" value="<#PARAM name='SearchCriteria'>" name="SearchCriteria" type="text" title="Search criteria">
+                <input class="btn btn-primary btn-sm" type="submit" name="SubmitButton" value="Search" title="Search" data-button-nodisable>
+
+                <!--Switch control for search filtering-->
+                <!--
+                <div class="custom-control custom-switch" id="customSearchType">
+                    <input type="checkbox" name="SearchType" class="custom-control-input" id="SearchType" value="Active" data-persisted-value="<#PARAM name='SearchType'>">
+                    <label class="custom-control-label" for="SearchType">Search <u>only</u> active requests</label>
+                </div>
+                -->
+
+                <!--Radio control for search filtering-->
+                <br>
+                
+                <div id="searchType">
+                    <input checked name="SearchType" type="radio" id="SearchTypeActive" value="Active" data-persisted-value="<#PARAM name='SearchType'>">
+                    <label for="SearchTypeActive"><span>Search <u>only</u> active requests</span></label>
+
+                    <input class="ml-3" name="SearchType" type="radio" id="SearchTypeAll" value="All" data-persisted-value="<#PARAM name='SearchType'>">
+                    <label for="SearchTypeAll">Search all requests</label>
+                </div>
+            </form>
+        </div>
+
+        <div id="searchResults">
+            <#DATAREPEATER name="ViewSearchResults" TemplateFile="templates/DataRow_DefaultRequest.html"  orderby="TransactionNumber DESC">
+           
+            <div id="no-results-message" style="display: none;">
+                There are no search results for
+                <span id="searchTerm"><strong><#PARAM name="SearchCriteria"></strong></span>
+            </div>
+        </div>
+        <#INCLUDE filename="include_footer.html">
+    </div>
+</body>
 </html>

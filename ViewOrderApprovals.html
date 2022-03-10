@@ -1,42 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account - Approve Billing</title>
-  <#INCLUDE filename="include_head.html">
-    <#INCLUDE filename="include_sortableTables.html">
-      <script type="text/javascript" src="utility.js"></script>
+	<title>Aeon - Order Billing</title>
+	<#INCLUDE filename="include_head.html">
 </head>
 
-<body id="type-b">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Outstanding Orders</h1>
-          <p>For credit card payments (Visa or MasterCard only), please select the items below and click Pay Now.  For all other forms of payment, please contact the library. </p>
-          <form action="aeon.dll" method="post" name="ViewOrderApprovals" class="f-wrap-request">
-            <input type="hidden" name="AeonForm" value="ViewOrderApprovals"> Select: <a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', true);" class="select-button">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewOrderApprovals', false);" class="select-button">None</a>
-            <div class="default-table simple-table">
-              <#TABLE name="ViewOrderBilling" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Title" column="ItemAuthor:Author" column="ServiceLevel:Service Level" column="ShippingOption:Shipping" column="PhotoduplicationStatus:Order Status" column="PageCount:Page Count" column="Subtotal" orderby="t.TransactionNumber DESC">
-            </div>
-            <div class="f-submit-wrap" align="right">
-              <button type="submit" name="SubmitButton" value="Pay Now" class="f-submit" tabindex="0">Approve for Payment</button>
-            </div>
-          </form>
-        </main>
-      </section>
-    </div>
-    <#INCLUDE filename="include_footer.html">
-    <script type="text/javascript">
-      ToggleCheckBoxes('ViewOrderApprovals', true);
-    </script>
+<body>
+	<#INCLUDE filename="include_header.html">
+	<#INCLUDE filename="include_menu.html">
+	<div id="content" class="container" role="heading" aria-label="Content">
+		<p class="text-muted">If you would like to proceed with placing your order(s), check the corresponding checkbox(es) and click the submit button.
+			You may also edit and change your order(s) option by clicking on the corresponding transaction number (TN).
+		</p>
+		<form action="aeon.dll" method="post" name="ViewOrderApprovals">
+			<input type="hidden" name="AeonForm" value="ViewOrderApprovals">
+
+			<div class="row">
+				<div class="col-lg-9">
+				
+					<div class="row">
+						<div class="col-lg-7">
+							<h2 class="header-special">Order Billing</h2>
+						</div>
+
+						<div class="col-lg-5 text-right">
+							<button  class="selectOptions btn btn-link checkAll" data-form="orderApprovals" aria-label="Select all of the displayed requests." role="button" >Select All</button>
+							<button  class="selectOptions btn btn-link checkNone" data-form="orderApprovals" aria-label="Unselect all of the displayed requests." role="button" >Select None</button>
+						</div>
+					</div>
+
+
+					<div id="orderApprovals">
+						<#DATAREPEATER name="ViewOrderBilling" TemplateFile="templates/DataRow_OrderBilling.html" noDataAction="You have no orders to approve/pay" orderby="t.TransactionNumber DESC">
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<h2 class="header-special">
+						<span>Summary</span>
+						<span class="badge badge-primary badge-pill">
+							<span id="selectedOrdersToSubmit">0</span>
+						</span>
+					</h2>
+
+					<div class="list-group-item d-flex justify-content-between">
+						<span>Charges</span>
+						<strong>$
+							<span id="summaryTotalCharges">0.00</span>
+						</strong>
+					</div>
+					<button id="approveOrder" disabled type="submit" class="btn btn-primary btn-block" name="SubmitButton" value="Approve Orders">Approve Order</button>
+					<button id="payOrder" disabled type="submit" class="btn btn-primary btn-block" name="SubmitButton" value="Pay Online">Pay Online</button>
+
+				</div>
+			</div>
+
+		</form>
+
+		<footer>
+			<#INCLUDE filename="include_footer.html">
+		</footer>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('input[type="checkbox"][name="TransactionSelect"]').change(function () {
+				UpdateCharges();
+			});
+			$('button.checkAll').click(function (event) {
+				event.preventDefault();
+				
+				$('#' + $(this).attr('data-form') + ' input:checkbox').prop('checked', true);
+				UpdateCharges();
+	});
+			$('button.checkNone').click(function (event) {
+				event.preventDefault();
+				
+				$('#' + $(this).attr('data-form') + ' input:checkbox').prop('checked', false);
+				UpdateCharges();
+	});
+
+		});
+		function UpdateCharges() {
+			var selectedRequests = $('input[type="Checkbox"][name="TransactionSelect"]:checked').length;
+			$('#selectedOrdersToSubmit').text(selectedRequests);
+			var total = 0;
+			$('input[type="Checkbox"][name="TransactionSelect"]:checked').each(function () {
+				total += Number($(this).attr('data-balanceRemaining'));
+			});
+			$('#summaryTotalCharges').text(total.toFixed(2));
+			$('#approveOrder').prop('disabled', (selectedRequests == 0));
+			$('#payOrder').prop('disabled', (selectedRequests == 0));
+		}
+	</script>
+
 </body>
 
 </html>

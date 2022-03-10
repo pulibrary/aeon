@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account - Notifications</title>
-  <#INCLUDE filename="include_head.html">
-    <link href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">" rel="alternate" type="application/rss+xml" title="Aeon Notifications" />
+	<title>Aeon - Notifications</title>
+	<#INCLUDE filename="include_head.html">
 </head>
 
-<body id="type-b">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Notifications</h1>
-          <a href="<#ACTION action="2" type="41" value="RSSID" valueType="lookup" absolutePath="true" includeSessionID="false">">Subscribe to Notifications Feed</a>
-          <div class="default-table simple-table">
-            <#TABLE name="ViewNotifications" noDataAction="ShowMessageRow" noDataMessage="No Notifications">
-          </div>
-        </main>
-      </section>
-    </div>
-    <#INCLUDE filename="include_footer.html">
+<body>
+
+    <#INCLUDE filename="include_header.html">
+
+	<#INCLUDE filename="include_menu.html">
+
+	<div id="content" class="container" role="heading" aria-label="Content">
+		<h2>Notifications</h2>
+		<div class="table">
+			<#TABLE name="ViewNotifications" noDataAction="ShowMessageRow" noDataMessage="You have no notifications">
+		</div>
+
+	    <#INCLUDE filename="include_footer.html">
+
+	</div>
 </body>
 
 </html>

@@ -1,74 +1,79 @@
-<div class="default-table simple-table">
-	<table class="default-table">
-	<thead>
-		<caption>Activity Information</caption>
-	</thead>
-	<tbody>
-	<tr class="row-even">
-		<td>
-			Name
-		</td>
-		<td>
-			<#ACTIVITY field="Name">
-		</td>
-	</tr>
-	<tr class="row-odd">
-		<td>
-			Description
-		</td>
-		<td>
-			<#ACTIVITY field="Description">
-		</td>
-	</tr>
-	<tr class="row-even">
-		<td>
-			Type
-		</td>
-		<td>
-			<#ACTIVITY field="ActivityType">
-		</td>
-	</tr>
-	<tr class="row-odd">
-		<td>
-			Status
-		</td>
-		<td>
-			<#ACTIVITY field="ActivityStatus">
-		</td>
-	</tr>
-	<tr class="row-even">
-		<td>
-			Status Date
-		</td>
-		<td>
-			<#ACTIVITY field="ActivityStatusDate">
-		</td>
-	</tr>
-	<tr class="row-odd">
-		<td>
-			Location
-		</td>
-		<td>
-			<#ACTIVITY field="Location">
-		</td>
-	</tr>
-	<tr class="row-even">
-		<td>
-			Begin Date
-		</td>
-		<td>
-			<#ACTIVITY field="BeginDate">
-		</td>
-	</tr>
-	<tr class="row-odd">
-		<td>
-			End Date
-		</td>
-		<td>
-			<#ACTIVITY field="EndDate">
-		</td>
-	</tr>
-	</tbody>
-	</table>
-	<br/>
+<h3>Activity Information</h3>
+
+<div class="row">
+	<div class="col-lg-12">
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Name</span>
+				<strong>
+					<span class="field-value"><#ACTIVITY field="Name"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Description</span>
+				<strong>
+					<span class="field-value"><#ACTIVITY field="Description"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Type</span>
+				<strong>
+					<span class="field-value"><#ACTIVITY field="ActivityType"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Status</span>
+				<strong>
+					<span class="field-value"><#ACTIVITY field="ActivityStatus"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Status Date</span>
+				<strong>
+					<span class="field-value convert-local" data-servertime="<#ACTIVITY field='ActivityStatusDate'>" data-iso8601="<#ACTIVITY field='ActivityStatusDate' display='ISO8601'>"><#ACTIVITY field="ActivityStatusDate" display="ISO8601"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Location</span>
+				<strong>
+					<span class="field-value"><#ACTIVITY field="Location"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>Begin Date</span>
+				<strong>
+					<span class="field-value convert-local" data-servertime="<#ACTIVITY field='BeginDate'>" data-iso8601="<#ACTIVITY field='BeginDate' display='ISO8601'>"><#ACTIVITY field="BeginDate" display="ISO8601"></span>
+				</strong>
+			</div>
+		</div>
+
+		<div class="field list-group-item">
+			<div class="d-flex justify-content-between">
+				<span>End Date</span>
+				<strong>
+					<span class="field-value convert-local" data-servertime="<#ACTIVITY field='EndDate'>" data-iso8601="<#ACTIVITY field='EndDate' display='ISO8601'>"><#ACTIVITY field="EndDate" display="ISO8601"></span>
+				</strong>
+			</div>
+		</div>
+	</div>
 </div>
+

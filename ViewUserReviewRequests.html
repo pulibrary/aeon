@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>Special Collections Research Account - Review Requests</title>
-  <#INCLUDE filename="include_head.html">
-    <#INCLUDE filename="include_head_request.html">
-      <#INCLUDE filename="include_sortableTables.html">
-        <script type="text/javascript" src="utility.js"></script>
-        <script type="text/javascript" src="js/KeepInReview.js"></script>
-        <style>
-        #ViewUserReviewRequests label .field {
-          width: 30%
-        }
-        </style>
+	<title>Aeon - Saved Requests</title>
+	<#INCLUDE filename="include_head.html">
+	<#INCLUDE filename="include_head_request.html">
+	<script type="text/javascript" src="js/KeepInReview.js"></script>
 </head>
 
-<body id="type-b">
-  <#INCLUDE filename="include_header.html">
-    <div id="content-wrap" class="panel-display--three_nine l-page">
-      <section class="l-main">
-        <nav role="navigation" aria-label="illiad navigation" class="three_nine-region--first">
-          <#INCLUDE filename="include_menu.html">
-        </nav>
-        <main role="main" class="three_nine-region--second">
-          <div id="status">
-            <#STATUS>
-          </div>
-          <h1>Requests in Review</h1>
-          <form action="aeon.dll" method="post" id="ViewUserReviewRequests" name="ViewUserReviewRequests" class="f-wrap-request">
-            <div class="select-checkboxes">
-              <input type="hidden" name="AeonForm" value="ViewUserReviewRequests"> Select: <a href="#" onclick="ToggleCheckBoxes('ViewUserReviewRequests', true);">All</a>,&nbsp;<a href="#" onclick="ToggleCheckBoxes('ViewUserReviewRequests', false);">None</a>
-            </div>
-            <div class="default-table table-responsive simple-table">
-              <#TABLE name="ViewUserReviewRequests" noDataAction="ShowMessageRow" noDataMessage="No Requests" sortable="true" column="TransactionNumber:TN" column="Site:Library" column="TransactionStatus:Status" column="ItemAuthor:Author" column="Title" column="CallNumber:Call/Coll. Number" column="ItemVolume:Box/Vol." column="Location" orderby="TransactionNumber DESC">
-            </div>
-            <div class="f-submit-wrap" align="left">
-              <label for="ScheduledDate">
-                <span class="field">
-									<span id="ERRORScheduledDate" class="<#ERROR name="ERRORScheduledDate">"><span class="bold">Scheduled Date</span></span>
-                <span class="note">Enter as M/D/YYYY</span>
-                </span>
-                <input id="ScheduledDate" name="ScheduledDate" class="f-name" tabindex="0" type="textbox" value="<#PARAM name="ScheduledDate">">
-              </label>
-            </div>
-            <div class="f-submit-wrap" align="right">
-              <input type="submit" name="SubmitButton" id="submitInformation" value="Submit Information" class="f-submit" tabindex="0" />
-              <input type="submit" name="SubmitButton" id="submitCancelRequests" value="Cancel Requests" class="f-submit" tabindex="0" />
-            </div>
-          </form>
-        </main>
-      </section>
-    </div>
-    <#INCLUDE filename="include_footer.html">
+<body>
+    <#INCLUDE filename="include_header.html">
+	<#INCLUDE filename="include_menu.html">
+	<div id="content" class="container" role="heading" aria-label="Content">
+		<#RETURNLINK linkText="Return to <#SYSTEMNAME>." linkTextAutoRedirect="Return to <#SYSTEMNAME>. You will be automatically redirected within <#REDIRECTSECONDS> seconds.">
+		<form action="aeon.dll" method="post" id="ViewUserReviewRequests" name="ViewUserReviewRequests">
+
+			<input type="hidden" name="AeonForm" value="ViewUserReviewRequests">
+			<div class="row">
+				<div class="col-lg-7">
+					<h2 class="header-special">Saved Requests</h2>
+				</div>
+		
+				<div class="col-lg-5 text-right">
+					<button class="selectOptions btn btn-link checkAll" data-form="ViewUserReviewRequests" aria-label="Select all of the displayed requests." role="button" >Select All</button>
+					<button class="selectOptions btn btn-link checkNone" data-form="ViewUserReviewRequests" aria-label="Unselect all of the displayed requests." role="button" >Select None</button>
+				</div>
+			</div>
+
+			<div id="saved-requests">
+				<#DATAREPEATER Name="RequestsInReview" TemplateFile="Templates\RequestsInReviewDataRow.html" NoDataAction="<div class='no-data-message'>You do not currently have any requests in review</div>">
+			</div>
+				
+			<div id ="scheduled-date-div" class="visit-date form-group col-sm-4">
+				<label for="ScheduledDate">
+					<span class="<#ERROR name='ERRORScheduledDate'>">
+						Date of Visit
+					</span>
+				</label>
+				<div class="input-group">
+					<input class="form-control" id="ScheduledDate" name="ScheduledDate" type="textbox" onchange="aeonKeepInReviewModule.revalidateRequests()" value="<#PARAM name='ScheduledDate'>">
+				</div>
+				<div class="small-notes">
+					Select the date you plan to visit.
+				</div>
+			</div>
+
+			<script>
+				$(document).ready(function () {
+					if (($('#saved-requests .card').length == 0)) {	
+						$('#scheduled-date-div').hide();
+					}	
+					else
+					{
+						$('#scheduled-date-div').show();
+					}
+				});
+			</script>
+
+			<input class="btn btn-primary btn-md" type="submit" name="SubmitButton" id="submitInformation" value="Submit Information">
+			<input class="btn btn-secondary btn-md" type="submit" name="SubmitButton" id="submitCancelRequests" formnovalidate value="Cancel Requests">
+			<input class="btn btn-secondary btn-md" type="submit" name="SubmitButton" id="submitCancel" formnovalidate value="Cancel - Exit to Main Menu">
+
+		</form>
+	    <#INCLUDE filename="include_footer.html">
+	</div>	
 </body>
 
 </html>

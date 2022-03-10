@@ -1,128 +1,185 @@
-<div class="default-table simple-table">
-  <!-- <#TABLE name="DetailedInformation" headerText="Transaction Information" hideColumnHeaders="true">                     -->
-  <table class="default-table transaction-table">
-    <thead>
-      <caption>Transaction Information</caption>
-    </thead>
-    <tbody>
-      <tr class="row-even">
-        <th scope="row">
-          Library
-        </th>
-        <td>
-          <#TRANSACTION field="Site">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Call Number
-        </th>
-        <td>
-          <#TRANSACTION field="CallNumber">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Title
-        </th>
-        <td>
-          <#TRANSACTION field="ItemTitle">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Author
-        </th>
-        <td>
-          <#TRANSACTION field="ItemAuthor">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Date
-        </th>
-        <td>
-          <#TRANSACTION field="ItemDate">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Publication Information
-        </th>
-        <td>
-          <#TRANSACTION field="ItemCitation">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Edition Information
-        </th>
-        <td>
-          <#TRANSACTION field="ItemEdition">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Location
-        </th>
-        <td>
-          <#TRANSACTION field="Location">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Shelving Location
-        </th>
-        <td>
-          <#TRANSACTION field="SubLocation">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Item Enumeration
-        </th>
-        <td>
-          <#TRANSACTION field="ItemVolume">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Restrictions
-        </th>
-        <td>
-          <#TRANSACTION field="ItemInfo1">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Record ID
-        </th>
-        <td>
-          <#TRANSACTION field="ReferenceNumber">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">
-          Barcode
-        </th>
-        <td>
-          <#TRANSACTION field="ItemNumber">
-        </td>
-      </tr>
-      <tr class="row-odd">
-        <th scope="row">
-          Item ID
-        </th>
-        <td>
-          <#TRANSACTION field="ItemInfo5">
-        </td>
-      </tr>
-      <tr class="row-even">
-        <th scope="row">Scheduled Date</th>
-        <td>
-          <#TRANSACTION field="ScheduledDate">
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<h3 class="header-detailed">Transaction Information</h3>
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Transaction Number</span>
+                <strong>
+                    <span class="field-value mr-1"><#TRANSACTION field="TransactionNumber"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Title</span>
+                <strong>
+                    <span class="field-value mr-1"><#TRANSACTION field="ItemTitle"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Author</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemAuthor"></span>
+                </strong>
+            </div>
+        </div>
+  
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Place of Publication</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemPlace"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Publisher</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemPublisher"></span>
+                </strong>
+            </div>
+        </div>
+        
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Date</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemDate"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Edition</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemEdition"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Volume/Box</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemVolume"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Issue/Copy</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemIssue"></span>
+                </strong>
+            </div>
+        </div>
+
+        <!--
+        <div class="list-group-item d-flex justify-content-between <#DATAROW display='CheckHasValue' field='CallNumber' disabledValue='d-none'>">
+            <span class="transaction-label">Size/Physical Description</span>
+            <strong>
+                <#TRANSACTION field="ItemCitation"> 
+            </strong>
+        </div>
+        -->
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Call Number</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="CallNumber"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Collection Name/Location</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="Location"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Requested For</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ResearcherUsername"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Activity Number</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ActivityID"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Scheduled Date</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ScheduledDate"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Special Request</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="SpecialRequest"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="list-group-item <#TRANSACTION display='CheckHasValue' field='PhotoduplicationQueueName' disabledValue='d-none'>">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">FOR DUPLICATION ORDERS:</span>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Pages/Selections to be Reproduced</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ItemPages"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">Estimated Number of Images</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="PageCount"></span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="field list-group-item">
+            <div class="d-flex justify-content-between">
+                <span class="transaction-label">For Publication?</span>
+                <strong>
+                    <span class="field-value"><#TRANSACTION field="ForPublication"></span>
+                </strong>
+            </div>
+        </div>
+
+    </div>
+    
 </div>

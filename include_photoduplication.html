@@ -1,44 +1,64 @@
-<label for="ItemPages">
-  <span class="field">
-		<span class="<#ERROR name="ERRORItemPages">"><span class="bold">Inclusive Pages</span></span>
-  <br/>
-  <span class="note">Additional citation information can be added as notes.</span>
-  </span>
-  <input id="ItemPages" name="ItemPages" type="text" size="90" class="f-name" tabindex="0" value="<#PARAM name="ItemPages">">
-</label>
-<label for="PageCount">
-  <span class="field">
-		<span class="<#ERROR name="ERRORPageCount">"><span class="bold">Page Count</span></span>
-  </span>
-  <input id="PageCount" name="PageCount" type="text" size="95" class="f-name" tabindex="0" value="<#PARAM name="PageCount">">
-</label>
-<label for="Format">
-  <span class="field">
-		<span class="<#ERROR name="ERRORFormat">"><span class="bold">Format</span></span>
-  </span>
-  <select id="Format" name="Format" size="1" class="f-name" tabindex="0">
-    <#OPTION name="Formats">
-  </select>
-</label>
-<label for="ShippingOption">
-  <span class="field">
-		<span class="<#ERROR name="ERRORShippingOption">"><span class="bold">Shipping</span></span>
-  </span>
-  <select id="ShippingOption" name="ShippingOption" size="1" class="f-name" tabindex="0">
-    <#OPTION name="ShippingOptions">
-  </select>
-</label>
-<label for="ServiceLevel">
-  <span class="field">
-		<span class="<#ERROR name="ERRORServiceLevel">"><span class="bold">Service Level</span></span>
-  </span>
-  <select id="ServiceLevel" name="ServiceLevel" size="1" class="f-name" tabindex="0">
-    <#OPTION name="ServiceLevels">
-  </select>
-</label>
-<label for="ForPublication">
-  <span class="field">
-		<span class="<#ERROR name="ERRORForPublication">"><span class="bold">For Publication?</span></span>
-  </span>
-  <input id="ForPublication" name="ForPublication" type="checkbox" class="f-checkbox" tabindex="0" value="Yes" <#CHECKED name="ForPublication"> default="false" />
-</label>
+<div class="form-group col-md-3">
+        <label for="ItemPages">
+                <span class="<#ERROR name='ERRORItemPages'>">
+                        Inclusive Pages
+                </span>
+        </label>
+        <input type="text" class="form-control" name="ItemPages" id="ItemPages" value="<#PARAM name='ItemPages'>">
+        <div class="small-notes">Additional citation information can be added as notes.</div>
+</div>
+
+<div class="form-group col-md-2">
+        <label for="PageCount">
+                <span class="<#ERROR name='ERRORPageCount'>">
+                        Page Count
+                </span>
+        </label>
+        <input type="text" class="form-control" name="PageCount" id="PageCount" value="<#PARAM name='PageCount'>">
+</div>
+
+
+<div class="form-group col-md-4">
+        <label for="Format">
+                <span class="<#ERROR name='ERRORFormat'>">
+                        Format
+                </span>
+        </label>
+        <select class="custom-select mr-sm-2" id="Format" name="Format" size="1">
+                <#OPTION name="Formats">
+        </select>
+</div>
+
+
+
+<div class="form-group col-md-4">
+        <label for="ShippingOption">
+                <span class="<#ERROR name='ERRORShippingOption'>">
+                        Shipping
+                </span>
+        </label>
+        <select class="custom-select mr-sm-2" id="ShippingOption" name="ShippingOption" size="1" >
+                <#OPTION name="ShippingOptions">
+        </select>
+</div>
+
+<div class="form-group col-md-4">
+        <label for="ServiceLevel">
+                <span class="<#ERROR name='ERRORServiceLevel'>">
+                        Service Level
+                </span>
+        </label>
+        <select class="custom-select mr-sm-2" id="ServiceLevel" name="ServiceLevel" size="1" >
+                <#OPTION name="ServiceLevels">
+        </select>
+        
+</div>
+
+<div class="form-check">
+        <label for="form-checkbox form-check-label">
+                <span class="<#ERROR name='ERRORForPublication'>">
+                        <input type="checkbox" class="form-check-input" id="ForPublication" name="ForPublication" value="Yes"  default="false" <#CHECKED name="ForPublication">> For Publication?
+                </span>
+        </label>
+</div>
+

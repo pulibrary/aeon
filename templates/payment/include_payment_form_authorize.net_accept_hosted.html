@@ -1,0 +1,50 @@
+<form id="paymentform" action="<#PAYMENTPROVIDERURL>" method="post">
+    <input id="paymentform-token" type="hidden" name="token" value="">
+                                            
+    <#INCLUDE filename="templates/payment/include_payment_buttons.html">
+</form>
+<script type="text/javascript">
+		transactionNumbers = "<#PARAM name='TransactionNumbers'>";
+		
+		$(document).ready(function(){
+			$("#payOrder").click(function() {
+				$("#payOrder, #cancel").attr('disabled', true);
+				$.ajax({
+					type: "GET",
+					url:"aeon.dll/ajax?query=GenerateAuthorizeNetAcceptHostedToken",
+					cache: false,
+					data: {
+						transactionNumbers: transactionNumbers,
+						invoiceDescription: "",	//When blank, this will default to 'Payments for Aeon requests ' followed by the transaction numbers of the requests being paid for.
+						returnUrl: "<#CUSTOMIZATION name='WebURL'>aeon.dll" + encodeURIComponent("?action=30&type=111"),
+						cancelUrl: "<#CUSTOMIZATION name='WebURL'>aeon.dll" + encodeURIComponent("?action=30&type=104"),
+						showBillingAddress: true,	
+						requireBillingAddress: true,
+						showShippingAddress: false,
+						requireShippingAddress: false,
+						requireCVV: true,
+						requireCaptcha: false
+					},
+					success: function(data, textStatus, jqXHR) {
+						$("#payOrder, #cancel").attr('disabled', false);
+						if (data.messages.resultCode == 'Error') {
+							var errMessage = 'Unable to process payment.\r\n';
+							errMessage = errMessage + data.messages.message[0].code + ': ' + data.messages.message[0].text;
+							alert(errMessage);
+						} else {
+							$("#paymentform-token").val(data.token);
+							$("#paymentform").submit();
+						}
+					},
+					error: function(jqXHR,textStatus,errorThrown) {
+						$("#payOrder, #cancel").attr('disabled', false);
+						throw errorThrown;
+					}
+				});
+			});
+
+			$("#cancel").click(function() {
+				window.location.replace("<#DLL queryFields=false>?action=10&form=10");
+			});
+	});
+</script>

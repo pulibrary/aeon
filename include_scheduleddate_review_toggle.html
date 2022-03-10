@@ -1,16 +1,16 @@
-<input id="VisitScheduled" name="Visit" type="radio" title="Schedule retrieval" tabindex="0" CHECKED="CHECKED"> Schedule Retrieval
-<input id="VisitReview" name="Visit" type="radio" title="Keep for my review" tabindex="0"> Keep for My Review
+<input id="VisitScheduled" name="Visit" type="radio" title="Schedule retrieval" CHECKED="CHECKED"> Schedule Retrieval<br>
+<input id="VisitReview" name="Visit" type="radio" title="Keep for my review"> Keep for My Review<br>						
 
 <label for="ScheduledDate">
-    <span class="field">
-        <span class="note <#ERROR name="ERRORScheduledDate">"><strong>Click the calendar button on the right to bring up a calendar</strong> and use it to indicate the date you plan to visit. You may leave this field blank if you are not sure when you will visit the library.</span>
+    <span class="field">								
+        <span class="note <#ERROR name='ERRORScheduledDate'>"><strong>Click the calendar button on the right to bring up a calendar</strong> and use it to indicate the date you plan to visit. You may leave this field blank if you are not sure when you'll be coming or you would like the item retrieved as soon as possible.</span>
     </span>
-    <input id="ScheduledDate" name="ScheduledDate" class="f-name" tabindex="0" type="textbox" value="<#PARAM name="ScheduledDate">" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">>
-</label>
-
+    <input id="ScheduledDate" name="ScheduledDate" class="f-name" type="textbox" value="<#PARAM name='ScheduledDate'>" <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">><br>
+</label>						
+                    
 <label for="UserReview">
-    <span class="field">
-        <span class="note <#ERROR name="ERRORUserReview">"><strong>This request will not be processed</strong> until you select and submit it from the "Review Requests" listing under the "Requests" menu in the left-hand navigational bar.</span>
+    <span class="field">								
+        <span class="note <#ERROR name='ERRORUserReview'>"><strong>This request will not be processed</strong> until you select and submit it from the "Review Requests" listing under the "Requests" menu in the left-hand navigational bar.</span>
     </span>
-    <input id="UserReview" name="UserReview" class="f-checkbox" tabindex="0" value="Yes" type="checkbox" <#CHECKED name="UserReview" default="false"> <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">>
+    <input id="UserReview" name="UserReview" class="f-checkbox" value="Yes" type="checkbox" <#CHECKED name="UserReview" default="false"> <#CONDITIONAL type="ConvertingToCopy" true="DISABLED">><br>
 </label>

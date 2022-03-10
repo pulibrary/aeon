@@ -1,0 +1,79 @@
+<form id="paypalform" action="<#PAYMENTPROVIDERURL>" method="post">
+    <!--Enter your currency code based on PayPal accepted codes. https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_currency_codes -->                    
+    <input type="hidden" name="currency_code" value="USD">
+                                        
+    <!--The notify URL should point to your nonshib folder if using remote auth e.g. http://aeon.institution.edu/aeon/nonshib/aeon.dll?action=11&type=106 -->
+    <input type="hidden" name="notify_url" value="<#CUSTOMIZATION name=WebURL />aeon.dll?action=11&type=106" />
+
+    <!--System defined values -->
+    <input type="hidden" name="business" value="<#CUSTOMIZATION name=PaymentProviderMerchantId />">
+    <input type="hidden" name="item_name_1" value="<#CUSTOMIZATION name=CreditCardTransactionsDescription />">
+    <input type="hidden" name="return" value="<#DLL absoluteUrl=true queryFields=false />?action=11&type=105" />                    
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="upload" value="1">
+    <input type="hidden" id="invoice" name="invoice" value="">
+    <input type="hidden" name="custom" value="<#PARAM name='TransactionNumbers'>">                    
+    <input type="hidden" id="totalCharges" name="amount_1" value="<#TOTALBILLINGCHARGES>">
+    <input type="hidden" name="no_shipping" value="1">
+    <input type="hidden" name="no_note" value="1">
+    <input type="hidden" name="rm" value="2">                   
+                                            
+    <#INCLUDE filename="templates/payment/include_payment_buttons.html">
+</form>
+
+<script type="text/javascript">
+    transactionNumbers = "<#PARAM name='TransactionNumbers'>";
+                        
+    $(document).ready(function(){
+        $("#payOrder").click(function() {      
+			$("#payOrder, #cancel").attr('disabled', true);
+            $.ajax({
+                type: "GET",
+                url: "aeon.dll/ajax?query=InitiatePayment", 
+                cache: false,
+                data: { 
+                    TransactionNumbers: transactionNumbers, 
+                    ProviderSystemId: 'PayPal' 
+                }, 
+                success: function(response, status, xhr){
+					$("#payOrder, #cancel").attr('disabled', false);
+                    var hasError = false;
+
+                    if(response.toLowerCase().indexOf("error: ") == 0)
+                    {
+                        $("#paymentResult").html(response.substring(6));
+                        hasError = true;
+                    }
+                    else if(status == "error")
+                    {
+                        $("#paymentResult").html("An error has occurred while attempting to process your payment.");
+                        hasError = true;
+                    }
+
+                    if(hasError)
+                    {
+                        $("#paymentResult").toggleClass("error", true);
+                        $("#paymentResult").toggleClass("success", false);                                                                        
+                        $("input[type=button]").removeAttr("disabled"); 
+                    }
+                    else
+                    {
+                        $("#paymentResult").toggleClass("error", false);
+                        $("#paymentResult").toggleClass("success", true);
+                        $('input[name=invoice]').val(response.toString());
+                        $("#paypalform").submit();
+                    }
+                },
+                error: function(jqXHR,textStatus,errorThrown) {
+					$("#payOrder, #cancel").attr('disabled', false);
+                    throw errorThrown;
+                }
+            });
+        });
+
+        $("#cancel").click(function() {
+            window.location.replace("<#DLL queryFields=false>?action=10&form=10");
+        });
+    });
+    
+</script>

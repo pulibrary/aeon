@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Aeon - Edit Manuscript/Archives Photoduplication Request</title>
+    <#INCLUDE filename="include_head.html">
+    <#INCLUDE filename="include_head_request.html">
+</head>
+
+<body>
+
+    <#INCLUDE filename="include_header.html">
+   
+    <#INCLUDE filename="include_nav.html">
+    <div id="content" class="container" role="heading" aria-label="Content">
+        <form action="aeon.dll" method="post" id="RequestForm">
+            <input type="hidden" name="AeonForm" value="EditGenericRequestManuscriptPhotodup">
+            <input type="hidden" name="Username" value="<#PARAM name='Username'>">
+            <input type="hidden" name="TransactionLink" value="<#PARAM name='TransactionLink'>">
+            <input type="hidden" name="ReferenceNumber" value="<#PARAM name='ReferenceNumber'>">
+            <input type="hidden" name="ItemNumber" value="<#PARAM name='ItemNumber'>">
+            <input type="hidden" name="RequestType" value="Copy">
+            <input type="hidden" name="DocumentType" value="Manuscript">
+
+            <h2> Edit the Manuscript/Archives Photoduplication Request</h2>
+            <div id="statusLine"><#STATUS></div>
+
+            <section name="item-info">
+               
+                <h3 class="section-header">Item Information</h3>
+                    
+                <div class="form-group col-md-8">
+                    <label for="ItemTitle">
+                        <span class="<#ERROR name='ERRORItemTitle'>">
+                            Title
+                        </span>
+                        <span class="req">(required)</span>
+                    </label>
+                    <textarea class="form-control" name="ItemTitle" id="ItemTitle" rows="2" cols="40" required><#PARAM name="ItemTitle"></textarea>
+                </div>
+				
+                <div class="form-group col-md-8">
+                    <label for="ItemAuthor">
+                        <span class="<#ERROR name='ERRORItemAuthor'>">
+                            Author/Creator
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" name="ItemAuthor" id="ItemAuthor" value="<#PARAM name='ItemAuthor'>">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="ItemDate">
+                        <span class="<#ERROR name='ERRORItemDate'>">
+                            Date(s)
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" name="ItemDate" id="ItemDate" value="<#PARAM name='ItemDate'>">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="Location">
+                        <span class="<#ERROR name='ERRORLocation'>">
+                            Collection Name/Location
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" name="Location" id="Location" value="<#PARAM name='Location'>">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="CallNumber">
+                        <span class="<#ERROR name='ERRORCallNumber'>">
+                            Call Number
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" name="CallNumber" id="CallNumber" value="<#PARAM name='CallNumber'>">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="ItemVolume">
+                        <span class="<#ERROR name='ERRORItemVolume'>">
+                            Box(es)/Folder(s)
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" name="ItemVolume" id="ItemVolume" value="<#PARAM name='ItemVolume'>">
+                </div>
+            </section>
+
+            <section name="order-info">
+                <h3 class="section-header">Order Information</h3>
+                <#INCLUDE filename="include_photoduplication.html">
+            </section>
+
+            <section name="user-info">
+
+                <h3 class="section-header">Request Information</h3>
+
+                <div class="form-group col-md-5 <#PARAM name='RequestLinksVisible' enabled='RequestForEnabled' disabled='d-none'>">
+                    <label for="RequestLink">
+                        <span class="<#ERROR name='ERRORRequestLink'>">
+                            Request for
+                        </span>
+                    </label>
+                    <select class="custom-select mr-sm-2"  id="RequestLink" name="RequestLink" size="1">
+                        <#OPTION name="RequestLinks" hideUsernames="true" hideEvents="true">
+                    </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <span class="<#PARAM name='BillingAccountsVisible' enabled='BillingAccountsEnabled' disabled='BillingAccountsDisabled'>"></span>
+                    <label for="BillingAccount">
+                        <span class="<#ERROR name='ERRORBillingAccount'>">
+                            Billing Account
+                        </span>
+                    </label>
+                    <select class="custom-select mr-sm-2" id="BillingAccountId" name="BillingAccountId">
+                        <#OPTION name="BillingAccounts">
+                    </select>
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label for="Notes">
+                        <span class="<#ERROR name='ERRORNotes'>">
+                            My Notes
+                        </span>
+                    </label>
+                    <textarea class="form-control" name="Notes" id="Notes" rows="2" cols="40"><#PARAM name="Notes"></textarea>
+                    <div class="small-notes">Enter any notes about this request for your personal reference.</div>
+                </div>
+
+                <div class="form-group col-md-8">
+                    <label for="SpecialRequest">
+                        <span class="<#ERROR name='ERRORSpecialRequest'>">
+                            Special Requests/Questions?
+                        </span>
+                    </label>
+                    <textarea class="form-control" name="SpecialRequest" id="SpecialRequest" rows="2" cols="40"><#PARAM name="SpecialRequest"></textarea>
+                    <div class="small-notes">Please enter any special requests or questions for library staff.</div>
+                </div>
+
+            </section>
+
+            <#INCLUDE filename="include_request_buttons_photoduplication.html">
+            <#INCLUDE filename="include_footer.html">
+      
+        </form>
+    </div>
+    <script type="text/javascript" src="js/billingContextOptionHandler.js"></script>
+    <script type="text/javascript" src="js/billingAccountsOptionHandler.js"></script>
+
+</body>
+
+</html>
+
